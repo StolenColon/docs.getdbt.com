@@ -49,6 +49,7 @@ const sidebarSettings = {
           items: [
             "docs/cloud/about-cloud-setup",
             "docs/cloud/account-settings",
+            "docs/cloud/account-integrations",
             "docs/dbt-cloud-environments",
             "docs/cloud/migration",
             {
@@ -141,6 +142,7 @@ const sidebarSettings = {
               },
               items: [
                 "docs/cloud/git/git-configuration-in-dbt-cloud",
+                "docs/cloud/git/managed-repository",
                 "docs/cloud/git/import-a-project-by-git-url",
                 "docs/cloud/git/connect-github",
                 "docs/cloud/git/connect-gitlab",
@@ -221,6 +223,7 @@ const sidebarSettings = {
                 "docs/core/connect-data-platform/athena-setup",
                 "docs/core/connect-data-platform/glue-setup",
                 "docs/core/connect-data-platform/clickhouse-setup",
+                "docs/core/connect-data-platform/cratedb-setup",
                 "docs/core/connect-data-platform/databend-setup",
                 "docs/core/connect-data-platform/decodable-setup",
                 "docs/core/connect-data-platform/doris-setup",
@@ -302,9 +305,9 @@ const sidebarSettings = {
             },
           ],
         },
-      ],
-    },
-    {
+        ],
+      },
+      {
       type: "category",
       label: "Build dbt projects",
       collapsed: true,
@@ -461,6 +464,7 @@ const sidebarSettings = {
           link: { type: "doc", id: "docs/collaborate/explore-projects" },
           items: [
             "docs/collaborate/explore-projects",
+            "docs/collaborate/data-health-signals",
             "docs/collaborate/access-from-dbt-cloud",
             "docs/collaborate/column-level-lineage",
             "docs/collaborate/model-performance",
@@ -489,7 +493,6 @@ const sidebarSettings = {
           items: [
             "docs/collaborate/git-version-control",
             "docs/collaborate/git/version-control-basics",
-            "docs/collaborate/git/managed-repository",
             "docs/collaborate/git/pr-template",
             "docs/collaborate/git/merge-conflicts",
           ],
@@ -770,7 +773,7 @@ const sidebarSettings = {
       link: { type: "doc", id: "docs/dbt-versions/core" },
       items: [
         "docs/dbt-versions/core",
-        "docs/dbt-versions/versionless-cloud",
+        "docs/dbt-versions/cloud-release-tracks",
         "docs/dbt-versions/upgrade-dbt-version-in-cloud",
         "docs/dbt-versions/product-lifecycles",
         "docs/dbt-versions/experimental-features",
@@ -799,6 +802,7 @@ const sidebarSettings = {
           },
           items: [
             "docs/dbt-versions/dbt-cloud-release-notes",
+            "docs/dbt-versions/compatible-track-changelog",
             "docs/dbt-versions/2023-release-notes",
             "docs/dbt-versions/2022-release-notes",
             {
@@ -918,17 +922,22 @@ const sidebarSettings = {
           items: [
             "reference/resource-configs/access",
             "reference/resource-configs/alias",
+            "reference/resource-configs/batch-size",
+            "reference/resource-configs/begin",
             "reference/resource-configs/database",
             "reference/resource-configs/enabled",
+            "reference/resource-configs/event-time",
             "reference/resource-configs/full_refresh",
             "reference/resource-configs/contract",
             "reference/resource-configs/grants",
             "reference/resource-configs/group",
             "reference/resource-configs/docs",
+            "reference/resource-configs/lookback",
             "reference/resource-configs/persist_docs",
             "reference/resource-configs/pre-hook-post-hook",
             "reference/resource-configs/schema",
             "reference/resource-configs/tags",
+            "reference/resource-configs/unique_key",
             "reference/resource-configs/meta",
             "reference/advanced-config-usage",
             "reference/resource-configs/plus-prefix",
@@ -944,6 +953,7 @@ const sidebarSettings = {
             "reference/resource-configs/materialized",
             "reference/resource-configs/on_configuration_change",
             "reference/resource-configs/sql_header",
+            "reference/resource-properties/concurrent_batches",
           ],
         },
         {
@@ -962,16 +972,17 @@ const sidebarSettings = {
           label: "For snapshots",
           items: [
             "reference/snapshot-properties",
-            "reference/resource-configs/snapshot_name",
             "reference/snapshot-configs",
             "reference/resource-configs/check_cols",
+            "reference/resource-configs/dbt_valid_to_current",
+            "reference/resource-configs/hard-deletes",
+            "reference/resource-configs/invalidate_hard_deletes",
+            "reference/resource-configs/snapshot_meta_column_names",
+            "reference/resource-configs/snapshot_name",
             "reference/resource-configs/strategy",
             "reference/resource-configs/target_database",
             "reference/resource-configs/target_schema",
-            "reference/resource-configs/unique_key",
             "reference/resource-configs/updated_at",
-            "reference/resource-configs/invalidate_hard_deletes",
-            "reference/resource-configs/snapshot_meta_column_names",
           ],
         },
         {

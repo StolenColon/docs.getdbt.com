@@ -3,7 +3,7 @@ title: "Discover data with dbt Explorer"
 sidebar_label: "Discover data with dbt Explorer"
 description: "Learn about dbt Explorer and how to interact with it to understand, improve, and leverage your dbt projects."
 image: /img/docs/collaborate/dbt-explorer/example-project-lineage-graph.png
-pagination_next: "docs/collaborate/access-from-dbt-cloud"
+pagination_next: "docs/collaborate/data-health-signals"
 pagination_prev: null
 ---
 
@@ -31,6 +31,7 @@ Navigate the dbt Explorer overview page to access your project's resources and m
 - **Marts and public models** &mdash; View the [marts](/best-practices/how-we-structure/1-guide-overview#guide-structure-overview) and [public models](/docs/collaborate/govern/model-access#access-modifiers) in your project. You can also navigate to all public models in your account through this view.
 - **Model query history** &mdash; Use [model query history](/docs/collaborate/model-query-history) to track consumption queries on your models for deeper insights.
 - **Auto-exposures** &mdash; [Set up and view auto-exposures](/docs/collaborate/auto-exposures) to automatically expose relevant data models from Tableau to enhance visibility.
+- **Data health signals** &mdash; View the [data-health-signals](/docs/collaborate/data-health-signals) for each resource to understand its health and performance.
 
 <Lightbox src="/img/docs/collaborate/dbt-explorer/explorer-main-page.gif" width="100%" title="Access dbt Explorer from dbt Cloud by clicking Explore in the navigation."/>
 
@@ -112,7 +113,7 @@ Lenses are helpful to analyze a subset of the DAG if you're zoomed in, or to fin
 
 A resource in your project is characterized by resource type, materialization type, or model layer, as well as its latest run or latest test status. Lenses are available for the following metadata:
 
-- **Relationship**: Organizes resources by resource type, such as models, tests, seeds, and [more](/reference/node-selection/syntax). Resource type uses the `resource_type` selector.
+- **Resource type**: Organizes resources by resource type, such as models, tests, seeds, saved query, and [more](/docs/build/projects). Resource type uses the `resource_type` selector.
 - **Materialization type**: Identifies the strategy for building the dbt models in your data platform.
 - **Latest status**: The status from the latest execution of the resource in the current environment. For example, diagnosing a failed DAG region.
 - **Model layer**: The modeling layer that the model belongs to according to [best practices guide](https://docs.getdbt.com/best-practices/how-we-structure/1-guide-overview#guide-structure-overview). For example, discovering marts models to analyze.
@@ -120,13 +121,13 @@ A resource in your project is characterized by resource type, materialization ty
     - **Intermediate** &mdash; A model with the prefix `int_`. Or, a model that lives in the `/int/` or `/intermediate/` subdirectory.
     - **Staging** &mdash; A model with the prefix `stg_`. Or, a model that lives in the `/staging/` subdirectory.
 - **Test status**: The status from the latest execution of the tests that ran again this resource. In the case that a model has multiple tests with different results, the lens reflects the 'worst case' status. 
-- **Usage queries**: The number of queries against this resource over a given time period.
+- **Consumption query history**: The number of queries against this resource over a given time period.
 
 </Expandable>
 
 ### Example of lenses
 
-Example of applying the **Materialization Type** _lens_ with the lineage graph zoomed out. In this view, each model name has a color according to the materialization type legend at the bottom, which specifies the materialization type. This color-coding helps to quickly identify the materialization types of different models.
+Example of applying the **Materialization type** _lens_ with the lineage graph zoomed out. In this view, each model name has a color according to the materialization type legend at the bottom, which specifies the materialization type. This color-coding helps to quickly identify the materialization types of different models.
 
 <Lightbox src="/img/docs/collaborate/dbt-explorer/example-materialization-type.jpg" width="100%" title="Example of the Materialization type lens" />
 
@@ -140,7 +141,7 @@ You can locate resources in your project by performing a keyword search in the s
 
 <Expandable alt_header="Search features">
 
-- **Partial keyword search** &mdash; This is also referred to as fuzzy search.
+- **Partial keyword search** &mdash; Also referred to as fuzzy search. Explorer uses a "contains" logic to improve your search results. This means you can search for partial terms without knowing the exact root word of your search term.
 - **Exclude keywords** &mdash; Prepend a minus sign (-) to the keyword you want to exclude from search results. For example, `-user` will exclude all matches of that keyword from search results.
 - **Boolean operators** &mdash; Use Boolean operators to enhance your keyword search. For example, the search results for `users OR github` will include matches for either keyword.
 - **Phrase search** &mdash; Surround a string of keywords with double quotation marks to search for that exact phrase (for example, `"stg users"`). To learn more, refer to [Phrase search](https://en.wikipedia.org/wiki/Phrase_search) on Wikipedia.
@@ -162,61 +163,8 @@ Under the the **Models** option, you can filter on model properties (access or m
 
 </Expandable>
 
-<Expandable alt_header="Trust signals for resources" lifecycle="preview">
-
-Trust signal icons offer a quick, at-a-glance view of data health when browsing your models in dbt Explorer. These icons keep you informed on the status of your model's health using the indicators **Healthy**, **Caution**, **Degraded**, and **Unknown**. For accurate health data, ensure the resource is up-to-date and has had a recent job run.
-
-Each trust signal icon reflects key data health components, such as test success status, missing resource descriptions, absence of builds in 30-day windows, and more. 
-
-To access trust signals:
-- Use the search function or click on **Models** or **Sources** under the **Resource** tab. 
-- View the icons under the **Health** column. 
-- Hover over or click the trust signal to see detailed information. 
-- For sources, the trust signal also indicates the source freshness status.
-
-<Lightbox src="/img/docs/collaborate/dbt-explorer/trust-signal-health.jpg" width="60%" title="View trust signals for your models."/>
-
-<!-- commenting out until further iteration on the content
-
-<Tabs>
-<TabItem value="healthy" label="Healthy">
-A resource is considered Healthy if it meets the following criteria:
-- Ran all tests successfully
-- Successfully built in its last run
-- Has a description and tests configured
-- Has been built in the past 30 days 
-<Lightbox src="/img/docs/collaborate/dbt-explorer/trust-signal-healthy.png" title="Healthy trust signal icon"/>
-</TabItem>
-
-<TabItem value="caution" label="Caution">
-Any of the following conditions can trigger a caution status:
-- Successfully built in its last run
-- Is missing a description
-- Does not have any tests configured
-- Has not been built in the past 30 day
-<Lightbox src="/img/docs/collaborate/dbt-explorer/trust-signal-caution.png" title="Caution trust signal icon"/>
-</TabItem>
-
-<TabItem value="degraded" label="Degraded">
-A resource is considered Degraded if it meets any of the following criteria:
-- Last run failed or source freshness error
-<Lightbox src="/img/docs/collaborate/dbt-explorer/trust-signals-degraded.jpg" width="35%" title="Degraded trust signal icon"/>
-</TabItem>
-
-<TabItem value="unknown" label="Unknown">
-The Unknown trust signal icon indicates that:
-- Health information is unknown because the resource hasn't been run recently. 
-<Lightbox src="/img/docs/collaborate/dbt-explorer/trust-signal-unknown.png" title="Unknown trust signal icon"/>
-
-</TabItem>
-</Tabs>
-
--->
-
- </Expandable>
-
 ### Example of keyword search
-Example of results from searching on the keyword `customers` and applying the filters models, description, and code. Trust signals are visible to the right of the model name in the search results.
+Example of results from searching on the keyword `customers` and applying the filters models, description, and code. [Data health signals](/docs/collaborate/data-health-signals) are visible to the right of the model name in the search results.
 
 <Lightbox src="/img/docs/collaborate/dbt-explorer/example-keyword-search.png" width="100%" title="Example of keyword search" />
 
@@ -225,6 +173,7 @@ Example of results from searching on the keyword `customers` and applying the fi
 From the sidebar, you can browse your project's resources, its file tree, and the database. 
 
 - **Resources** tab &mdash; All resources in the project organized by type. Select any resource type in the list and all those resources in the project will display as a table in the main section of the page. For a description on the different resource types (like models, metrics, and so on), refer to [About dbt projects](/docs/build/projects).
+  - [Data health signals](/docs/collaborate/data-health-signals) are visible to the right of the resource name under the **Health** column.
 - **File Tree** tab &mdash; All resources in the project organized by the file in which they are defined. This mirrors the file tree in your dbt project repository.
 - **Database** tab &mdash; All resources in the project organized by the database and schema in which they are built. This mirrors your data platform's structure that represents the [applied state](/docs/dbt-cloud-apis/project-state) of your project. 
 
@@ -253,7 +202,7 @@ In the upper right corner of the resource details page, you can:
 
 <Expandable alt_header="What details are available for a model?">
 
-- Trust signal icon &mdash; Icons offering a quick, at-a-glance view of data health. These icons indicate whether a model is Healthy, Caution, Degraded, or Unknown. Hover over an icon to view detailed information about the model's health.
+- **Data health signals** &mdash; [Data health signals](/docs/collaborate/data-health-signals) offer a quick, at-a-glance view of data health. These icons indicate whether a model is Healthy, Caution, Degraded, or Unknown. Hover over an icon to view detailed information about the model's health.
 - **Status bar** (below the page title) &mdash; Information on the last time the model ran, whether the run was successful, how the data is materialized, number of rows, and the size of the model. 
 - **General** tab includes:
     - **Lineage** graph &mdash; The model’s lineage graph that you can interact with. The graph includes one upstream node and one downstream node from the model. Click the Expand icon in the graph's upper right corner to view the model in full lineage graph mode.
@@ -270,6 +219,7 @@ In the upper right corner of the resource details page, you can:
 <Expandable alt_header="What details are available for an exposure?">
 
 - **Status bar** (below the page title) &mdash; Information on the last time the exposure was updated. 
+- **Data health signals** &mdash; [Data health signals](/docs/collaborate/data-health-signals) offer a quick, at-a-glance view of data health. These icons indicate whether a resource is Healthy, Caution, or Degraded. Hover over an icon to view detailed information about the exposure's health.
 - **General** tab includes:
     - **Data health** &mdash; The status on data freshness and data quality.
     - **Status** section &mdash; The status on data freshness and data quality.
@@ -303,6 +253,7 @@ Example of the Tests view:
 <Expandable alt_header="What details are available for each source table within a source collection?">
 
 - **Status bar** (below the page title) &mdash; Information on the last time the source was updated and the number of tables the source uses. 
+- **Data health signals** &mdash; [Data health signals](/docs/collaborate/data-health-signals) offer a quick, at-a-glance view of data health. These icons indicate whether a resource is Healthy, Caution, or Degraded. Hover over an icon to view detailed information about the source's health.
 - **General** tab includes:
     - **Lineage** graph &mdash; The source’s lineage graph that you can interact with. The graph includes one upstream node and one downstream node from the source. Click the Expand icon in the graph's upper right corner to view the source in full lineage graph mode.
     - **Description** section &mdash; A description of the source.
@@ -322,6 +273,7 @@ Example of the details view for the model `customers`:<br /> <Lightbox src="/img
 <Lightbox src="/img/docs/cloud-integrations/auto-exposures/explorer-lineage2.jpg" width="95%" title="Example of auto-exposure details for the Tableau exposure."/>
 
 </DocCarousel>
+
 
 ## Staging environment
 

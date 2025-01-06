@@ -38,11 +38,11 @@ flags:
 The following configurations are supported.
 For more information, check out the Snowflake reference for [`CREATE ICEBERG TABLE` (Snowflake as the catalog)](https://docs.snowflake.com/en/sql-reference/sql/create-iceberg-table-snowflake).
 
-| Field                 | Type   | Required | Description                                                                                                                | Sample input              | Note                                                                                                                                                                                                                                                         |
-| --------------------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Table Format          | String | Yes      | Configures the objects table format.                                                                                       | `iceberg`                 | `iceberg` is the only accepted value.                                                                                                                                                                                                                          |
-| External volume       | String | Yes(*)   | Specifies the identifier (name) of the external volume where Snowflake writes the Iceberg table's metadata and data files. | `my_s3_bucket`            | *You don't need to specify this if the account, database, or schema already has an associated external volume. [More info](https://docs.snowflake.com/en/sql-reference/sql/create-iceberg-table-snowflake#:~:text=Snowflake%20Table%20Structures.-,external_volume) |
-| Base location Subpath | String | No       | An optional suffix to add to the `base_location` path that dbt automatically specifies.                                    | `jaffle_marketing_folder` | We recommend that you do not specify this. Modifying this parameter results in a new Iceberg table. See [Base Location](#base-location) for more info.                                                                                                  |
+| Parameter | Type   | Required | Description   | Sample input | Note   |
+| ------ | ----- | -------- | ------------- | ------------ | ------ |
+| `table_format` | String | Yes     | Configures the objects table format.  | `iceberg`  | `iceberg` is the only accepted value.    |
+| `external_volume` | String | Yes(*)   | Specifies the identifier (name) of the external volume where Snowflake writes the Iceberg table's metadata and data files. | `my_s3_bucket`            | *You don't need to specify this if the account, database, or schema already has an associated external volume. [More info](https://docs.snowflake.com/user-guide/tables-iceberg-configure-external-volume#set-a-default-external-volume-at-the-account-database-or-schema-level) |
+| `base_location_subpath` | String | No       | An optional suffix to add to the `base_location` path that dbt automatically specifies.     | `jaffle_marketing_folder` | We recommend that you do not specify this. Modifying this parameter results in a new Iceberg table. See [Base Location](#base-location) for more info.                                                                                                  |
 
 ### Example configuration
 
@@ -470,7 +470,14 @@ In this example, you can set up a query tag to be applied to every query with th
 
 The [`incremental_strategy` config](/docs/build/incremental-strategy) controls how dbt builds incremental models. By default, dbt will use a [merge statement](https://docs.snowflake.net/manuals/sql-reference/sql/merge.html) on Snowflake to refresh incremental tables.
 
+Snowflake supports the following incremental strategies:
+- Merge (default)
+- Append
+- Delete+insert
+- [`microbatch`](/docs/build/incremental-microbatch)
+
 Snowflake's `merge` statement fails with a "nondeterministic merge" error if the `unique_key` specified in your model config is not actually unique. If you encounter this error, you can instruct dbt to use a two-step incremental approach by setting the `incremental_strategy` config for your model to `delete+insert`.
+
 
 ## Configuring table clustering
 
@@ -678,3 +685,27 @@ Per the [Snowflake documentation](https://docs.snowflake.com/en/sql-reference/in
   >- DDL operations.
   >- DML operations (for tables only).
   >- Background maintenance operations on metadata performed by Snowflake.
+
+<VersionBlock firstVersion="1.9">
+
+## Pagination for object results
+
+By default, when dbt encounters a schema with up to 100,000 objects, it will paginate the results from `show objects` at 10,000 per page for up to 10 pages.
+
+Environments with more than 100,000 objects in a schema can customize the number of results per page and the page limit using the following [flags](/reference/global-configs/about-global-configs) in the `dbt_project.yml`:
+
+- `list_relations_per_page` &mdash; The number of relations on each page (Max 10k as this is the most Snowflake allows).
+- `list_relations_page_limit` &mdash; The maximum number of pages to include in the results.
+
+For example, if you wanted to include 10,000 objects per page and include up to 100 pages (1 million objects), configure the flags as follows:
+
+
+```yml
+
+flags:
+  list_relations_per_page: 10000
+  list_relations_page_limit: 100
+
+```
+
+</VersionBlock>
