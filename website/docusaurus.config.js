@@ -68,6 +68,7 @@ var siteSettings = {
       apiKey: ALGOLIA_API_KEY ? ALGOLIA_API_KEY : "dbt",
       indexName: ALGOLIA_INDEX_NAME ? ALGOLIA_INDEX_NAME : "dbt",
       appId: ALGOLIA_APP_ID ? ALGOLIA_APP_ID : "dbt",
+      contextualSearch: true,
       //debug: true,
     },
     announcementBar: {
