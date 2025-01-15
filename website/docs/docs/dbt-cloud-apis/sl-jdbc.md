@@ -577,6 +577,27 @@ select * from {{ semantic_layer.query(saved_query="new_customer_orders", limit=5
 
 The JDBC API will use the saved query (`new_customer_orders`) as defined and apply a limit of 5 records.
 
+### Query with a metric alias
+You can add an alias to a metric name as part of a query request using the alias argurment:
+
+```sql
+select * from {{
+    semantic_layer.query(metrics=[Metric("revenue", alias="metric_alias")])
+}}
+```
+The result set will change the column name from revenue to metric_alias.
+
+### Query using with all dimensions
+You can use the semantic_layer.group_by_all() endpoint to query by all valid dimensions.
+```sql
+select * from {{
+    semantic_layer.query_with_all_group_bys(metrics =['revenue','orders','food_orders'],
+    compile= True)
+}}
+
+This will return all dimensions that are valid for the set of metrics in the request.
+```
+
 ### Multi-hop joins
 
 In cases where you need to query across multiple related tables (multi-hop joins), use the `entity_path` argument to specify the path between related entities. The following are examples of how you can define these joins:

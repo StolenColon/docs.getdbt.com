@@ -265,6 +265,7 @@ createQuery(
 ```graphql
 MetricInput {
   name: String!
+  alias: String!
 }
 
 GroupByInput {
