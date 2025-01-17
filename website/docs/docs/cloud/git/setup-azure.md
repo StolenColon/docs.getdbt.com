@@ -9,7 +9,7 @@ sidebar_label: "Set up Azure DevOps"
 
 :::note
 
-The service principal integration for Azure DevOps is currently available for select Enterprise accounts. dbt Labs will be implementing a phased rollout in the near future across all Enterprise accounts. If you'd like the integration enabled now, please [contact us](https://www.getdbt.com/contact/) or your account manager.
+The service principal integration for Azure DevOps is currently available for select Enterprise accounts. dbt Labs will be implementing a phased rollout shortly across all Enterprise accounts. 
 
 :::
 
