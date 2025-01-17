@@ -5,7 +5,13 @@ description: "You can set up your Azure DevOps by creating a Microsoft Entra ID 
 sidebar_label: "Set up Azure DevOps"
 ---
 
-<Snippet path="available-enterprise-tier-only" />
+# Set up Azure DevOps <Lifecycle status="enterprise"/>
+
+:::note
+
+The service principal integration for Azure DevOps is currently available for select Enterprise accounts. dbt Labs will be implementing a phased rollout in the near future across all Enterprise accounts. If you'd like the integration enabled now, please [contact us](https://www.getdbt.com/contact/) or your account manager.
+
+:::
 
 ## Overview
 
