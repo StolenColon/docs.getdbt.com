@@ -20,7 +20,7 @@ exports.versions = [
   },
   {
     version: "1.9",
-    customDisplay: "1.9 (Compatible)",
+    isCloudCompatible: true,
     EOLDate: "2025-12-08",
   },
   {

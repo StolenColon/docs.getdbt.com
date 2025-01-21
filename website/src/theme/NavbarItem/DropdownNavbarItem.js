@@ -8,18 +8,8 @@ import {
 import { isSamePath, useLocalPathname } from '@docusaurus/theme-common/internal';
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
-
-/* dbt Customizations:
- * Import VersionsNavbarItem component and context
- * Pass versionContext prop into DropdownNavbarItemDesktop or DropdownNavbarItemMobile
- * Custom state to handle version dropdown on click
- * Show version dropdown on version state change
- * Pass versionContext to Comp
- * 
-*/
-// import VersionsNavbarItem from './VersionsNavItem';
 import VersionContext from '../../stores/VersionContext';
-import { versions } from '../../../dbt-versions'
+import { versions } from '../../../dbt-versions';
 
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
@@ -33,9 +23,11 @@ function isItemActive(item, localPathname) {
   }
   return false;
 }
+
 function containsActiveItems(items, localPathname) {
   return items.some((item) => isItemActive(item, localPathname));
 }
+
 function DropdownNavbarItemDesktop({
   items,
   position,
@@ -46,9 +38,12 @@ function DropdownNavbarItemDesktop({
 }) {
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
-
-  // dbt Custom: handle version dropdown state on click
   const [showVersionDropdown, setShowVersionDropdown] = useState(true);
+  const [selectedLabel, setSelectedLabel] = useState(
+    versionContext?.customDisplay
+      ? versionContext.customDisplay
+      : `v${versionContext.version} ${versionContext?.isPrerelease ? "(Beta)" : ""}`
+  );
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -65,20 +60,22 @@ function DropdownNavbarItemDesktop({
     };
   }, [dropdownRef]);
 
-  // dbt Custom: Hide version dropdown on click
-  // This adds dropdown--version--hide class on line 87
-  const handleVersionMenuClick = () => {
-    setShowVersionDropdown(false)
-  }
+  const handleVersionMenuClick = (newLabel) => {
+    setShowVersionDropdown(false);
+    setSelectedLabel(newLabel);
+  };
 
-  // Run when showVersionDropdown state changes
-  // which occurs during version menu item clicked
-  // This resets version dropdown to original state
-  // and removes the dropdown--version--hide class
   useEffect(() => {
-    setShowVersionDropdown(true)
-  }, [showVersionDropdown])
-  
+    setShowVersionDropdown(true);
+  }, [showVersionDropdown]);
+
+  // Ensure the version label doesn't revert if "Cloud (Compatible)" was selected
+  useEffect(() => {
+    if (versionContext?.isCloudCompatible) {
+      setSelectedLabel("Cloud (Compatible)");
+    }
+  }, [versionContext]);
+
   return (
     <div
       ref={dropdownRef}
@@ -104,7 +101,7 @@ function DropdownNavbarItemDesktop({
         }}
         label={
           className === "nav-versioning"
-            ? `${versionContext?.customDisplay ? `${versionContext.customDisplay}` : `v${versionContext.version} ${versionContext?.isPrerelease ? "(Beta)" : ""}`}`
+            ? selectedLabel
             : props.children ?? props.label
         }
       >
@@ -113,25 +110,43 @@ function DropdownNavbarItemDesktop({
       <ul className="dropdown__menu">
         {items.map((childItemProps, i) => {
           const thisVersion = versions.find(
-            (version) => childItemProps.label == version.version
+            (version) => childItemProps.label === version.version
           );
-          const versionDisplay = thisVersion?.customDisplay ? thisVersion.customDisplay : `${childItemProps.label} ${thisVersion?.isPrerelease ? " (Beta)" : ""}`;
-                    
+          const versionDisplay = thisVersion?.customDisplay
+            ? thisVersion.customDisplay
+            : `${childItemProps.label} ${thisVersion?.isPrerelease ? " (Beta)" : ""}`;
+
           return (
             <React.Fragment key={i}>
               {className === "nav-versioning" ? (
-                <li>
-                  <a
-                    className="dropdown__link nav-versioning-dropdown__link"
-                    data-dbt-version={childItemProps.label}
-                    onClick={(e) => {
-                      handleVersionMenuClick();
-                      versionContext.updateVersion(e);
-                    }}
-                  >
-                    {versionDisplay}
-                  </a>
-                </li>
+                <>
+                  {thisVersion?.isCloudCompatible && (
+                    <li>
+                      <a
+                        className="dropdown__link nav-versioning-dropdown__link"
+                        data-dbt-version={childItemProps.label}
+                        onClick={(e) => {
+                          handleVersionMenuClick("Cloud (Compatible)");
+                          versionContext.updateVersion(e);
+                        }}
+                      >
+                        Cloud (Compatible)
+                      </a>
+                    </li>
+                  )}
+                  <li>
+                    <a
+                      className="dropdown__link nav-versioning-dropdown__link"
+                      data-dbt-version={childItemProps.label}
+                      onClick={(e) => {
+                        handleVersionMenuClick(versionDisplay);
+                        versionContext.updateVersion(e);
+                      }}
+                    >
+                      {versionDisplay}
+                    </a>
+                  </li>
+                </>
               ) : (
                 <NavbarItem
                   isDropdownItem
@@ -145,9 +160,7 @@ function DropdownNavbarItemDesktop({
                         const targetItem =
                           nextNavbarItem instanceof HTMLAnchorElement
                             ? nextNavbarItem
-                            : // Next item is another dropdown; focus on the inner
-                              // anchor element instead so there's outline
-                              nextNavbarItem.querySelector("a");
+                            : nextNavbarItem.querySelector("a");
                         targetItem.focus();
                       }
                     }
@@ -159,12 +172,12 @@ function DropdownNavbarItemDesktop({
               )}
             </React.Fragment>
           );
-        } 
-        )}
+        })}
       </ul>
     </div>
   );
 }
+
 function DropdownNavbarItemMobile({
   items,
   className,
@@ -178,12 +191,24 @@ function DropdownNavbarItemMobile({
   const { collapsed, toggleCollapsed, setCollapsed } = useCollapsible({
     initialState: () => !containsActive,
   });
-  // Expand/collapse if any item active after a navigation
+  const [selectedLabel, setSelectedLabel] = useState(
+    versionContext?.customDisplay
+      ? versionContext.customDisplay
+      : `v${versionContext.version} ${versionContext?.isPrerelease ? "(Beta)" : ""}`
+  );
+
   useEffect(() => {
     if (containsActive) {
       setCollapsed(!containsActive);
     }
   }, [localPathname, containsActive, setCollapsed]);
+
+  useEffect(() => {
+    if (versionContext?.isCloudCompatible) {
+      setSelectedLabel("Cloud (Compatible)");
+    }
+  }, [versionContext]);
+
   return (
     <li
       className={clsx("menu__list-item", {
@@ -203,7 +228,7 @@ function DropdownNavbarItemMobile({
         }}
         label={
           className === "nav-versioning"
-            ? `${versionContext?.customDisplay ? `${versionContext.customDisplay}` : `v${versionContext.version} ${versionContext?.isPrerelease ? "(Beta)" : ""}`}`
+            ? selectedLabel
             : props.children ?? props.label
         }
       >
@@ -212,38 +237,58 @@ function DropdownNavbarItemMobile({
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
         {items.map((childItemProps, i) => {
           const thisVersion = versions.find(
-            (version) => childItemProps.label == version.version
+            (version) => childItemProps.label === version.version
           );
           const versionDisplay = thisVersion?.customDisplay
             ? thisVersion.customDisplay
             : `${childItemProps.label} ${thisVersion?.isPrerelease ? " (Beta)" : ""}`;
 
           return (
-            <NavbarItem
-              mobile
-              isDropdownItem
-              data-dbt-version={childItemProps.label}
-              onClick={
-                className === "nav-versioning"
-                  ? (e) => versionContext.updateVersion(e)
-                  : onClick
-              }
-              activeClassName="menu__link--active"
-              {...childItemProps}
-              label={versionDisplay}
-              key={i}
-            />
+            <React.Fragment key={i}>
+              {thisVersion?.isCloudCompatible && (
+                <NavbarItem
+                  mobile
+                  isDropdownItem
+                  data-dbt-version={childItemProps.label}
+                  onClick={
+                    className === "nav-versioning"
+                      ? (e) => {
+                          setSelectedLabel("Cloud (Compatible)");
+                          versionContext.updateVersion(e);
+                        }
+                      : onClick
+                  }
+                  activeClassName="menu__link--active"
+                  label="Cloud (Compatible)"
+                />
+              )}
+              <NavbarItem
+                mobile
+                isDropdownItem
+                data-dbt-version={childItemProps.label}
+                onClick={
+                  className === "nav-versioning"
+                    ? (e) => {
+                        setSelectedLabel(versionDisplay);
+                        versionContext.updateVersion(e);
+                      }
+                    : onClick
+                }
+                activeClassName="menu__link--active"
+                {...childItemProps}
+                label={versionDisplay}
+              />
+            </React.Fragment>
           );
         })}
       </Collapsible>
     </li>
   );
 }
+
 export default function DropdownNavbarItem({ mobile = false, ...props }) {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
-
-  // dbt Custom
-  const versionContext = useContext(VersionContext)
+  const versionContext = useContext(VersionContext);
 
   return <Comp versionContext={versionContext} {...props} />;
 }
