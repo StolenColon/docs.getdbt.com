@@ -13,6 +13,7 @@ import Mermaid from '@theme/Mermaid';
 /* dbt Customizations:
  * Imports the following components below for export
  */
+import SortableTable from '@site/src/components/sortableTable';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem'
 import Changelog from '@site/src/components/changelog';
@@ -44,6 +45,7 @@ import Lifecycle from '@site/src/components/lifeCycle';
 import DetailsToggle from '@site/src/components/detailsToggle';
 import Expandable from '@site/src/components/expandable';
 import ConfettiTrigger from '@site/src/components/confetti/';
+import VersionCallout from '@site/src/components/versionCallout';
 
 const MDXComponents = {
   Head,
@@ -95,5 +97,7 @@ const MDXComponents = {
   DetailsToggle: DetailsToggle,
   Expandable: Expandable,
   ConfettiTrigger: ConfettiTrigger,
+  SortableTable: SortableTable,
+  VersionCallout: VersionCallout,
 };
 export default MDXComponents;

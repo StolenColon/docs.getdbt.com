@@ -18,7 +18,7 @@ The dbt Cloud audit log stores all the events that occurred in your organization
 
 ## Accessing the audit log
 
-To access the audit log, click the gear icon in the top right, then click **Audit Log**.
+To access the audit log, click on your account name in the left side menu and select **Account settings**.
 
 <Lightbox src="/img/docs/dbt-cloud/dbt-cloud-enterprise/audit-log-menu.png" width="30%" title="Audit log menu"/>
 
@@ -62,7 +62,7 @@ The audit log supports various events for different objects in dbt Cloud. You wi
 | Auth Provider Changed      | auth_provider.Changed          | Authentication provider settings changed               |
 | Credential Login Succeeded | auth.CredentialsLoginSucceeded | User successfully logged in with username and password |
 | SSO Login Failed           | auth.SsoLoginFailed            | User login via SSO failed                              |
-| SSO Login Succeeded        | auth.SsoLoginSucceeded         | User successfully logged in via SSO  
+| SSO Login Succeeded        | auth.SsoLoginSucceeded         | User successfully logged in via SSO                    |
 
 ### Environment
 
@@ -93,7 +93,7 @@ The audit log supports various events for different objects in dbt Cloud. You wi
 | ------------- | ----------------------------- | ------------------------------ |
 | Group Added   | user_group.Added   | New Group successfully created |
 | Group Changed | user_group.Changed | Group settings changed         |
-| Group Removed | user_group.Changed | Group successfully removed     |
+| Group Removed | user_group.Removed | Group successfully removed     |
 
 ### User
 
@@ -102,9 +102,11 @@ The audit log supports various events for different objects in dbt Cloud. You wi
 | Invite Added                 | invite.Added              | User invitation added and sent to the user      |
 | Invite Redeemed              | invite.Redeemed           | User redeemed invitation                        |
 | User Added to Account        | account.UserAdded         | New user added to the account                   |
-| User Added to Group          | user_group_user.Added     | An existing user is added to a group            |
-| User Removed from Account    | account.UserRemoved       | User removed from the account
-| User Removed from Group      | user_group_user.Removed   | An existing user is removed from a group        |
+| User Added to Group          | user_group_user.Added     | An existing user was added to a group            |
+| User Removed from Account    | account.UserRemoved       | User removed from the account                  |
+| User Removed from Group      | user_group_user.Removed   | An existing user was removed from a group        |
+| User License Created         | user_license.added        | A new user license was consumed                  |
+| User License Removed         | user_license.removed      | A user license was removed from the seat count   |
 | Verification Email Confirmed | user.jit.email.Confirmed  | Email verification confirmed by user            |
 | Verification Email Sent      | user.jit.email.Sent       | Email verification sent to user created via JIT |
 
@@ -149,11 +151,64 @@ The audit log supports various events for different objects in dbt Cloud. You wi
 
 ### Credentials
 
-| Event Name                       | Event Type                    | Description                      |
-| -------------------------------- | ----------------------------- | -------------------------------- |
+| Event Name                       | Event Type                    | Description            |
+| -------------------------------- | ----------------------------- | -----------------------|
 | Credentials Added to Project     | credentials.Added   | Project credentials added        |
 | Credentials Changed in Project   | credentials.Changed | Credentials changed in project   |
 | Credentials Removed from Project | credentials.Removed | Credentials removed from project |
+
+
+### Git integration
+
+| Event Name                       | Event Type                    | Description            |
+| -------------------------------- | ----------------------------- | -----------------------|
+| GitLab Application Changed        | gitlab_application.changed    | GitLab configuration in dbt Cloud changed |
+
+### Webhooks
+
+| Event Name                       | Event Type                    | Description            |
+| -------------------------------- | ----------------------------- | -----------------------|
+| Webhook Subscriptions Added      | webhook_subscription.added    | New webhook configured in settings |
+| Webhook Subscriptions Changed    | webhook_subscription.changed  | Existing webhook configuration altered |
+| Webhook Subscriptions Removed    | webhook_subscription.removed  | Existing webhook deleted  |
+
+
+### Semantic Layer
+
+| Event Name                       | Event Type                    | Description            |
+| -------------------------------- | ----------------------------- | -----------------------|
+| Semantic Layer Config Added      | semantic_layer_config.added   | Semantic Layer config added |
+| Semantic Layer Config Changed      | semantic_layer_config.changed  | Semantic Layer config (not related to credentials) changed |
+| Semantic Layer Config Removed    | semantic_layer_config.removed   | Semantic Layer config removed |
+| Semantic Layer Credentials Added | semantic_layer_credentials.added   | Semantic Layer credentials added |
+| Semantic Layer Credentials Changed| semantic_layer_credentials.changed   | Semantic Layer credentials changed. Does not trigger semantic_layer_config.changed|
+| Semantic Layer Credentials Removed| semantic_layer_credentials.removed   | Semantic Layer credentials removed |
+
+### Extended attributes
+
+| Event Name                       | Event Type                    | Description            |
+| -------------------------------- | ----------------------------- | -----------------------|
+| Extended Attribute Added         | extended_attributes.added     | Extended attribute added to a project |
+| Extended Attribute Changed       | extended_attributes.changed   | Extended attribute changed or removed |
+
+
+### Account-scoped personal access token
+
+| Event Name                       | Event Type                    | Description            |
+| -------------------------------- | ----------------------------- | -----------------------|
+| Account Scoped Personal Access Token Created | account_scoped_pat.created | An account-scoped PAT was created |
+| Account Scoped Personal Access Token Deleted | account_scoped_pat.deleted | An account-scoped PAT was deleted | 
+
+### IP restrictions
+
+| Event Name                       | Event Type                    | Description            |
+| -------------------------------- | ----------------------------- | -----------------------|
+| IP Restrictions Toggled          | ip_restrictions.toggled       | IP restrictions feature enabled or disabled |
+| IP Restrictions Rule Added       | ip_restrictions.rule.added    | IP restriction rule created |
+| IP Restrictions Rule Changed     | ip_restrictions.rule.changed   | IP restriction rule edited |
+| IP Restrictions Rule Removed     | ip_restrictions.rule.removed   | IP restriction rule deleted |
+
+
 
 ## Searching the audit log
 

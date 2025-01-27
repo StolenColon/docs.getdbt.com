@@ -14,7 +14,7 @@ To-do:
 - `schema` is interchangeable with the BigQuery concept `dataset`
 - `database` is interchangeable with the BigQuery concept of `project`
 
-For our reference documentation, you can declare `project` in place of `database.` 
+For our reference documentation, you can declare `project` in place of `database.`
 This will allow you to read and write from multiple BigQuery projects. Same for `dataset`.
 
 ## Using table partitioning and clustering
@@ -335,7 +335,7 @@ models:
 dbt supports the specification of BigQuery labels for the tables and <Term id="view">views</Term> that it creates. These labels can be specified using the `labels` model config.
 
 The `labels` config can be provided in a model config, or in the `dbt_project.yml` file, as shown below.
-  
+
   BigQuery key-value pair entries for labels larger than 63 characters are truncated.
 
 **Configuring labels in a model file**
@@ -393,9 +393,9 @@ select * from {{ ref('another_model') }}
 
 </File>
 
-You can create a new label with no value or remove a value from an existing label key. 
+You can create a new label with no value or remove a value from an existing label key.
 
-A label with a key that has an empty value can also be [referred](https://cloud.google.com/bigquery/docs/adding-labels#adding_a_label_without_a_value) to as a tag in BigQuery. However, this should not be confused with a [tag resource](https://cloud.google.com/bigquery/docs/tags), which conditionally applies IAM policies to BigQuery tables and datasets. Find out more in [labels and tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview). 
+A label with a key that has an empty value can also be [referred](https://cloud.google.com/bigquery/docs/adding-labels#adding_a_label_without_a_value) to as a tag in BigQuery. However, this should not be confused with a [tag resource](https://cloud.google.com/bigquery/docs/tags), which conditionally applies IAM policies to BigQuery tables and datasets. Find out more in [labels and tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview).
 
 Currently, it's not possible to apply IAM tags in BigQuery, however, you can weigh in by upvoting [GitHub issue 1134](https://github.com/dbt-labs/dbt-bigquery/issues/1134).
 
@@ -425,9 +425,10 @@ Please note that in order for policy tags to take effect, [column-level `persist
 
 The [`incremental_strategy` config](/docs/build/incremental-strategy) controls how dbt builds incremental models. dbt uses a [merge statement](https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax) on BigQuery to refresh incremental tables.
 
-The `incremental_strategy` config can be set to one of two values:
- - `merge` (default)
- - `insert_overwrite`
+The `incremental_strategy` config can be set to one of the following values:
+- `merge` (default)
+- `insert_overwrite`
+- [`microbatch`](/docs/build/incremental-microbatch)
 
 ### Performance and cost
 
@@ -550,7 +551,7 @@ _today_ and _yesterday_ every day that it is run. It is the fastest and cheapest
 way to incrementally update a table using dbt. If we wanted this to run more dynamically—
 let’s say, always for the past 3 days—we could leverage dbt’s baked-in [datetime macros](https://github.com/dbt-labs/dbt-core/blob/dev/octavius-catto/core/dbt/include/global_project/macros/etc/datetime.sql) and write a few of our own.
 
-Think of this as "full control" mode. You must ensure that expressions or literal values in the the `partitions` config have proper quoting when templated, and that they match the `partition_by.data_type` (`timestamp`, `datetime`, `date`, or `int64`). Otherwise, the filter in the incremental `merge` statement will raise an error.
+Think of this as "full control" mode. You must ensure that expressions or literal values in the `partitions` config have proper quoting when templated, and that they match the `partition_by.data_type` (`timestamp`, `datetime`, `date`, or `int64`). Otherwise, the filter in the incremental `merge` statement will raise an error.
 
 #### Dynamic partitions
 
@@ -561,7 +562,7 @@ If no `partitions` configuration is provided, dbt will instead:
 3. Query the destination table to find the _max_ partition in the database
 
 When building your model SQL, you can take advantage of the introspection performed
-by dbt to filter for only _new_ data. The max partition in the destination table
+by dbt to filter for only _new_ data. The maximum value in the partitioned field in the destination table
 will be available using the `_dbt_max_partition` BigQuery scripting variable. **Note:**
 this is a BigQuery SQL variable, not a dbt Jinja variable, so no jinja brackets are
 required to access this variable.
@@ -908,3 +909,10 @@ By default, this is set to `True` to support the default `intermediate_format` o
 ### The `intermediate_format` parameter
 The `intermediate_format` parameter specifies which file format to use when writing records to a table. The default is `parquet`.
 
+<VersionBlock firstVersion="1.8">
+
+## Unit test limitations
+
+You must specify all fields in a BigQuery `STRUCT` for [unit tests](/docs/build/unit-tests). You cannot use only a subset of fields in a `STRUCT`.
+
+</VersionBlock>

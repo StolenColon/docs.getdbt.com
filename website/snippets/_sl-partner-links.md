@@ -24,6 +24,20 @@ The following tools integrate with the dbt Semantic Layer:
 
   <div className="card-container">
     <Card
+      title="Dot"
+      link="https://docs.getdot.ai/dot/integrations/dbt-semantic-layer"
+      body="Enable everyone to analyze data with AI in Slack or Teams."
+      icon="dot-ai"/>
+      <a href="https://docs.getdot.ai/dot/integrations/dbt-semantic-layer"
+      className="external-link"
+      target="_blank"
+      rel="noopener noreferrer">
+      <Icon name='fa-external-link' />
+    </a>
+  </div>
+
+  <div className="card-container">
+    <Card
       title="Hex"
       link="https://learn.hex.tech/docs/connect-to-data/data-connections/dbt-integration#dbt-semantic-layer-integration"
       body="Check out how to connect, analyze metrics, collaborate, and discover more data possibilities."
@@ -91,6 +105,21 @@ The following tools integrate with the dbt Semantic Layer:
       <Icon name='fa-external-link' />
     </a>
 </div>
+
+<div className="card-container">
+  <Card
+    title="Sigma (Preview)"
+    body="Connect Sigma to the dbt Semantic Layer to allow you to leverage your predefined dbt metrics in Sigma workbooks."
+    link="https://help.sigmacomputing.com/docs/configure-a-dbt-semantic-layer-integration"
+    icon="sigma"/>
+    <a href="https://help.sigmacomputing.com/docs/configure-a-dbt-semantic-layer-integration"
+    className="external-link"
+      target="_blank"
+      rel="noopener noreferrer">
+      <Icon name='fa-external-link' />
+    </a>
+</div>
+
 
 <div className="card-container">
   <Card

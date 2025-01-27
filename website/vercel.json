@@ -3,6 +3,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/cloud/about-cloud/dark-mode",
+      "destination": "/docs/cloud/about-cloud/change-your-dbt-cloud-theme",
+      "permanent": true
+    },
+    {
+      "source": "/docs/collaborate/git/managed-repository",
+      "destination": "/docs/cloud/git/managed-repository",
+      "permanent": true
+    },
+    {
+      "source": "/faqs/API/rotate-token",
+      "destination": "/docs/dbt-cloud-apis/service-tokens#service-token-update",
+      "permanent": true
+    },
+    {
       "source": "/styles",
       "destination": "https://github.com/dbt-labs/docs.getdbt.com/blob/current/contributing/adding-page-components.md",
       "permanent": true
@@ -95,6 +110,11 @@
     {
       "source": "/docs/dbt-versions/core-upgrade/upgrading-to-v1.4",
       "destination": "/docs/dbt-versions/core-upgrade/Older%20versions/upgrading-to-v1.4",
+      "permanent": true
+    },
+    {
+      "source": "/docs/dbt-versions/versionless-cloud",
+      "destination": "/docs/dbt-versions/cloud-release-tracks",
       "permanent": true
     },
     {
@@ -1362,7 +1382,7 @@
     },
     {
       "source": "/docs/dbt-cloud/cloud-configuring-dbt-cloud/cloud-using-a-managed-repository",
-      "destination": "/docs/collaborate/git/managed-repository",
+      "destination": "/docs/cloud/git/managed-repository",
       "permanent": true
     },
     {
@@ -3617,12 +3637,27 @@
       "permanent": true
     },
     {
+      "source": "/terms/elt",
+      "destination": "https://www.getdbt.com/blog/extract-load-transform",
+      "permanent": true
+    },
+    {
+      "source": "/terms/etl",
+      "destination": "https://www.getdbt.com/blog/extract-transform-load",
+      "permanent": true
+    },
+    {
+      "source": "/terms/reverse-etl",
+      "destination": "https://www.getdbt.com/blog/reverse-etl-playbook",
+      "permanent": true
+    },
+    {
       "source": "/glossary",
       "destination": "https://www.getdbt.com/blog",
       "permanent": true
     },
     {
-      "source": "/terms/:path((?!elt|etl|reverse-etl).*)",
+      "source": "/terms/:path*",
       "destination": "https://www.getdbt.com/blog",
       "permanent": true
     }
@@ -3641,7 +3676,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "img-src 'self' data: https:;"
+          "value": "img-src 'self' data: https:; frame-ancestors 'self' https://*.mutinyhq.com https://*.getdbt.com"
         },
         {
           "key": "Strict-Transport-Security",

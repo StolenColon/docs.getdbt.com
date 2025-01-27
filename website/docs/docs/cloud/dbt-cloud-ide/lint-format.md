@@ -74,14 +74,14 @@ To configure your own linting rules:
 
 1. Create a new file in the root project directory (the parent or top-level directory for your files). Note: The root project directory is the directory where your `dbt_project.yml` file resides.
 2. Name the file `.sqlfluff` (make sure you add the `.` before `sqlfluff`).
-3. [Create](https://docs.sqlfluff.com/en/stable/configuration.html#new-project-configuration) and add your custom config code. 
+3. [Create](https://docs.sqlfluff.com/en/stable/configuration/setting_configuration.html#new-project-configuration) and add your custom config code. 
 4. Save and commit your changes.
 5. Restart the IDE.
 6. Test it out and happy linting!
 
 :::tip Configure dbtonic linting rules
 
-Refer to the [SQLFluff config file](https://github.com/dbt-labs/jaffle-shop-template/blob/main/.sqlfluff) to add the dbt code (or dbtonic) rules we use for our own projects:
+Refer to the [Jaffle shop SQLFluff config file](https://github.com/dbt-labs/jaffle-shop-template/blob/main/.sqlfluff) for dbt-specific (or dbtonic) linting rules we use for our own projects:
 
 <details>
 <summary>dbtonic config code example provided by dbt Labs</summary>
@@ -231,3 +231,4 @@ To avoid this, break up your model into smaller models (files) so that they are 
 
 - [User interface](/docs/cloud/dbt-cloud-ide/ide-user-interface)
 - [Keyboard shortcuts](/docs/cloud/dbt-cloud-ide/keyboard-shortcuts)
+- [SQL linting in CI jobs](/docs/deploy/continuous-integration#sql-linting) 

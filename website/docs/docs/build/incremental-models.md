@@ -34,8 +34,7 @@ To use incremental models, you also need to tell dbt:
 
 The `is_incremental()` macro powers incremental materializations. It will return `True` if _all_ of the following conditions are met:
 
-- The model must already exist in the database
-- The destination table already exists in the database
+- The model must already exist as a table in the database
 - The `full-refresh` flag _is not_ passed
 - The running model is configured with `materialized='incremental'`
 
@@ -114,7 +113,7 @@ When you define a `unique_key`, you'll see this behavior for each row of "new" d
 Please note that if there's a unique_key with more than one row in either the existing target table or the new incremental rows, the incremental model may fail depending on your database and [incremental strategy](/docs/build/incremental-strategy). If you're having issues running an incremental model, it's a good idea to double check that the unique key is truly unique in both your existing database table and your new incremental rows. You can [learn more about surrogate keys here](https://www.getdbt.com/blog/guide-to-surrogate-key).
 
 :::info
-While common incremental strategies, such as`delete+insert` + `merge`, might use `unique_key`, others don't. For example, the `insert_overwrite` strategy does not use `unique_key`, because it operates on partitions of data rather than individual rows. For more information, see [About incremental_strategy](/docs/build/incremental-strategy).
+While common incremental strategies, such as `delete+insert` + `merge`, might use `unique_key`, others don't. For example, the `insert_overwrite` strategy does not use `unique_key`, because it operates on partitions of data rather than individual rows. For more information, see [About incremental_strategy](/docs/build/incremental-strategy).
 :::
 
 #### `unique_key` example
@@ -156,15 +155,17 @@ Building this model incrementally without the `unique_key` parameter would resul
 ## How do I rebuild an incremental model?
 If your incremental model logic has changed, the transformations on your new rows of data may diverge from the historical transformations, which are stored in your target table. In this case, you should rebuild your incremental model.
 
-To force dbt to rebuild the entire incremental model from scratch, use the `--full-refresh` flag on the command line. This flag will cause dbt to drop the existing target table in the database before rebuilding it for all-time.
+To force dbt to rebuild the entire incremental model from scratch, use the `--full-refresh` flag on the command line. This flag will cause dbt to drop the existing target table in the database before rebuilding it for all-time. 
 
 ```bash
 $ dbt run --full-refresh --select my_incremental_model+
 ```
+
 It's also advisable to rebuild any downstream models, as indicated by the trailing `+`.
 
-For detailed usage instructions, check out the [dbt run](/reference/commands/run) documentation.
+You can optionally use the [`full_refresh config`](/reference/resource-configs/full_refresh) to set a resource to always or never full-refresh at the project or resource level. If specified as true or false, the `full_refresh` config will take precedence over the presence or absence of the `--full-refresh` flag.
 
+For detailed usage instructions, check out the [dbt run](/reference/commands/run) documentation. 
 
 ## What if the columns of my incremental model change?
 
@@ -212,11 +213,11 @@ Currently, `on_schema_change` only tracks top-level column changes. It does not 
 
 ### Default behavior
 
-This is the behavior if `on_schema_change: ignore`, which is set by default, and on older versions of dbt.
+This is the behavior of `on_schema_change: ignore`, which is set by default.
 
 If you add a column to your incremental model, and execute a `dbt run`, this column will _not_ appear in your target table.
 
-Similarly, if you remove a column from your incremental model, and execute a `dbt run`, this column will _not_ be removed from your target table.
+If you remove a column from your incremental model and execute a `dbt run`, `dbt run` will fail.
 
 Instead, whenever the logic of your incremental changes, execute a full-refresh run of both your incremental model and any downstream models.
 
