@@ -188,6 +188,8 @@ select * from final
 
 Later, you can connect your business intelligence (BI) tools to these views and tables so they only read cleaned up data rather than raw data in your BI tool.
 
+To add sources, staging and business entities to your project, refer to [Add sources, staging and business-defined entities](/guides/sources-staging-business-defined-entities) and [Staging: Preparing our atomic building blocks](/best-practices/how-we-structure/2-staging) for our best practices on project stages.
+
 #### FAQs
 
 <FAQ path="Runs/checking-logs" />
