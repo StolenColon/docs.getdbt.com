@@ -961,6 +961,7 @@ const sidebarSettings = {
             "reference/model-properties",
             "reference/resource-properties/model_name",
             "reference/model-configs",
+            "reference/resource-configs/build-after",
             "reference/resource-properties/concurrent_batches",
             "reference/resource-configs/materialized",
             "reference/resource-configs/on_configuration_change",
