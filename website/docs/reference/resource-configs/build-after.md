@@ -85,7 +85,16 @@ The configuration consists of the following parts:
 For sources, dbt considers data "new" based on custom freshness calculations (if configured). If a source's freshness goes past its warning/error threshold, dbt raises a warning/error during the build.
 
 ## Default
-No default is provided.
+Default for the `build_after` is:
+
+```yaml
+build_after:
+  count: 0
+  period: minute
+  depends_on: all
+```
+
+This means that the model will be built every time a scheduled job runs for any amount of new data.
 
 ## Examples
 
