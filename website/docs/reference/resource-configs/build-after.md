@@ -66,13 +66,13 @@ This configuration is not available in dbt 1.9 and earlier. To use `build_after`
 
 ## Description
 
-The `build_after` configuration in dbt makes sure that a model is rebuilt in a scheduled job _only if new source or upstream data is available_, helping you reduce unnecessary rebuilds and optimize spend. This is useful for models that depend on other models and need to be updated periodically. This configuration applies only to models.
+The `build_after` configuration in dbt helps you rebuild models _only when new source or upstream data is available_, helping you reduce unnecessary rebuilds and optimize spend. This is useful for models that depend on other models and need to be updated periodically. 
 
-`build_after` complements dbt Cloud orchestration settings by determining when a model is built in a scheduled job. 👈 tbd since adaptive jobs is at risk
+`build_after` works alongside dbt Cloud job orchestration by helping you determine when models should be rebuilt in a scheduled job. When a job runs, dbt Cloud:
+- Checks if there's new data available for the model
+- Ensures enough time has passed since the last build, based on `count` and `period`
 
-When a scheduled job runs, dbt Cloud uses the `build_after` config to:
-- Check if there's new source data to build 
-- And whether enough time has passed since the last build, based on the specified `count` and `period`
+This makes sure models run only when needed, helping you avoid overbuilding models unnecessarily.
 
 The configuration consists of the following parts:
 
@@ -80,7 +80,7 @@ The configuration consists of the following parts:
 |--------------|-------------|
 | `build_after` | Config nested under `freshness`. Used to tell dbt to build model only if it has some new source/upstream data (based on `count`, `period`, and `depends_on`). |
 | `count` and `period` | Specify how often dbt should check for new data (for example, `count: 4, period: hour` means dbt will check every 4 hours) |
-| `depends_on` | Determines when upstream data changes should trigger a job build. Use the following values:<br />• `any`: The model will build only if _any_ direct upstream node has new data since the last build<br />• `all`: The model will only build only if _all_ direct upstream nodes have new data since the last build |
+| `depends_on` | Determines when upstream data changes should trigger a job build. Use the following values:<br /> - `any`: The model will build only if _any_ direct upstream node has new data since the last build. Faster and may increase spend.<br /> - `all`: The model will only build only if _all_ direct upstream nodes have new data since the last build. Less spend and more requirements |
 
 For sources, dbt considers data "new" based on custom freshness calculations (if configured). If a source's freshness goes past its warning/error threshold, dbt raises a warning/error during the build.
 
@@ -94,10 +94,69 @@ build_after:
   depends_on: all
 ```
 
-This means that the model will be built every time a scheduled job runs for any amount of new data.
+This means that by default, the model will be built every time a scheduled job runs for any amount of new data.
 
 ## Examples
 
+The following example shows how to configure less frequent and more frequent models.
 
-- add example of low latency model (reduce spend)
-- add example of high latency model
+### Less frequent
+If you want to build a model that runs less frequently (which reduces spend), you can configure the model to only build after X amount of time.
+
+Add a `build_after` freshness configuration to the model with `count: 4` and `period: hour`:
+
+```yaml
+models:
+  - name: stg_wizards
+    freshness:
+      build_after: 
+        count: 4
+        period: hour
+        depends_on: all
+  - name: stg_worlds
+    freshness:
+      build_after: 
+        count: 4
+        period: hour
+        depends_on: all  
+```
+
+WWen the adaptive job kicks off, dbt checks:
+
+- If there's new source data
+- As well as whether models `stg_wizards` and `stg_worlds` were already built within the last 4 hour
+
+If _both_ conditions are met, dbt will build the model. Since the `depends_on: all` config is set, it means if `raw.wizards` source has new data, but `stg_wizards` and `stg_worlds` was last built 3 hours ago, nothing would be built.
+
+If `depends_on: any` is set, it means if `raw.wizards` source has new data, dbt will build the model.
+
+### More frequent
+If you want to build a model that runs more frequently (which means it might increase spend), you can configure the model to build as soon as _any_ dependency has new data instead of waiting for all dependencies.
+
+Add a `build_after` freshness configuration to the model with `count: 1` and `period: hour`:
+
+```yaml
+models:
+  - name: stg_wizards
+    freshness:
+      build_after: 
+        count: 1
+        period: hour
+        depends_on: any
+  - name: stg_worlds
+    freshness:
+      build_after: 
+        count: 1
+        period: hour
+        depends_on: any  
+
+```
+
+When the adaptive job kicks off, dbt checks:
+
+- If new source data is available
+- If at least one of `stg_wizards` or `stg_worlds` has been built within the last hour
+
+If _both_ conditions are met, dbt will build the model. This also means if either model (`stg_wizards` _or_ `stg_worlds`) has new data, dbt rebuilds the model. If neither model has new data, nothing will be built.
+
+Since `depends_on: any` in this example, it means if `raw.wizards` source has new data, but only `stg_wizards` was built in the last hour while `stg_worlds` hasn’t been updated, dbt will still build the model because at least one dependency has new incoming data.
