@@ -198,6 +198,24 @@ To add sources, staging and business entities to your project, refer to [Staging
 <FAQ path="Models/run-downtime" />
 <FAQ path="Troubleshooting/sql-errors" />
 
+## Add sources, staging models and business entities
+
+This section of the guide will walk you through adding sources, staging models and business-defined entities to your project.
+
+### Add sources
+
+[Sources](/docs/build/sources) in dbt are tables in your data warehouse that are defined and described within your dbt project. They allow you to:
+
+- Name and describe data loaded by your extract and load tools.
+- Select from source tables using the `{{ source() }}` function.
+- Test assumptions and calculate data freshness.
+
+To add sources to a BigQuery project in dbt, follow these steps:
+
+1. Define sources in a `.yml` file under a sources: key.
+2. Specify the database, schema, and tables.
+3. Use the `{{ source() }}` function in your models to reference these sources.
+
 ## Change the way your model is materialized
 
 <Snippet path="quickstarts/change-way-model-materialized" />
