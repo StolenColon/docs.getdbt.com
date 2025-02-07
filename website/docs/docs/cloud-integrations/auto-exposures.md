@@ -27,7 +27,7 @@ Select the following card to learn how to set up and view auto exposures in Tabl
     icon="tableau-software"/>
 
 <Card
-    title="Auto exposures in Power BI (preview)"
+    title="Auto exposures in Power BI (Preview)"
     link="/docs/cloud-integrations/auto-exposures-pbi"
     body="Import and auto-generate exposures from Power BI dashboards. This helps you understand how models are used in downstream tools for a richer downstream lineage."
     icon="pbi"/>

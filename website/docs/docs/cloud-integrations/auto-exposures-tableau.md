@@ -77,7 +77,9 @@ dbt Cloud imports everything in the collection(s) and you can continue to [view 
 
 ## View auto-exposures
 
-import ViewExposures from '/snippets/_auto-exposures-view.md';
+After setting up auto-exposures in dbt Cloud, you can view them in [dbt Explorer](/docs/collaborate/explore-projects) for a richer experience.
+
+import ViewExposures from '/snippets/_auto-exposures-view-tableau.md';
 
 <ViewExposures/>
 

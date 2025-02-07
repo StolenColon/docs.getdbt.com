@@ -29,7 +29,13 @@ If you're using Tableau Server, you need to [allowlist dbt Cloud's IP addresses]
 :::
 
 ## View auto exposures in dbt Explorer
+After setting up auto-exposures in dbt Cloud, you can view them in [dbt Explorer](/docs/collaborate/explore-projects) for a richer experience.
 
-import ViewExposures from '/snippets/_auto-exposures-view.md';
+import ViewExposuresTableau from '/snippets/_auto-exposures-view-tableau.md';
+import ViewExposuresPBI from '/snippets/_auto-exposures-view-pbi.md';
 
-<ViewExposures/>
+### Tableau
+<ViewExposuresTableau/>
+
+### Power BI
+<ViewExposuresPBI/>
