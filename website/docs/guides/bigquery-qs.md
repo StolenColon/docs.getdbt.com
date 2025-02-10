@@ -212,9 +212,105 @@ This section of the guide will walk you through adding sources, staging models a
 
 To add sources to a BigQuery project in dbt, follow these steps:
 
-1. Define sources in a `.yml` file under a sources: key.
+1. Define sources by creating a YAML file &mdash; `models/<filename>.yml`.
 2. Specify the database, schema, and tables.
+
+<File name='models/<modelname>.sql'>
+
+```
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: orders
+      - name: customers
+     
+
+```
+
+</File>
+
 3. Use the `{{ source() }}` function in your models to reference these sources.
+
+```
+select
+  ...
+from {{ source('jaffle_shop', 'orders') }}
+left join {{ source('jaffle_shop', 'customers') }} using (customer_id)
+
+```
+
+### Add staging models
+
+[Staging models](/best-practices/how-we-structure/2-staging) in dbt are foundational components that prepare raw data for further transformation. They:
+
+- Clean and organize source data
+- Apply renaming, type casting, and basic computations
+- Avoid joins and aggregations
+- Are materialized as views for real-time data access
+- These models ensure data consistency and reusability.
+
+To add staging models to your BigQuery project, follow these steps:
+
+1. Create a staging models file and name it `stg_customers.sql`
+
+```
+
+     select id as customer_id, first_name, last_name
+     from `dbt-tutorial.jaffle_shop.customers`
+
+```
+
+2. Create a file named ` stg_orders.sql`
+
+```
+
+  select id as order_id, user_id as customer_id, order_date, status
+  from `dbt-tutorial.jaffle_shop.orders`
+
+```
+
+3. In your main model, use `ref` to reference the following staging models:
+
+```
+
+     with customers as (
+       select * from {{ ref('stg_customers') }}
+     ),
+     orders as (
+       select * from {{ ref('stg_orders') }}
+     )
+
+```
+
+4. Execute `dbt run` to build these models in BigQuery.
+
+### Add business entities
+
+Adding [business entities](/docs/build/entities) to your project in dbt Cloud helps define real-world concepts like customers or transactions. These entities serve as join keys in semantic models, enabling data analysis and aggregation. They ensure data integrity and facilitate connections between tables, enhancing data modeling and reporting.
+
+Here's an example of using business entities in a BigQuery project in dbt Cloud:
+
+
+- Primary key:  In an employee table, employee_id serves as a primary key, uniquely identifying each employee.
+- Foreign key: In an orders table, customer_id acts as a foreign key linking to a customers table, associating orders with specific customers.
+
+These keys help define relationships and ensure data integrity across tables.
+
+```
+
+yaml
+entities:
+  - name: customer_id
+    type: primary
+  - name: order_id
+    type: foreign
+    expr: customer_id
+
+```
 
 ## Change the way your model is materialized
 
