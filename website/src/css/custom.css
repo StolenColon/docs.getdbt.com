@@ -2226,8 +2226,8 @@ table th {
   font-weight: bold;
   display: block;
   padding: 8px 0;
-  border-top: 2px solid #ddd;  /* Line above */
-  border-bottom: 2px solid #ddd; /* Line below */
+  border-top: 2px solid var(--ifm-color-primary);  /* Line above */
+  border-bottom: 2px solid var(--ifm-color-primary); /* Line below */
   margin: 12px 0;
   text-align: center; /* Optional: Center the title */
 }
