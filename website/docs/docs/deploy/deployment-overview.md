@@ -63,15 +63,15 @@ Learn how to use dbt Cloud's features to help your team ship timely and quality 
 <div className="grid--3-col">
 
 <Card
-    title="Run visibility"
-    body="View the history of your runs and the model timing dashboard to help identify where improvements can be made to the scheduled jobs."
-    link="/docs/deploy/run-visibility"
+    title="Auto and active exposures"
+    body="Use dbt Cloud to automatically generate exposures from dashboards and proactively refresh the underlying data sources  during scheduled dbt jobs."
+    link="/docs/deploy/active-and-auto-exposures"
     icon="dbt-bit"/>
 
 <Card
-    title="Retry jobs"
-    body="Rerun your errored jobs from start or the failure point."
-    link="/docs/deploy/retry-jobs"
+    title="Artifacts"
+    body="dbt Cloud generates and saves artifacts for your project, which it uses to power features like creating docs for your project and reporting the freshness of your sources."
+    link="/docs/deploy/artifacts"
     icon="dbt-bit"/>
 
 <Card
@@ -87,21 +87,27 @@ Learn how to use dbt Cloud's features to help your team ship timely and quality 
     icon="dbt-bit"/>
 
 <Card
-    title="Webhooks"
-    body="Create outbound webhooks to send events about your dbt jobs' statuses to other systems in your organization."
-    link="/docs/deploy/webhooks"
+    title="Run visibility"
+    body="View the history of your runs and the model timing dashboard to help identify where improvements can be made to the scheduled jobs."
+    link="/docs/deploy/run-visibility"
     icon="dbt-bit"/>
 
 <Card
-    title="Artifacts"
-    body="dbt Cloud generates and saves artifacts for your project, which it uses to power features like creating docs for your project and reporting the freshness of your sources."
-    link="/docs/deploy/artifacts"
+    title="Retry jobs"
+    body="Rerun your errored jobs from start or the failure point."
+    link="/docs/deploy/retry-jobs"
     icon="dbt-bit"/>
 
 <Card
     title="Source freshness"
     body="Enable snapshots to capture the freshness of your data sources and configure how frequent these snapshots should be taken. This can help you determine whether your source data freshness is meeting your SLAs."
     link="/docs/deploy/source-freshness"
+    icon="dbt-bit"/>
+
+<Card
+    title="Webhooks"
+    body="Create outbound webhooks to send events about your dbt jobs' statuses to other systems in your organization."
+    link="/docs/deploy/webhooks"
     icon="dbt-bit"/>
 
 </div> <br />
