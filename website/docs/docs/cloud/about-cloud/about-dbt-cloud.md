@@ -29,7 +29,7 @@ dbt Cloud's [flexible plans](https://www.getdbt.com/pricing/) and features make 
     icon="dbt-bit"/>
 
 <Card
-    title="Visual editor (beta)"
+    title="Visual editor (beta)*"
     body="Develop with the visual editor, a seamless drag-and-drop experience that helps analysts quickly create and visualize dbt models in dbt Cloud."
     link="/docs/cloud/visual-editor"
     icon="dbt-bit"/>
@@ -99,6 +99,13 @@ dbt Cloud's [flexible plans](https://www.getdbt.com/pricing/) and features make 
     body="Learn about dbt Explorer and how to interact with it to understand, improve, and leverage your data pipelines."
     link="/docs/collaborate/explore-projects"
     icon="dbt-bit"/>
+
+  <Card
+    title="Auto and active exposures*"
+    body="Use dbt Cloud to automatically generate exposures from dashboards and proactively refresh the underlying data sources during scheduled dbt jobs."
+    link="/docs/cloud-integrations/active-and-auto-exposures"
+    icon="dbt-bit"/>
+
 </div> <br />
 
 *These features are available on [selected plans](https://www.getdbt.com/pricing/).

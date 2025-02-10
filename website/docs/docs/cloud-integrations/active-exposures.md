@@ -29,22 +29,23 @@ With active exposures, you can now use dbt [Cloud job scheduler](/docs/deploy/jo
 
 To enable active exposures, you should meet the following:
 
-1. You have [auto exposures](/docs/cloud-integrations/auto-exposures#set-up-auto-exposures) already set up.
-2. Your environment and jobs are on a supported [release track](/docs/dbt-versions/cloud-release-tracks) dbt.
+1. You have [auto exposures in Tableau](/docs/cloud-integrations/auto-exposures-tableau#set-up-in-tableau) already set up.
+2. Your environment and jobs are on a supported dbt Cloud [release track](/docs/dbt-versions/cloud-release-tracks).
 3. You have a dbt Cloud account on the [Enterprise plan](https://www.getdbt.com/pricing/).
 4. You have set up a [production](/docs/deploy/deploy-environments#set-as-production-environment) deployment environment for each project you want to explore, with at least one successful job run. 
 5. You have [admin permissions](/docs/cloud/manage-access/enterprise-permissions) in dbt Cloud to edit project settings or production environment settings.
 
 ## Set up active exposures
 
-To set up active exposures:
+To set up active exposures in dbt Cloud, follow these steps:
 
-1. Ensure you have [Auto exposures enabled for Tableau](#set-up-active-exposures) and the desired exposures are included in your lineage.
-2. Set the environment level variable `DBT_ACTIVE_EXPOSURES` to `1` within the environment you want the refresh to happen.
-3. Set `DBT_ACTIVE_EXPOSURES_BUILD_AFTER` to control the maximum refresh cadence (in minutes) you want between each exposure refresh. 
-   - Set to 1440 minutes (24 hours) by default, meaning that even for auto exposures that depend on more frequently running models, active exposures will not refresh the Tableau extracts more often than this period. 
-   - Job runs will display the status of `skipped` for the auto-exposure if enough time hasn't yet passed.
-4. You will see the update each time a job runs in production 
-   - This can be viewed in the logs of the dbt run
+1. Ensure you have [Auto exposures enabled for Tableau](/docs/cloud-integrations/auto-exposures-tableau#set-up-in-tableau) and that the desired exposures are included in your lineage.
+2. Set the [environment level variable](/docs/build/environment-variables#setting-and-overriding-environment-variables) `DBT_ACTIVE_EXPOSURES` to `1` within the environment you want the refresh to happen.
+3. Define the maximum refresh cadence by setting a second environment variable `DBT_ACTIVE_EXPOSURES_BUILD_AFTER` to the number of minutes between each exposure refresh
+   - By default, this is set to 1440 minutes (24 hours). Even if auto exposures depend on more frequently running models, Tableau extracts won't refresh more often than this period.
+   - If a job runs before the specified time interval has passed, the auto exposures will receive a status of `skipped`.
+   <Lightbox src="/img/docs/cloud-integrations/auto-exposures/active-exposures-env-var.jpg" width="100%" title="Set the environment variables in your Environment settings."/ >
+4. Monitor the updates each time a job runs in production:
+   - Check the `dbt run` logs for updates.
       <Lightbox src="/img/docs/cloud-integrations/auto-exposures/active-exposure-log.jpg" title="View the active exposure logs in the dbt run job logs."/ >
-   - More details can also be viewed in the debug logs
+   - More details are available in the debug logs.

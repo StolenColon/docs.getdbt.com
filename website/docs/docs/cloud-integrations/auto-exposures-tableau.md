@@ -5,7 +5,7 @@ description: "Import and auto-generate exposures from Tableau dashboards, helpin
 image: /img/docs/cloud-integrations/auto-exposures/explorer-lineage2.jpg
 ---
 
-# Auto exposures <Lifecycle status="enterprise" />
+# Auto exposures in Tableau <Lifecycle status="enterprise" />
 
 Auto exposures integrates natively with Tableau and [auto-generates downstream lineage](#view-auto-exposures) in [dbt Explorer](/docs/collaborate/explore-projects) for a richer experience.
 
@@ -65,13 +65,12 @@ To set up [personal access tokens (PATs)](https://help.tableau.com/current/serve
    
    <Lightbox src="/img/docs/cloud-integrations/auto-exposures/cloud-select-collections.jpg" title="Select the collections you want to include for auto exposures."/>
 
-      :::info
-      dbt Cloud automatically imports and syncs any workbook within the selected collections. New additions to the collections will be added to the lineage in dbt Cloud during the next sync (automatically once per day).
-   
-      dbt Cloud immediately starts a sync when you update the selected collections list, capturing new workbooks and removing irrelevant ones.
-      :::
+5. dbt Cloud imports everything in the collection(s) and you can continue to [view them](#view-auto-exposures) in Explorer. 
+   :::info
+   dbt Cloud automatically imports and syncs any workbook within the selected collections. New additions to the collections will be added to the lineage in dbt Cloud during the next sync (automatically once per day).
 
-dbt Cloud imports everything in the collection(s) and you can continue to [view them](#view-auto-exposures) in Explorer. 
+   dbt Cloud immediately starts a sync when you update the selected collections list, capturing new workbooks and removing irrelevant ones.
+   :::
 
 <Lightbox src="/img/docs/cloud-integrations/auto-exposures/explorer-lineage2.jpg" width="100%" title="View from the dbt Explorer in your Project lineage view, displayed with the Tableau icon."/>
 
