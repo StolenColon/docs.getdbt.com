@@ -98,7 +98,7 @@ your_profile_name:
 
 ### Thrift
 
-Use the `thrift` connection method if you are connecting to a Thrift server sitting in front of a Spark cluster. For example, a cluster running locally or on Amazon EMR EKS clusters or EC2 instances.
+Use the `thrift` connection method if you are connecting to a Thrift server sitting in front of a Spark cluster. For example, a cluster running locally or on Amazon EMR (in an EC2 instance or EKS cluster).
 
 <File name='~/.dbt/profiles.yml'>
 
@@ -207,7 +207,7 @@ When facing difficulties, run `poetry run dbt debug --log-level=debug`. The logs
 
 ### Usage with EMR
 
-To connect to Apache Spark running on an Amazon EMR EKS cluster or EC2 instance, you will need to run `sudo /usr/lib/spark/sbin/start-thriftserver.sh` on the master node of the cluster to start the Thrift server (see [the docs](https://aws.amazon.com/premiumsupport/knowledge-center/jdbc-connection-emr/) for more information). You will also need to connect to port 10001, which will connect to the Spark backend Thrift server; port 10000 will instead connect to a Hive backend, which will not work correctly with dbt.
+To connect to Apache Spark running on an Amazon EMR in an EC2 instance or EKS cluster (serverless is not supported), you will need to run `sudo /usr/lib/spark/sbin/start-thriftserver.sh` on the master node of the cluster to start the Thrift server (see [the docs](https://aws.amazon.com/premiumsupport/knowledge-center/jdbc-connection-emr/) for more information). You will also need to connect to port 10001, which will connect to the Spark backend Thrift server; port 10000 will instead connect to a Hive backend, which will not work correctly with dbt.
 
 ### Supported functionality
 
