@@ -53,7 +53,7 @@ $ python -m pip install "dbt-spark[session]"
 dbt-spark can connect to Spark clusters by four different methods:
 
 - [`odbc`](#odbc) is the preferred method when connecting to Databricks. It supports connecting to a SQL Endpoint or an all-purpose interactive cluster.
-- [`thrift`](#thrift) connects directly to the lead node of a cluster, either locally hosted / on premise or in the cloud (e.g. Amazon EMR).
+- [`thrift`](#thrift) connects directly to the lead node of a cluster, either locally hosted / on premise or in the cloud (for example, Amazon EMR).
 - [`http`](#http) is a more generic method for connecting to a managed service that provides an HTTP endpoint. Currently, this includes connections to a Databricks interactive cluster.
 
 
@@ -98,7 +98,7 @@ your_profile_name:
 
 ### Thrift
 
-Use the `thrift` connection method if you are connecting to a Thrift server sitting in front of a Spark cluster, e.g. a cluster running locally or on Amazon EMR.
+Use the `thrift` connection method if you are connecting to a Thrift server sitting in front of a Spark cluster. For example, a cluster running locally or on Amazon EMR EKS clusters or EC2 instances.
 
 <File name='~/.dbt/profiles.yml'>
 
@@ -206,7 +206,8 @@ Spark can be customized using [Application Properties](https://spark.apache.org/
 When facing difficulties, run `poetry run dbt debug --log-level=debug`. The logs are saved at `logs/dbt.log`.
 
 ### Usage with EMR
-To connect to Apache Spark running on an Amazon EMR cluster, you will need to run `sudo /usr/lib/spark/sbin/start-thriftserver.sh` on the master node of the cluster to start the Thrift server (see [the docs](https://aws.amazon.com/premiumsupport/knowledge-center/jdbc-connection-emr/) for more information). You will also need to connect to port 10001, which will connect to the Spark backend Thrift server; port 10000 will instead connect to a Hive backend, which will not work correctly with dbt.
+
+To connect to Apache Spark running on an Amazon EMR EKS cluster or EC2 instance, you will need to run `sudo /usr/lib/spark/sbin/start-thriftserver.sh` on the master node of the cluster to start the Thrift server (see [the docs](https://aws.amazon.com/premiumsupport/knowledge-center/jdbc-connection-emr/) for more information). You will also need to connect to port 10001, which will connect to the Spark backend Thrift server; port 10000 will instead connect to a Hive backend, which will not work correctly with dbt.
 
 ### Supported functionality
 
