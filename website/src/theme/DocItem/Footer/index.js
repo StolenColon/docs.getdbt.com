@@ -4,10 +4,17 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import TagsListInline from '@theme/TagsListInline';
 import EditMetaRow from '@theme/EditMetaRow';
-import Feedback from '../../../components/Feedback';
+import Feedback from '@site/src/components/Feedback';
+
 export default function DocItemFooter() {
   const {metadata} = useDoc();
-  const {editUrl, lastUpdatedAt, lastUpdatedBy, tags, unversionedId, formattedLastUpdatedAt} = metadata;
+  console.log("Full metadata object:", metadata); // log full metadata object
+  // use id or slug instead of unversionedId
+  const resourceId = metadata?.id || metadata?.slug || metadata?.permalink || "unknown-resource";
+  console.log("Final Resource ID:", resourceId); // debug
+
+  const {editUrl, lastUpdatedAt, lastUpdatedBy, tags, formattedLastUpdatedAt} = metadata;
+
   const canDisplayTagsRow = tags.length > 0;
   const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
   const canDisplayFooter = canDisplayTagsRow || canDisplayEditMetaRow;
@@ -16,7 +23,7 @@ export default function DocItemFooter() {
   }
   return (
     <>
-    <Feedback resource={unversionedId} />
+    <Feedback resource={resourceId} />
     <footer
       className={clsx(ThemeClassNames.docs.docFooter, 'docusaurus-mt-lg')}>
       {canDisplayTagsRow && (
