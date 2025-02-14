@@ -3,6 +3,7 @@ title: "Defining a database source property"
 sidebar_label: "database"
 resource_types: sources
 datatype: database_name
+intro_text: "Define the database that your source is stored in."
 ---
 
 <File name='models/<filename>.yml'>

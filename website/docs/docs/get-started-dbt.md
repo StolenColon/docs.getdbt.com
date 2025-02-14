@@ -4,9 +4,8 @@ id: get-started-dbt
 hide_table_of_contents: true
 pagination_next: null
 pagination_prev: null
+intro_text: "Begin your dbt journey by trying one of our quickstarts, which provides a step-by-step guide to help you set up dbt Cloud or dbt Core with a variety of data platforms."
 ---
-
-Begin your dbt journey by trying one of our quickstarts, which provides a step-by-step guide to help you set up [dbt Cloud](#dbt-cloud) or [dbt Core](#dbt-core) with a [variety of data platforms](/docs/cloud/connect-data-platform/about-connections).
 
 ## dbt Cloud
 

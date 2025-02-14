@@ -1,6 +1,7 @@
 ---
 resource_types: all
 datatype: test
+intro_text: "Columns in dbt are child properties of models, sources, and other resources. They can define metadata, tests, tags, and types."
 ---
 
 <Tabs

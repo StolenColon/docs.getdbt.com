@@ -4,6 +4,7 @@ sidebar_label: "config"
 resource_types: [models, seeds, snapshots, tests, sources, metrics, exposures]
 datatype: "{dictionary}"
 hide_table_of_contents: true
+intro_text: "Configure dbt resources directly in YAML files using the config property. "
 ---
 
 

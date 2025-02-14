@@ -6,9 +6,8 @@ description: "Explore dbt Cloud's features and learn why dbt Cloud is the fastes
 hide_table_of_contents: true
 pagination_next: "docs/cloud/about-cloud/architecture"
 pagination_prev: null
+intro_text: "dbt Cloud is the fastest and most reliable way to deploy dbt. Develop, test, schedule, document, and investigate data models all in one browser-based UI. "
 ---
-
-dbt Cloud is the fastest and most reliable way to deploy dbt. Develop, test, schedule, document, and investigate data models all in one browser-based UI. 
 
 In addition to providing a hosted architecture for running dbt across your organization, dbt Cloud comes equipped with turnkey support for scheduling jobs, CI/CD, hosting documentation, monitoring and alerting, an integrated development environment (IDE), and allows you to develop and run dbt commands from your local command line interface (CLI) or code editor.
 

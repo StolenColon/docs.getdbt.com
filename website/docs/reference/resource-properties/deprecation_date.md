@@ -2,6 +2,7 @@
 resource_types: [models]
 datatype: deprecation_date
 required: no
+intro_text: "Learn how to set deprecation dates for dbt models to manage lifecycle, communicate maintenance plans, and handle model retirement gracefully."
 ---
 
 <File name='models/<schema>.yml'>

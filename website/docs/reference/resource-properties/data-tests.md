@@ -5,6 +5,7 @@ sidebar_label: "Data tests"
 resource_types: all
 datatype: data-test
 keywords: [test, tests, custom tests, custom test name, test name]
+intro_text: "Configure and use data tests in dbt to validate data quality, using built-in tests, custom tests, and test configurations."
 ---
 
 <Tabs

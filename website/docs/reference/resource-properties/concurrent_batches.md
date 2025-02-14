@@ -3,6 +3,7 @@ title: "concurrent_batches"
 resource_types: [models]
 datatype: model_name
 description: "Learn about concurrent_batches in dbt."
+intro_text: "concurrent_batches is an override which allows you to decide whether or not you want to run batches in parallel or sequentially (one at a time)."
 ---
 
 <VersionCallout version="1.9" />
