@@ -2,6 +2,7 @@
 title: "Parser, Better, Faster, Stronger: A peek at the new dbt engine"
 description: "Remember how dbt felt when you had a small project? You pressed enter and stuff just happened immediately? We're bringing that back."
 slug: faster-project-parsing-with-rust
+featured_image: "/img/blog/2025-02-19-faster-project-parsing-with-rust/parsing_10k.gif"
 
 authors: [joel_labes]
 
