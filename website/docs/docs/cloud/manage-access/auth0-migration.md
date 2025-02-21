@@ -48,6 +48,8 @@ After changing the slug, admins must share the new login URL with their dbt Clou
 
 SAML 2.0 users must update a few fields in the SSO app configuration to match the new Auth0 URL and URI.  You can approach this by editing the existing SSO app settings or creating a new one to accommodate the Auth0 settings. One approach isn't inherently better, so you can choose whichever works best for your organization.
 
+
+
 ### SAML 2.0 and Okta
 
 The Okta fields that will be updated are:

@@ -51,7 +51,7 @@ When prompted for the SAML 2.0 application configurations, supply the following 
 * Audience URI (SP Entity ID): `urn:auth0:<YOUR_AUTH0_ENTITYID>:{login slug}`
 - Relay State: `<login slug>`
 
-Additionally, you may configure the IdP attributes passed from your identity provider into dbt Cloud. We recommend using the following values:
+Additionally, you may configure the IdP attributes passed from your identity provider into dbt Cloud. The values will look something like this, but check with your IdP's documentation to confirm the proper formatting:
 
 
 | name | name format | value | description |
