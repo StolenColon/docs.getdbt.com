@@ -10,7 +10,7 @@ Monitor your dbt Cloud jobs to help identify improvement and set up alerts to pr
 
 This portion of our documentation will go over dbt Cloud's various capabilities that help you monitor your jobs and set up alerts to ensure seamless orchestration, including:
 
-- [Leverage artifacts](/docs/deploy/artifacts) &mdash; dbt Cloud generates and saves artifacts for your project, which it uses to power features like creating docs for your project and reporting freshness of your sources.  
+- [Leverage artifacts](/docs/deploy/artifacts) &mdash; dbt Cloud generates and saves artifacts for your project, which it uses to power features like creating docs for your project and reporting freshness of your sources.
 - [Auto and active exposures](/docs/cloud-integrations/active-and-auto-exposures) &mdash; Learn how to use dbt Cloud to automatically generate exposures from dashboards and proactively refresh the underlying data sources (like Tableau extracts) during scheduled dbt jobs
 - [Job notifications](/docs/deploy/job-notifications) &mdash; Receive email or Slack notifications when a job run succeeds, encounters warnings, fails, or is canceled.  
 - [Model notifications](/docs/deploy/model-notifications) &mdash; Receive email notifications about any issues encountered by your models and tests as soon as they occur while running a job.  
