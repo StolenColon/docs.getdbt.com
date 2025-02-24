@@ -19,7 +19,7 @@ After setting up auto-exposures in dbt Cloud, you can view them in [dbt Explorer
 
    </DocCarousel>
 
-<!-->
+<!--
 ### View in Power BI
 
 1. Navigate to dbt Explorer by clicking on the **Explore** link in the navigation.
