@@ -9,11 +9,7 @@ image: /img/docs/cloud-integrations/auto-exposures/explorer-lineage2.jpg
 
 Auto exposures integrates natively with Power BI and [auto-generates downstream lineage](#view-auto-exposures) in [dbt Explorer](/docs/collaborate/explore-projects) for a richer experience.
 
-## Set up auto exposures
-
-Set up auto exposures in [Power BI](#set-up-in-power-bi) and [dbt Cloud](#set-up-in-dbt-cloud) to ensure that your Power BI extracts are updated regularly.
-
-### Prerequisites
+## Prerequisites
 
 To enable auto exposures, you should meet the following:
 
@@ -25,31 +21,25 @@ To enable auto exposures, you should meet the following:
 6. Create enable metadata permissions or work with an admin to do so. 
 7. Have access to Admin APIs to use auto exposures and see lineage between PowerBI and dbt Cloud
 
-### Set up in Power BI
+## Set up auto exposures
 
-CONTINUE FROM HERE AS OF WED FEB 5TH
+Set up auto exposures in [Power BI](#set-up-in-power-bi) and [dbt Cloud](#set-up-in-dbt-cloud) to ensure that your Power BI extracts are updated regularly.
+
+### Set up in Power BI
 
 This section of the document explains the steps you need to set up the auto-exposures integration with Power BI. Once you've set this up in Power BI and [dbt Cloud](#set-up-in-dbt-cloud), you can view the [auto-exposures](#view-auto-exposures) in dbt Explorer.
 
-To set up [personal access tokens (PATs)](https://help.tableau.com/current/server/en-us/security_personal_access_tokens.htm) needed for auto exposures, ask a site admin to configure it for the account.
-
-1. Ensure you or a site admin enables PATs for the account in Tableau.
-   <Lightbox src="/img/docs/cloud-integrations/auto-exposures/tableau-enable-pat.jpg" title="Enable PATs for the account in Tableau"/>
-
-2. Create a PAT that you can add to dbt Cloud to pull in Tableau metadata for auto exposures. Ensure the user creating the PAT has access to collections/folders, as the PAT only grants access matching the creator's existing privileges.
-   <Lightbox src="/img/docs/cloud-integrations/auto-exposures/tableau-create-pat.jpg" title="Create PATs for the account in Tableau"/>
-
-3. Copy the **Secret** and the **Token name** and enter them in dbt Cloud. The secret is only displayed once, so store it in a safe location (like a password manager).
-   <Lightbox src="/img/docs/cloud-integrations/auto-exposures/tableau-copy-token.jpg" title="Copy the secret and token name to enter them in dbt Cloud"/>
-
-4. Copy the **Server URL** and **Sitename**. You can find these in the URL while logged into Tableau.
-   <Lightbox src="/img/docs/cloud-integrations/auto-exposures/tablueau-serverurl.jpg" title="Locate the Server URL and Sitename in Tableau"/>
-
-   For example, if the full URL is: `10az.online.tableau.com/#/site/dbtlabspartner/explore`:
-   - The **Server URL** is the first part of the URL, in this case: `10az.online.tableau.com`
-   - The **Sitename** is right after the `site` in the URL, in this case: `dbtlabspartner` 
-
-5. You should now be ready to set up auto-exposures in dbt Cloud after copying the following items, which you'll need during the dbt Cloud setup: ServerURL, Sitename, Token name, and Secret.
+1. To set up auto exposures in Power BI, you need to create a registered application and client secret in Azure AD. Follow the steps in the [Step 1 - Create a Microsoft Entra app documentation](https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal?tabs=azure-portal#step-1---create-an-azure-ad-app).
+2. When creating a new registration, fill in the following details and make sure you save these values:
+    - Name: Name the registration whatever you’d like, for example, `dbt-cloud`
+    - Supported account types: Accounts in the organizational directory only (Default directory, single tenant)
+    - (Optional) Redirect URI: Leave blank or enter a URI if needed
+3. Once you've created the registration, select the newly created registration and copy the following values:
+    - Application (client) ID
+    - Directory (tenant) ID
+4. Create a new client secret for the registration using the **Certificates & secrets** tab and copy the value. 
+   - Note, you can specify the description and expiry of the client secret.
+5. 
 
 ### Set up in dbt Cloud <Lifecycle status="enterprise"/>
 
@@ -76,7 +66,10 @@ update screenshot w pbi
 
 ## View auto-exposures
 
-import ViewExposures from '/snippets/_auto-exposures-view.md';
+After setting up auto-exposures in dbt Cloud, you can view them in [dbt Explorer](/docs/collaborate/explore-projects) for a richer experience.
+
+
+import ViewExposures from '/snippets/_auto-exposures-view-pbi.md';
 
 <ViewExposures/>
 
