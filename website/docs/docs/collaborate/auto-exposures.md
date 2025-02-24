@@ -22,6 +22,15 @@ If you're using Tableau Server, you need to [allowlist dbt Cloud's IP addresses]
 
 For more information on how to set up auto-exposures, prerequisites, and more &mdash; refer to [configure auto-exposures in Tableau and dbt Cloud](/docs/cloud-integrations/configure-auto-exposures).
 
+## About Auto exposures and active exposures
+
+| Feature | Auto-exposures | Active exposures |
+| ---- | ---- | ---- |
+| Location  | dbt Explorer | dbt Cloud scheduler |
+| Purpose | Automatically brings downstream assets (like Tableau workbooks) into your dbt lineage. | Proactively refreshes the underlying data sources (like Tableau extracts) during scheduled dbt jobs. |
+| Benefits | Provides visibility into data flow and dependencies. | Ensures BI tools always have up-to-date data without manual intervention. |
+| Use case | Helps users understand how models are used and reduces incidents. | Optimizes timeliness and reduces costs by running models when needed. |
+
 import ViewExposures from '/snippets/_auto-exposures-view.md';
 
 <ViewExposures/>

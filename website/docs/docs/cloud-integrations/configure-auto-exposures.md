@@ -14,7 +14,16 @@ Auto-exposures help data teams optimize their efficiency and ensure data quality
 
 - Helping users understand how their models are used in downstream analytics tools to inform investments and reduce incidents — ultimately building trust and confidence in data products.
 - Importing and auto-generating exposures based on Tableau dashboards, with user-defined curation.
-- Enabling the active exposure work to run models based on when exposures are updated or need to be updated, improving timeliness and reducing costs.
+- Enabling active exposure to run models based on when exposures are updated or need to be updated, improving timeliness and reducing costs.
+
+## About Auto exposures and active exposures
+
+| Feature | Auto-exposures | Active exposures |
+| ---- | ---- | ---- |
+| Location  | dbt Explorer | dbt Cloud scheduler |
+| Purpose | Automatically brings downstream assets (like Tableau workbooks) into your dbt lineage. | Proactively refreshes the underlying data sources (like Tableau extracts) during scheduled dbt jobs. |
+| Benefits | Provides visibility into data flow and dependencies. | Ensures BI tools always have up-to-date data without manual intervention. |
+| Use case | Helps users understand how models are used and reduces incidents. | Optimizes timeliness and reduces costs by running models when needed. |
 
 ## Prerequisites
 
@@ -75,13 +84,25 @@ dbt Cloud imports everything in the collection(s) and you can continue to view t
 
 <Lightbox src="/img/docs/cloud-integrations/auto-exposures/explorer-lineage2.jpg" width="100%" title="View from the dbt Explorer in your Project lineage view, displayed with the Tableau icon."/>
 
-## Refresh auto-exposures in jobs
-
-:::info Coming soon
-Soon, you’ll also be able to use auto-exposures to trigger the refresh of the data used in your Tableau dashboards from within dbt Cloud. Stay tuned for more on this soon!
-:::
-
 ## Considerations
 import ConsiderationsTableau from '/snippets/_auto-exposures-considerations-tb.md';
 
 <ConsiderationsTableau/>
+
+## Refresh with active exposures
+
+With active exposures, you can now use dbt to proactively refresh the underlying data sources (extracts) that power your Tableau Workbooks.
+
+- Active exposures integrate with auto exposures and uses your dbt build to ensure that Tableau extracts are updated regularly.
+- You can control the frequency of these refreshes by configuring environment variables in your dbt environment.
+
+To set up active exposures:
+
+1. Ensure you have [Auto exposures enabled for Tableau](#configure-auto-exposures) and the desired exposures are included in your lineage.
+2. Set the environment level variable `DBT_ACTIVE_EXPOSURES` to `1` within the environment you want the refresh to happen.
+3. Set `DBT_ACTIVE_EXPOSURES_BUILD_AFTER` to control the maximum refresh cadence (in minutes) you want between each exposure refresh. 
+   - Set to 1440 minutes (24 hours) by default, meaning that even for auto exposures that depend on more frequently running models, active exposures will not refresh the Tableau extracts more often than this period. 
+   - Job runs will display the status of `skipped` for the auto-exposure if enough time hasn't yet passed.
+4. You will see the update each time a job runs in production 
+   - This can be viewed in the logs of the dbt run
+   - More details can also be viewed in the debug logs
