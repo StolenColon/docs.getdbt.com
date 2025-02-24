@@ -30,6 +30,11 @@ To enable auto exposures, you should meet the following:
    - If you're using Tableau Server, you need to [allowlist dbt Cloud's IP addresses](/docs/cloud/about-cloud/access-regions-ip-addresses) for your dbt Cloud region.
    - Currently, you can only connect to a single Tableau site on the same server. 
 
+### Considerations
+import Considerations from '/snippets/_auto-exposures-considerations-tb.md';
+
+<Considerations/>
+
 ### Set up in Tableau
 
 This section of the document explains the steps you need to set up the auto-exposures integration with Tableau. Once you've set this up in Tableau and [dbt Cloud](#set-up-in-dbt-cloud), you can view the [auto-exposures](#view-auto-exposures) in dbt Explorer.

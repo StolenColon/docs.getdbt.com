@@ -5,7 +5,7 @@ description: "Import and auto-generate exposures from Power BI dashboards. This 
 image: /img/docs/cloud-integrations/auto-exposures/explorer-lineage2.jpg
 ---
 
-# Auto exposures in Power BI <Lifecycle status="preview,enterprise" />
+# Auto exposures in Power BI <Lifecycle status="beta,enterprise" />
 
 Auto exposures integrates natively with Power BI and [auto-generates downstream lineage](#view-auto-exposures) in [dbt Explorer](/docs/collaborate/explore-projects) for a richer experience.
 

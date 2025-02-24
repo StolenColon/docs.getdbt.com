@@ -561,10 +561,10 @@ const sidebarSettings = {
               label: "Model consumption",
               link: {
                 type: "doc",
-                id: "docs/collaborate/view-auto-exposures",
+                id: "docs/collaborate/auto-exposures",
               },
               items: [
-                "docs/collaborate/view-auto-exposures",
+                "docs/collaborate/auto-exposures",
                 "docs/collaborate/data-tile",
                 "docs/collaborate/model-query-history",
               ],
