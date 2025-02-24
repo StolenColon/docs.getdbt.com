@@ -1,6 +1,5 @@
-## View auto-exposures
 
-After setting up auto-exposures in dbt Cloud, you can view them in dbt Explorer for a richer experience.
+After setting up auto-exposures in dbt Cloud, you can view them in [dbt Explorer](/docs/collaborate/explore-projects) for a richer experience.
 
 Navigate to dbt Explorer by clicking on the **Explore** link in the navigation. From the **Overview** page, you can view auto-exposures from a couple of places:
 - [Exposures menu](#exposures-menu)

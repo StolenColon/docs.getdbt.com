@@ -39,6 +39,11 @@
   ],
   "redirects": [
     {
+      "source": "/docs/cloud-integrations/configure-auto-exposures",
+      "destination": "/docs/cloud-integrations/active-and-auto-exposures",
+      "permanent": true
+    },
+    {
       "source": "/author/amy_chen",
       "destination": "/blog/authors/amy-chen",
       "permanent": true
