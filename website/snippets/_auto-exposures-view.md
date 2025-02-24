@@ -35,3 +35,12 @@ From the **Project lineage** view, which visualizes the dependencies and relatio
 <Lightbox src="/img/docs/cloud-integrations/auto-exposures/explorer-lineage.jpg" width="95%" title="View from the dbt Explorer in your Project lineage view, displayed with the Tableau icon."/>
 
 </DocCarousel>
+
+<!--
+### View in Power BI
+
+1. Navigate to dbt Explorer by clicking on the **Explore** link in the navigation.
+2. From the **Overview** page, you can view auto-exposures from a couple of places:
+   - From the **Exposures** menu item under **Resources**. This menu provides a comprehensive list of all the exposures so you can quickly access and manage them.
+   <Lightbox src="/img/docs/cloud-integrations/auto-exposures/explorer-view-resources.jpg" width="120%" title="View from the dbt Explorer under the 'Resources' menu."/>
+-->
