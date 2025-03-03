@@ -55,4 +55,3 @@ For example, here is an overview of the **Jobs** section of the environment page
 The same page if the user has not been granted environment-level permissions:
 
 <Lightbox src="/img/docs/dbt-cloud/read-only-access.png" width="80%" title="The jobs page with read-only access and the 'Create job' button is not visible ."/>
-
