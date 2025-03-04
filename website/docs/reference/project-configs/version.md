@@ -2,6 +2,7 @@
 datatype: version
 required: True
 keyword: project version, project versioning, dbt project versioning
+intro_text: "Specify the version of a dbt project in dbt_project.yml."
 ---
 
 import VersionsCallout from '/snippets/_model-version-callout.md';

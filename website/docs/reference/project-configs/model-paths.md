@@ -1,6 +1,7 @@
 ---
 datatype: [directorypath]
 default_value: [models]
+intro_text: "Specify directories for models, sources, and unit tests in dbt_project.yml."
 ---
 
 <File name='dbt_project.yml'>

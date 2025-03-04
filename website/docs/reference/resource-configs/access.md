@@ -1,6 +1,7 @@
 ---
 resource_types: [models]
 datatype: access
+intro_text: "Configure access in dbt_project.yml or model properties to control visibility."
 ---
 
 <File name='models/<schema>.yml'>

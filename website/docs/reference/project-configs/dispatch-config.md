@@ -3,6 +3,7 @@ title: dispatch (config)
 description: "Read this guide to understand the dispatch configuration in dbt."
 datatype: list
 required: False
+intro_text: "Override macro search locations in dbt_project.yml"
 ---
 
 <File name='dbt_project.yml'>

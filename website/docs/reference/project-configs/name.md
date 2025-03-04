@@ -2,6 +2,7 @@
 datatype: string
 description: "Read this guide to understand the name configuration in dbt."
 required: True
+intro_text: "Set the project name in dbt_project.yml using letters, digits, and underscores."
 ---
 
 <File name='dbt_project.yml'>

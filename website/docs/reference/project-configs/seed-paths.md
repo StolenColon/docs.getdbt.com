@@ -1,6 +1,7 @@
 ---
 datatype: [directorypath]
 default_value: [data]
+intro_text: "Specify directories for seeds in dbt_project.yml."
 ---
 
 <File name='dbt_project.yml'>

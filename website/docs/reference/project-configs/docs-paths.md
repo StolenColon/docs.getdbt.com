@@ -2,6 +2,7 @@
 datatype: [directorypath]
 description: "Read this guide to understand the docs-paths configuration in dbt."
 default_value: []
+intro_text: "Specify directories for docs blocks in dbt_project.yml."
 ---
 
 <File name='dbt_project.yml'>

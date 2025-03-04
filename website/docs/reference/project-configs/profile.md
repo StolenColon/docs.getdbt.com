@@ -1,6 +1,7 @@
 ---
 datatype: string
 description: "Read this guide to understand the profile configuration in dbt."
+intro_text: "Specify the profile to use in dbt_project.yml."
 ---
 <File name='dbt_project.yml'>
 

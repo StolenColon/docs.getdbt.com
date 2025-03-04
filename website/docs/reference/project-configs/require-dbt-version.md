@@ -2,6 +2,7 @@
 datatype: version-range | [version-range]
 description: "Read this guide to understand the require-dbt-version configuration in dbt."
 default_value: None
+intro_text: "Specify the minimum dbt version required for a project in dbt_project.yml."
 ---
 
 

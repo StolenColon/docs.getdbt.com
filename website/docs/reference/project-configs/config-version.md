@@ -1,6 +1,7 @@
 ---
 datatype: integer
 description: "Read this guide to understand the config-version configuration in dbt."
+intro_text: "Specify config-version: 2 in dbt_project.yml to use the v2 structure."
 ---
 
 The `config-version:` tag is optional.

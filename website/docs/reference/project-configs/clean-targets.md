@@ -1,6 +1,7 @@
 ---
 datatype: [directorypath]
 default_value: [target_path]
+intro_text: "Specify directories for dbt clean in dbt_project.yml." 
 ---
 
 <File name='dbt_project.yml'>

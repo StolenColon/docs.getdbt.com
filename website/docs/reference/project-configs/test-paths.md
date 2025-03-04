@@ -1,6 +1,7 @@
 ---
 datatype: [directorypath]
 default_value: [test]
+intro_text: "Specify directories for tests in dbt_project.yml."
 ---
 
 <File name='dbt_project.yml'>

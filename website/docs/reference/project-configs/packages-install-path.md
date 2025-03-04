@@ -1,6 +1,7 @@
 ---
 datatype: directorypath
 default_value: dbt_packages
+intro_text: "Specify the directory where packages are installed in dbt_project.yml."
 ---
 
 <File name='dbt_project.yml'>

@@ -2,6 +2,7 @@
 datatype: directorypath
 description: "Read this guide to understand the macro-paths configuration in dbt."
 default_value: [macros]
+intro_text: "Specify directories for macros in dbt_project.yml."
 ---
 
 <File name='dbt_project.yml'>

@@ -2,6 +2,7 @@
 title: on-run-start & on-run-end
 description: "Read this guide to understand the on-run-start and on-run-end configurations in dbt."
 datatype: sql-statement | [sql-statement]
+intro_text: "Specify SQL statements to be run at the start or end of a dbt run in dbt_project.yml."
 ---
 
 import OnRunCommands from '/snippets/_onrunstart-onrunend-commands.md';
