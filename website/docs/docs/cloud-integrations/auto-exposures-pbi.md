@@ -13,13 +13,13 @@ Auto exposures integrates natively with Power BI and [auto-generates downstream 
 
 To enable auto exposures, you should meet the following:
 
-1. Your environment and jobs are on a supported dbt Cloud [release track](/docs/dbt-versions/cloud-release-tracks).
-2. You have a dbt Cloud account on the [Enterprise plan](https://www.getdbt.com/pricing/).
-3. You have set up a [production](/docs/deploy/deploy-environments#set-as-production-environment) deployment environment for each project you want to explore, with at least one successful job run. 
-4. You have [admin permissions](/docs/cloud/manage-access/enterprise-permissions) in dbt Cloud to edit project settings or production environment settings.
-5. Use Power BI Service as your BI tool and have reports published as part of workspaces.
-6. Create enable metadata permissions or work with an admin to do so. 
-7. Have access to Power BI Admin APIs to use auto exposures and see lineage between PowerBI and dbt Cloud
+- Your environment and jobs are on a supported dbt Cloud [release track](/docs/dbt-versions/cloud-release-tracks).
+- You have a dbt Cloud account on the [Enterprise plan](https://www.getdbt.com/pricing/).
+- You have set up a [production](/docs/deploy/deploy-environments#set-as-production-environment) deployment environment for each project you want to explore, with at least one successful job run. 
+- You have [admin permissions](/docs/cloud/manage-access/enterprise-permissions) in dbt Cloud to edit project settings or production environment settings.
+- Use Power BI Service as your BI tool and have reports published as part of workspaces.
+- Create enable metadata permissions or work with an admin to do so. 
+- Have access to Power BI Admin APIs to use auto exposures and see lineage between PowerBI and dbt Cloud
 
 ### Considerations
 - Active exposures are designed for Power BI Service. Power BI Report Server isn't currently supported.
@@ -30,7 +30,7 @@ To enable auto exposures, you should meet the following:
 
 Set up auto exposures in [Power BI](#set-up-in-power-bi) and [dbt Cloud](#set-up-in-dbt-cloud) to ensure that your Power BI extracts are updated regularly.
 
-Once you've set this up in Power BI and [dbt Cloud](#set-up-in-dbt-cloud), you can view the [auto-exposures](#view-auto-exposures) in dbt Explorer.
+Once you've set this up in Power BI and dbt Cloud, you can view the [auto-exposures](#view-auto-exposures) in dbt Explorer.
 
 ### Set up in Power BI
 
@@ -92,7 +92,7 @@ In this section, you'll configure [workspace access](https://learn.microsoft.com
 The API endpoints used in this integration are read-only and _do not_ modify any Power BI resources. However, the [Fabric REST API](https://learn.microsoft.com/en-us/rest/api/fabric/report/items/get-report-definition?tabs=HTTP) does require `Report.ReadWrite.All` permission for the `Items - Get Report Definition` endpoint.
 :::
 
-### Set up in dbt Cloud <Lifecycle status="enterprise"/>
+### Set up in dbt Cloud
 
 Now that you’ve set up PowerBI and necessary settings in Azure, you’re ready to enable this in dbt Cloud! 
 

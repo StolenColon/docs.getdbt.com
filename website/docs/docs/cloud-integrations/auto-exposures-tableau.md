@@ -26,9 +26,7 @@ To enable auto exposures, you should meet the following:
 2. You have a dbt Cloud account on the [Enterprise plan](https://www.getdbt.com/pricing/).
 3. You have set up a [production](/docs/deploy/deploy-environments#set-as-production-environment) deployment environment for each project you want to explore, with at least one successful job run. 
 4. You have [admin permissions](/docs/cloud/manage-access/enterprise-permissions) in dbt Cloud to edit project settings or production environment settings.
-5. Use Tableau as your BI tool and enable metadata permissions or work with an admin to do so. Compatible with Tableau Cloud or Tableau Server with the Metadata API enabled. 
-   - If you're using Tableau Server, you need to [allowlist dbt Cloud's IP addresses](/docs/cloud/about-cloud/access-regions-ip-addresses) for your dbt Cloud region.
-   - Currently, you can only connect to a single Tableau site on the same server. 
+5. Use Tableau as your BI tool and enable metadata permissions or work with an admin to do so. Compatible with Tableau Cloud or Tableau Server with the Metadata API enabled.
 
 ### Considerations
 import Considerations from '/snippets/_auto-exposures-considerations-tb.md';
@@ -37,7 +35,7 @@ import Considerations from '/snippets/_auto-exposures-considerations-tb.md';
 
 ### Set up in Tableau
 
-This section of the document explains the steps you need to set up the auto-exposures integration with Tableau. Once you've set this up in Tableau and [dbt Cloud](#set-up-in-dbt-cloud), you can view the [auto-exposures](#view-auto-exposures) in dbt Explorer.
+This section of the document explains the steps you need to set up the auto-exposures integration with Tableau. Once you've set this up in Tableau and [dbt Cloud](#set-up-in-dbt-cloud), you can [view the auto-exposures](#view-auto-exposures) in dbt Explorer.
 
 To set up [personal access tokens (PATs)](https://help.tableau.com/current/server/en-us/security_personal_access_tokens.htm) needed for auto exposures, ask a site admin to configure it for the account.
 
@@ -59,7 +57,7 @@ To set up [personal access tokens (PATs)](https://help.tableau.com/current/serve
 
 5. You should now be ready to set up auto-exposures in dbt Cloud after copying the following items, which you'll need during the dbt Cloud setup: ServerURL, Sitename, Token name, and Secret.
 
-### Set up in dbt Cloud <Lifecycle status="enterprise"/>
+### Set up in dbt Cloud
 
 1. In dbt Cloud, navigate to the project you want to add the auto-exposures to and then select **Settings**.
 2. Under the **Exposures** section, select **Add integration** to add the Tableau connection.
