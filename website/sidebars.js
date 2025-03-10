@@ -673,6 +673,7 @@ const sidebarSettings = {
           link: { type: "doc", id: "docs/dbt-cloud-apis/admin-cloud-api" },
           items: [
             "docs/dbt-cloud-apis/admin-cloud-api",
+            "docs/dbt-cloud-apis/admin-api-use-cases-and-examples",
             {
               type: "link",
               label: "API v2",

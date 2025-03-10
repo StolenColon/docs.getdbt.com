@@ -5,7 +5,7 @@ sidebar_label: "Uses and examples"
 
 With the Discovery API, you can query the metadata in dbt Cloud to learn more about your dbt deployments and the data it generates to analyze them and make improvements.
 
-You can use the API in a variety of ways to get answers to your business questions. Below describes some of the uses of the API and is meant to give you an idea of the questions this API can help you answer.
+You can use the API to get answers to a variety of your business questions. Answer these questions with the Discovery API:
 
 | Use case | Outcome | <div style={{width:'400px'}}>Example questions</div> |
 | --- | --- | --- |
