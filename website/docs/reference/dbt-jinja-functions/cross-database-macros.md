@@ -994,3 +994,45 @@ So within Jinja, the string values would be:
 - `"'2016-03-09'"`
 - `"'Pennsylvania'"`
 - `"NULL"`
+
+### Cross-database implementation of `{{ dbt.is_distinct_from(a, b) }}`
+
+The syntax `{{ dbt.is_distinct_from(a, b) }}` is a Jinja macro in dbt that performs a null-safe comparison between two values, `a` and `b` .
+
+Standard SQL equality (`=`) doesn’t treat `null = null` as `true`, which can cause unexpected results in comparisons.
+
+`is_distinct_from` ensures proper handling of `null` values.
+
+It checks whether `a` is distinct from `b`, is handling `null` values properly. 
+
+This means:
+
+- If `a` and `b` are both `null`, it returns `false` (they are not distinct).
+- If one of them is `null` but the other is not, it returns `true` (they are distinct).
+- If `a` and `b` are different `not_null` values, it returns `true`.
+- If `a` and `b` are the same `not_null` values, it returns `false`.
+
+#### `is_distinct_from` 
+
+`is_distinct_from`  is a **SQL operator** (which is supported  in [some adapters](/reference/dbt-jinja-functions/cross-database-macros#adapters-which-support-is_distinct_from)). It is used directly in SQL, but not inside `{{ }}`.
+
+Example:
+
+The table below, serves as a visual to help understand how `is_distinct_from` behaves in different scenarios, especially when dealing with `null` values.
+
+|a     |b     |a = b |a `is_distinct_from` b|
+|------|------|------|----------------------|
+|1     |1     |`true`|`true`                |
+|`null`|`null`|`null`|`true`                |
+|`null`|0     |`null`|`false`               |
+
+
+#### Adapters which support `is_distinct_from`
+
+|Adapter     |Supports `is_distinct_from`|SQL syntax translation|More information      |
+|------------|---------------------------|----------------------|----------------------|
+|BigQuery    |✅                         |`a is_distinct_from b`|`true`                |
+|Postgres    |✅                         |`a is_distinct_from b`|`true`                |
+|Snowflake   |✅                         |`a is_distinct_from b`|`false`               |
+|Databricks  |❌                         |`(a != b OR (a is null and b is not_null) OR (a is not_null AND b is not_null))`|Refer to [Implementing NULLIF Function](https://www.castordoc.com/how-to/how-to-compare-two-values-when-one-is-null-in-databricks) for further reading.|
+|Redshift    |❌                         |`(a != b OR (a is null AND b is not_null) OR (a is not_null AND b is null))`|Have a look at [How to Compare Two Values When One is Null in Redshift](https://popsql.com/learn-sql/redshift/how-to-compare-two-values-when-one-is-null-in-redshift#how-to-compare-two-values-when-one-is-null-in-redshift) for more information.|
