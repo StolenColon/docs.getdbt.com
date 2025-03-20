@@ -380,7 +380,9 @@ models:
 
 ### Apply configurations to one model only
 
-Some types of configurations are specific to a particular model. In these cases, placing configurations in the `dbt_project.yml` file can be unwieldy. Instead, you can specify these configurations at the top of a model `.sql` file, or in its individual YAML properties.
+Some configurations can be applied at the model level. In these cases, placing configurations in the `dbt_project.yml` file can be unwieldy. Instead, you can specify these configurations at the top of a model `.sql` file, or in its individual YAML properties.
+
+You can configure a model in the model `.sql` file:
 
 <File name='models/events/base/base_events.sql'>
 
@@ -388,16 +390,19 @@ Some types of configurations are specific to a particular model. In these cases,
 {{
   config(
     materialized = "table",
-    sort = 'event_time',
-    dist = 'event_id'
+    tags = ["events", "staging"],
+    meta = {"owner": "data-team"},
+    enabled = true
   )
 }}
 
-
 select * from ...
+
 ```
 
 </File>
+
+You can configure a model in the YAML properties file:
 
 <File name='models/events/base/properties.yml'>
 
@@ -408,8 +413,10 @@ models:
   - name: base_events
     config:
       materialized: table
-      sort: event_time
-      dist: event_id
+      tags: ["events", "staging"]
+      meta:
+        owner: data-team
+      enabled: true
 ```
 
 </File>
