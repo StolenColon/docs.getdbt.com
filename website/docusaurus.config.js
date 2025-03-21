@@ -81,7 +81,7 @@ var siteSettings = {
     },
     announcementBarActive: true,
     announcementBarLink:
-      "https://www.getdbt.com/resources/webinars/dbt-cloud-demos-with-experts/?utm_medium=i[…]ly-demos_aw&utm_content=biweekly-demos____&utm_term=all_all__",
+      "https://www.getdbt.com/resources/webinars/dbt-cloud-demos-with-experts",
     // Set community spotlight member on homepage
     // This is the ID for a specific file under docs/community/spotlight
     communitySpotlightMember: "original-dbt-athena-maintainers",
@@ -294,6 +294,7 @@ var siteSettings = {
     "/js/gtm.js",
     "/js/onetrust.js",
     "/js/mutiny.js",
+    "/js/hide-forethought.js",
   ],
   stylesheets: [
     "/css/fonts.css",

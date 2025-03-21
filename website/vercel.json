@@ -39,6 +39,21 @@
   ],
   "redirects": [
     {
+      "source": "/docs/cloud-integrations/configure-auto-exposures",
+      "destination": "/docs/cloud-integrations/downstream-exposures",
+      "permanent": true
+    },
+    {
+      "source": "/docs/collaborate/auto-exposures",
+      "destination": "/docs/collaborate/view-downstream-exposures",
+      "permanent": true
+    },  
+    {
+      "source": "/guides/dbt-cloud-cli",
+      "destination": "/docs/cloud/cloud-cli-installation",
+      "permanent": true
+    },
+    {
       "source": "/author/amy_chen",
       "destination": "/blog/authors/amy-chen",
       "permanent": true
@@ -424,6 +439,11 @@
       "permanent": true
     },
     {
+      "source": "/docs/cloud/dbt-copilot-data",
+      "destination": "/docs/cloud/dbt-copilot-faqs",
+      "permanent": true
+    },
+    {
       "source": "/docs/cloud/git/setup-azure",
       "destination": "/docs/cloud/git/connect-azure-devops",
       "permanent": true
@@ -446,6 +466,11 @@
     {
       "source": "/styles",
       "destination": "https://github.com/dbt-labs/docs.getdbt.com/blob/current/contributing/adding-page-components.md",
+      "permanent": true
+    },
+    {
+      "source": "/guides/codespace",
+      "destination": "/guides/duckdb",
       "permanent": true
     },
     {
