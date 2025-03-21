@@ -380,7 +380,7 @@ models:
 
 ### Apply configurations to one model only
 
-Some configurations can be applied at the model level. In these cases, placing configurations in the `dbt_project.yml` file can be unwieldy. Instead, you can specify these configurations at the top of a model `.sql` file, or in its individual YAML properties.
+Some configurations can be applied at the model level. In these cases, placing configurations in the `dbt_project.yml` file can be unwieldy. Instead, you can specify these configurations at the top of a model `.sql` file, or in its individual `.yml` properties file.
 
 You can configure a model in the model `.sql` file:
 
@@ -402,7 +402,7 @@ select * from ...
 
 </File>
 
-You can configure a model in the YAML properties file:
+You can configure a model in the `.yml` properties file:
 
 <File name='models/events/base/properties.yml'>
 
