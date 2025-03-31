@@ -54,9 +54,11 @@ For these use cases, use the dynamic [dbt Semantic Layer APIs](/docs/dbt-cloud-a
 Before you're able to run exports in development or production, you'll need to make sure you've [configured saved queries and exports](/docs/build/saved-queries) in your dbt project. In your saved query config, you can also leverage [caching](/docs/use-dbt-semantic-layer/sl-cache) with the dbt Cloud job scheduler to cache common queries, speed up performance, and reduce compute costs.
 
 There are two ways to run an export:
-  
-- [Run exports in development](#exports-in-development) using the [dbt Cloud CLI](/docs/cloud/cloud-cli-installation) to test the output before production (You can configure exports in the dbt Cloud IDE, however running them directly in the IDE isn't supported yet). If you're using the dbt Cloud IDE, use `dbt build` to run exports. Make sure you have the [environment variable](#set-environment-variable) enabled. 
-- [Run exports in production](#exports-in-production) using the [dbt Cloud job scheduler](/docs/deploy/job-scheduler) to write these queries within your data platform.
+
+| Environment | Method | Tool |
+| ----------- | ------ | ------ |
+| [Run exports in development](#exports-in-development) | Use the [dbt Cloud CLI](/docs/cloud/cloud-cli-installation) to test the output before production. <br /><br /> You can configure exports in the dbt Cloud IDE, however running them directly in the IDE isn't supported yet. In the dbt Cloud IDE, use `dbt build` to run exports. Make sure you have the [environment variable](#set-environment-variable) enabled. | dbt Cloud CLI |
+| [Run exports in production](#exports-in-production) | Use the [dbt Cloud job scheduler](/docs/deploy/job-scheduler) to write these queries within your data platform. | dbt Cloud job scheduler |
 
 ## Exports in development
 
