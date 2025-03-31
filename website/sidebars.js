@@ -575,6 +575,16 @@ const sidebarSettings = {
         },
         {
           type: "category",
+          label: "Analyze with Query page",
+          link: { type: "doc", id: "docs/collaborate/query-page" },
+          items: [
+            "docs/collaborate/query-page", // main query page doc
+            "docs/collaborate/access-query-page", // info on how to access and use query page
+            "docs/collaborate/navigate-query-page", // navigate query page doc
+          ],
+        },
+        {
+          type: "category",
           label: "Git version control",
           link: { type: "doc", id: "docs/collaborate/git-version-control" },
           items: [
@@ -775,7 +785,7 @@ const sidebarSettings = {
         "docs/cloud/dbt-copilot-faqs",
         ],
       },
-    {
+      {
       type: "category",
       label: "dbt Cloud integrations",
       link: { type: "doc", id: "docs/cloud-integrations/overview" },
@@ -944,6 +954,7 @@ const sidebarSettings = {
         "reference/resource-configs/clickhouse-configs",
         "reference/resource-configs/databricks-configs",
         "reference/resource-configs/doris-configs",
+        "reference/resource-configs/duckdb-configs",
         "reference/resource-configs/firebolt-configs",
         "reference/resource-configs/greenplum-configs",
         "reference/resource-configs/infer-configs",
@@ -1003,8 +1014,6 @@ const sidebarSettings = {
             "reference/resource-properties/deprecation_date",
             "reference/resource-properties/description",
             "reference/resource-properties/latest_version",
-            "reference/resource-properties/include-exclude",
-            "reference/resource-properties/quote",
             "reference/resource-properties/data-tests",
             "reference/resource-properties/versions",
           ],
