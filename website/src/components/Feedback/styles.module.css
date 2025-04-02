@@ -17,11 +17,6 @@
   width: 50px;
 }
  
-.widget .reaction {
-  width: 100%;
-  border: black 1px solid;
-}
- 
 .widget .reaction:hover {
   border: black 1px solid;
 }

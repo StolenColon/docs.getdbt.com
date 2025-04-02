@@ -4,19 +4,13 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import TagsListInline from '@theme/TagsListInline';
 import EditMetaRow from '@theme/EditMetaRow';
-import Feedback from '@site/src/components/Feedback';
-
+import Feedback from '/src/components/Feedback/index.js';
 export default function DocItemFooter() {
   const {metadata} = useDoc();
-  console.log("Full metadata object:", metadata); // log full metadata object
-  // use id or slug instead of unversionedId
-  const resourceId = metadata?.id || metadata?.slug || metadata?.permalink || "unknown-resource";
-  console.log("Final Resource ID:", resourceId); // debug
-
-  const {editUrl, lastUpdatedAt, lastUpdatedBy, tags, formattedLastUpdatedAt} = metadata;
-
+  const {editUrl, lastUpdatedAt, lastUpdatedBy, tags} = metadata;
   const canDisplayTagsRow = tags.length > 0;
   const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
+  const resourceId = metadata.unversionedId || metadata.id || metadata.permalink || 'default-resource';
   const canDisplayFooter = canDisplayTagsRow || canDisplayEditMetaRow;
   if (!canDisplayFooter) {
     return null;

@@ -13,7 +13,9 @@ export default function Feedback({ resource }) {
   const _resource = String(resource).replace(/\//g, '-');
 
   useEffect(() => {
-    console.log("Feedback component received resource:", resource);
+    const _resource = resource ? String(resource).replace(/\//g, '-') : 'unknown-page';
+    console.log("🚀 [Feedback] resource prop:", resource);
+    console.log("📦 [Feedback] parsed _resource:", _resource);
   }, [resource]);
 
   const handleReaction = (params) => {
