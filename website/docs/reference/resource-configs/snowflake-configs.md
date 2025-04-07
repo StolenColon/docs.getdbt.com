@@ -4,6 +4,21 @@ id: "snowflake-configs"
 description: "Snowflake Configurations - Read this in-depth guide to learn about configurations in dbt."
 ---
 
+| Configuration    | Description    | 
+|------------------|----------------|
+|[Iceberg table format](/reference/resource-configs/snowflake-configs#iceberg-table-format)|The dbt-snowflake adapter supports the Iceberg table format and is available for three of the Snowflake materializations [table](/docs/build/materializations#table), [incremental](/docs/build/materializations#incremental) and [dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables)|
+|[Dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables)|Specific to Snowflake but follows the implementation of [materialized views](/docs/build/materializations#Materialized-View).|
+|[Temporary tables](/reference/resource-configs/snowflake-configs#temporary-tables)|The `tmp_relation_type` configuration lets you opt into using temporary tables for incremental builds.|
+|[Transient tables](/reference/resource-configs/snowflake-configs#transient-tables)|Transient tables allow time travel for 1 day, with no fail-safe period. By default, dbt creates all Snowflake tables as transient.|
+|[Query tags](/reference/resource-configs/snowflake-configs#query-tags)|Snowflake parameter that can be quite useful when searching in the `QUERY_HISTORY` view|.
+|[Merge behavior (incremental models)](/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models)|The `incremental_strategy` config determines how dbt builds incremental models. By default, dbt uses a merge statement on Snowflake to refresh these tables. The Snowflake adapter supports the following incremental materialization strategies &mdash; `append`, `delete+insert`, `insert_overwrite`, `merge` and [`microbatch`](/docs/build/incremental-microbatch).|
+|[`cluster_by`](/reference/resource-configs/snowflake-configs#configuring-table-clustering)|Use the `cluster_by` config to control clustering for a table or incremental model. It orders the table by the specified fields and adds the clustering keys to the target table.|
+|[Configuring virtual warehouses](/reference/resource-configs/snowflake-configs#configuring-virtual-warehouses)|Use the `snowflake_warehouse` model configuration to override the warehouse that is used for specific models.|
+|[Copying grants](/reference/resource-configs/snowflake-configs#copying-grants)|`copy_grants` = `true', dbt adds the copy grants DDL qualifier when rebuilding tables and views. The default is false.|
+|[Secure views](/reference/resource-configs/snowflake-configs#secure-views)|Use the `secure` config for view models which can be used to limit access to sensitive data.|
+|[Source freshness known limitation](/reference/resource-configs/snowflake-configs#source-freshness-known-limitation)|Snowflake determines source freshness using the `LAST_ALTERED` information.|
+[Pagination for object results](/reference/resource-configs/snowflake-configs#pagination-for-object-results)|Environments with over 100,000 objects in a schema can adjust the results per page and page limit using the `list_relations_per_page` and list_relations_page_limit~ flags in the `dbt_project.yml`.|
+
 <VersionBlock firstVersion="1.9">
 
 ## Iceberg table format

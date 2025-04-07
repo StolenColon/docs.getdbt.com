@@ -4,6 +4,16 @@ description: "Postgres Configurations - Read this in-depth guide to learn about 
 id: "postgres-configs"
 ---
 
+| Configuration    | Description    | 
+|------------------|----------------|
+|[Incremental materialization strategies](/reference/resource-configs/postgres-configs#incremental-materialization-strategies)| The Postgres adapter supports the following incremental materialization strategies: `append` (default when `unique_key` is not defined, `delete+insert` (default when unique_key is defined), `merge` and [`microbatch`](/docs/build/incremental-microbatch).|
+|[Unlogged](/reference/resource-configs/postgres-configs#unlogged)|"Unlogged" tables are faster than regular tables since they aren't written to the log or replicated, but they are less safe.|
+|[Indexes](/reference/resource-configs/postgres-configs#indexes)|Postgres index can have the three components `columns`, `unique` and `type`. Indexes are used to improve the speed of data retrieval operations on a table by allowing the database to quickly locate rows without scanning the entire table.|
+|[Materialized views](/reference/resource-configs/postgres-configs#materialized-views)|The Postgres adapter supports materialized views with the `on_configuration_change` and `indexes` configuration parameters.|
+
+
+Refer to [Supported incremental strategies](/docs/build/incremental-strategy#supported-incremental-strategies-by-adapter) for more information.
+
 ## Incremental materialization strategies
 
 In dbt-postgres, the following incremental materialization strategies are supported:
