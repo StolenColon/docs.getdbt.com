@@ -16,7 +16,7 @@ To-do:
 |[Sortkey and distkey](/reference/resource-configs/redshift-configs#using-sortkey-and-distkey)|Add these keys to `{{ config(...) }}` block in model .sql file to improve query performance.|
 |[Late binding views](/reference/resource-configs/redshift-configs#late-binding-views)|"Unbinds" a view from the data it selects from.|
 |[Materialized views](/reference/resource-configs/redshift-configs#materialized-views)|See table for more information.|
-|[Unit test limitations](/reference/resource-configs/redshift-configs#unit-test-limitations)|The Redshift adapter doesn't support unit tests when the SQL in the CTE contains functions such as `LISTAGG`, `MEDIAN`, `PERCENTILE_CONT` and more so. For more information, refer to this [Github issue](dbt-labs/dbt-core#8499).|
+|[Unit test limitations](/reference/resource-configs/redshift-configs#unit-test-limitations)|The Redshift adapter doesn't support unit tests when the SQL in the CTE contains functions such as `LISTAGG`, `MEDIAN`, `PERCENTILE_CONT` and more so.|
 
 
 
