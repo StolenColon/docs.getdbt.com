@@ -133,7 +133,6 @@ Job viewer enables users to monitor and review job executions within dbt Cloud. 
 
 Notable features:
 - Job viewer is a project-level set.
-- Can run jobs.
 - Read-only access to job results, status, and logs.
 - No other access to dbt Cloud features. 
 - Can access dbt Explorer.
@@ -218,6 +217,8 @@ Notable features:
 </Expandable>
 <Expandable alt_header="Viewer">
 The Account Viewer permissions set provides read-only access to the dbt Cloud account. Useful for any persona who needs insights into your dbt Cloud account without access to create or change configurations.
+
+The Viewer permission set is frequently paired with the [Read-only license-type](/docs/cloud/manage-access/seats-and-users).
 
 Notable features:
 - Viewer is an account-level set.

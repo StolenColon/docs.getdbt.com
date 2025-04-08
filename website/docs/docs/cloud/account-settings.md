@@ -10,7 +10,14 @@ The following sections describe the different **Account settings** available fro
 
 ## Git repository caching <Lifecycle status="enterprise" />
 
-At the start of every job run, dbt Cloud clones the project's Git repository so it has the latest versions of your project's code and runs `dbt deps` to install your dependencies. 
+:::important repo caching enabled by default
+
+dbt Cloud Git repository caching is enabled by default for all new Enterprise accounts, improving reliability by allowing dbt Cloud to use a cached copy of your repo if cloning fails. 
+
+See the next section for more details on repo caching, retention, and more.
+:::
+
+At the start of every [job](/docs/deploy/jobs) run, dbt Cloud clones the project's Git repository so it has the latest versions of your project's code and runs `dbt deps` to install your dependencies. 
 
 For improved reliability and performance on your job runs, you can enable dbt Cloud to keep a cache of the project's Git repository. So, if there's a third-party outage that causes the cloning operation to fail, dbt Cloud will instead use the cached copy of the repo so your jobs can continue running as scheduled. 
 
@@ -22,6 +29,7 @@ dbt Cloud will use the cached copy of your project's Git repo under these circum
 - Git authentication fails.
 - There are syntax errors in the `packages.yml` file. You can set up and use [continuous integration (CI)](/docs/deploy/continuous-integration) to find these errors sooner.
 - If a package doesn't work with the current dbt version. You can set up and use [continuous integration (CI)](/docs/deploy/continuous-integration) to identify this issue sooner.
+- Note, Git repository caching should not be used for CI jobs. CI jobs are designed to test the latest code changes in a pull request and ensure your code is up to date. Using a cached copy of the repo in CI jobs could result in stale code being tested.
 
 To use, select the **Enable repository caching** option from your account settings. 
 

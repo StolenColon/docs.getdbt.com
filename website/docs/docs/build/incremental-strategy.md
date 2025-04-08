@@ -1,8 +1,9 @@
 ---
 title: "About incremental strategy"
-sidebar_label: "About incremental strategy"
+sidebar_label: "Incremental strategy"
 description: "Incremental strategies for materializations optimize performance by defining how to handle new and changed data."
 id: "incremental-strategy"
+intro_text: "Incremental strategies for materializations optimize performance by defining how to handle new and changed data."
 ---
 
 There are various strategies to implement the concept of incremental materializations. The value of each strategy depends on:
@@ -21,21 +22,24 @@ The [`microbatch` incremental strategy](/docs/build/incremental-microbatch) is i
 
 ### Supported incremental strategies by adapter
 
-This table represents the availability of each incremental strategy, based on the latest version of dbt Core and each adapter.
+This table shows the support of each incremental strategy across adapters available on dbt Cloud's [Latest release track](/docs/dbt-versions/cloud-release-tracks). Some strategies may be unavailable if you're not on "Latest" and the feature hasn't been released to the "Compatible" track.  
 
-Click the name of the adapter in the below table for more information about supported incremental strategies.
+If you're interested in an adapter available in dbt Core only, check out the [adapter's individual configuration page](/reference/resource-configs/resource-configs) for more details.
+
+Click the name of the adapter in the following table for more information about supported incremental strategies:
 
 | Data platform adapter | `append` | `merge` | `delete+insert` | `insert_overwrite` | `microbatch`        |
 |-----------------------|:--------:|:-------:|:---------------:|:------------------:|:-------------------:|
-| [dbt-postgres](/reference/resource-configs/postgres-configs#incremental-materialization-strategies) |     ✅    |    ✅   |        ✅        |                    |      ✅            |
-| [dbt-redshift](/reference/resource-configs/redshift-configs#incremental-materialization-strategies) |     ✅    |    ✅   |        ✅        |                    |      ✅        |
-| [dbt-bigquery](/reference/resource-configs/bigquery-configs#merge-behavior-incremental-models)      |           |    ✅   |                 |          ✅         |      ✅            |
-| [dbt-spark](/reference/resource-configs/spark-configs#incremental-models)                           |     ✅    |    ✅   |                 |          ✅         |      ✅            |
-| [dbt-databricks](/reference/resource-configs/databricks-configs#incremental-models)                 |     ✅    |    ✅   |                 |          ✅         |          ✅         |
-| [dbt-snowflake](/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models)    |     ✅    |    ✅   |        ✅        |                    |      ✅            |
-| [dbt-trino](/reference/resource-configs/trino-configs#incremental)                                  |     ✅    |    ✅   |        ✅        |                    |                    |
-| [dbt-fabric](/reference/resource-configs/fabric-configs#incremental)                                |     ✅    |         |        ✅          |                    |                    |
-| [dbt-athena](/reference/resource-configs/athena-configs#incremental-models)                         |     ✅    |    ✅   |                 |          ✅         |                    |
+| [dbt-postgres](/reference/resource-configs/postgres-configs#incremental-materialization-strategies) |     ✅    |    ✅   |  ✅ |   |   ✅   |
+| [dbt-redshift](/reference/resource-configs/redshift-configs#incremental-materialization-strategies) |     ✅    |    ✅   |  ✅ |   |   ✅   |
+| [dbt-bigquery](/reference/resource-configs/bigquery-configs#merge-behavior-incremental-models)      |           |    ✅   |    | ✅ |  ✅    |
+| [dbt-spark](/reference/resource-configs/spark-configs#incremental-models)                           |     ✅    |    ✅   |    |    ✅   | ✅ |
+| [dbt-databricks](/reference/resource-configs/databricks-configs#incremental-models)                 |     ✅    |    ✅   |    |          ✅         |          ✅         |
+| [dbt-snowflake](/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models)    |     ✅    |    ✅   | ✅  | ✅ | ✅  |
+| [dbt-trino](/reference/resource-configs/trino-configs#incremental)                                  |     ✅    |    ✅   | ✅  |    |    |
+| [dbt-fabric](/reference/resource-configs/fabric-configs#incremental)                                |     ✅    |         | ✅  |    |    |
+| [dbt-athena](/reference/resource-configs/athena-configs#incremental-models)                         |     ✅    |    ✅   |     | ✅ |    |
+| [dbt-teradata](/reference/resource-configs/teradata-configs#valid_history-incremental-materialization-strategy)  | ✅    |  ✅   |   ✅   |    |         ✅    |
 
 ### Configuring incremental strategy
 
