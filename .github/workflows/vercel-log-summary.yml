@@ -2,6 +2,9 @@ name: Summarize Vercel build failures
 
 on:
     workflow_dispatch: # lets you run it manually from the Actions tab
+    pull_request:
+        branches:
+            - gha-summarize-logs
 
 jobs:
   summarize-failure:
