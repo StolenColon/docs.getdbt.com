@@ -10,16 +10,47 @@ To-do:
 - think about whether some of these should be outside of models
 --->
 
-| Configuration    | Description    | 
-|------------------|----------------|
-|[Incremental materialization strategies](/reference/resource-configs/redshift-configs#incremental-materialization-strategies)|The Redshift adapter supports the following incremental materialization strategies: `append` (default when `unique_key` is not defined, `merge`, `delete+insert` (default when unique_key is defined) and [`microbatch`].|
-|[Sortkey and distkey](/reference/resource-configs/redshift-configs#using-sortkey-and-distkey)|Add these keys to `{{ config(...) }}` block in model .sql file to improve query performance.|
-|[Late binding views](/reference/resource-configs/redshift-configs#late-binding-views)|"Unbinds" a view from the data it selects from.|
-|[Materialized views](/reference/resource-configs/redshift-configs#materialized-views)|See table for more information.|
-|[Unit test limitations](/reference/resource-configs/redshift-configs#unit-test-limitations)|The Redshift adapter doesn't support unit tests when the SQL in the CTE contains functions such as `LISTAGG`, `MEDIAN`, `PERCENTILE_CONT` and more so.|
+import AdapterConfigIntro from '/snippets/_adapter-configs-intro.md';
 
+<AdapterConfigIntro />
 
+<Expandable alt_header="Incremental materialization strategies">
 
+- The Redshift adapter supports the following incremental materialization strategies: `append` (default when `unique_key` is not defined, `merge`, `delete+insert` (default when unique_key is defined), and [`microbatch`](/docs/build/incremental-microbatch).
+
+</Expandable>
+
+<Expandable alt_header="Performance Optimizations: sortkey and distkey">
+
+- Add these keys to `{{ config(...) }}` block in model .sql file to improve query performance.
+
+</Expandable>
+
+<Expandable alt_header="Late binding views">
+
+- "Unbinds" a view from the data it selects from.
+- Configure `bind: false` to create late-binding views in Redshift, ensuring they are not dropped when upstream models are replaced or removed.
+
+</Expandable>
+
+<Expandable alt_header="Materialized views">
+
+- The Refshift adapter supports materialized views with the following configuration parameters:
+
+  - [`on_configuration_change`](/reference/resource-configs/on_configuration_change)  
+  - [`dist`](/reference/resource-configs/redshift-configs#using-sortkey-and-distkey)
+  - [`sort`](/reference/resource-configs/redshift-configs#using-sortkey-and-distkey)
+  - [`sort_type`](/reference/resource-configs/redshift-configs#using-sortkey-and-distkey)
+  - [`auto_refresh`](/reference/resource-configs/redshift-configs#auto-refresh)	
+  - [`backup`](/reference/resource-configs/redshift-configs#backup)
+
+</Expandable>
+
+<Expandable alt_header="Unit test limitations">
+
+- The Redshift adapter doesn't support unit tests when the SQL in the CTE contains functions such as `LISTAGG`, `MEDIAN`, `PERCENTILE_CONT` and so on.
+
+</Expandable>
 
 ## Incremental materialization strategies
 

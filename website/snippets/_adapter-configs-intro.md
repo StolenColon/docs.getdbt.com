@@ -1,0 +1,1 @@
+This guide outlines the available adapter configurations, including key parameters, valid values, and best practices. It will help you customize settings for optimal performance and seamless integration into your workflow.

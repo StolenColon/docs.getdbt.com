@@ -4,6 +4,96 @@ id: "snowflake-configs"
 description: "Snowflake Configurations - Read this in-depth guide to learn about configurations in dbt."
 ---
 
+import AdapterConfigIntro from '/snippets/_adapter-configs-intro.md';
+
+<AdapterConfigIntro />
+
+<Expandable alt_header="Iceberg table format">
+
+- The dbt-snowflake adapter supports the Iceberg table format and is available for three of the Snowflake materializations: [table](/docs/build/materializations#table), [incremental](/docs/build/materializations#incremental), and [dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables).
+
+</Expandable>
+
+<Expandable alt_header="Dynamic tables">
+
+- The dbt-snowflake adapter supports the Iceberg table format and is available for three of the Snowflake materializations: [table](/docs/build/materializations#table), [incremental](/docs/build/materializations#incremental), and [dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables).
+- Use the Snowflake-specific dynamic materialization to create dynamic tables and supports settings like [`target_lag`](/reference/resource-configs/snowflake-configs#target-lag), `refresh_mode`, and [`on_configuration_change`](/reference/resource-configs/on_configuration_change).
+
+
+</Expandable>
+
+<Expandable alt_header="Temporary tables">
+
+- The `tmp_relation_type` configuration lets you opt into using temporary tables for incremental builds.
+
+</Expandable>
+
+<Expandable alt_header="Transient tables">
+
+- Snowflake transient tables reduce storage costs by skipping history and fail-safe. dbt creates them by default, but you can disable them in dbt_project.yml using the `transient: false` config.
+
+</Expandable>
+
+<Expandable alt_header="Query tags">
+
+- Snowflake parameter that can be quite useful when searching in the `QUERY_HISTORY` view.
+
+</Expandable>
+
+<Expandable alt_header="Merge behavior">
+
+[Merge behavior (incremental models)](/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models)
+
+- The `incremental_strategy` config determines how dbt builds incremental models. By default, dbt uses a merge statement on Snowflake to refresh these tables. The Snowflake adapter supports the following incremental materialization strategies &mdash; `append`, `delete+insert`, `insert_overwrite`, `merge`, and [`microbatch`](/docs/build/incremental-microbatch).
+
+</Expandable>
+
+<Expandable alt_header="Merge behavior">
+
+[Merge behavior (incremental models)](/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models)
+
+- The `incremental_strategy` config determines how dbt builds incremental models. By default, dbt uses a merge statement on Snowflake to refresh these tables. The Snowflake adapter supports the following incremental materialization strategies &mdash; `append`, `delete+insert`, `insert_overwrite`, `merge`, and [`microbatch`](/docs/build/incremental-microbatch).
+
+</Expandable>
+
+<Expandable alt_header="Configuring table clustering: cluster_by and automatic_clustering">
+
+- Use the `cluster_by` config to control clustering for a table or incremental model. It orders the table by the specified fields and adds the clustering keys to the target table.
+- By default, `automatic_clustering` is enabled by default in Snowflake. 
+- When `automatic_clustering` is set to `true`, dbt will run an `alter table <table name> resume recluster` query after building the target table.
+
+</Expandable>
+
+<Expandable alt_header="Configuring virtual warehouses">
+
+- Use the `snowflake_warehouse` model configuration to override the warehouse that is used for specific models.
+
+</Expandable>
+
+<Expandable alt_header="Copying grants">
+
+- When `copy_grants` is set to `true', dbt adds the copy grants DDL qualifier when rebuilding tables and views. The default is false.
+
+</Expandable>
+
+<Expandable alt_header="Secure views">
+
+- Use the `secure` config for view models which can be used to limit access to sensitive data.
+
+</Expandable>
+
+<Expandable alt_header="Source freshness known limitations">
+
+- Snowflake determines source freshness using the `LAST_ALTERED` column.
+
+</Expandable>
+
+<Expandable alt_header="Pagination for object results">
+
+- Environments with over 100,000 objects in a schema can adjust the results per page and page limit using the `list_relations_per_page` and `list_relations_page_limit` flags in the `dbt_project.yml`
+
+</Expandable>
+
 | Configuration    | Description    | 
 |------------------|----------------|
 |[Iceberg table format](/reference/resource-configs/snowflake-configs#iceberg-table-format)|The dbt-snowflake adapter supports the Iceberg table format and is available for three of the Snowflake materializations [table](/docs/build/materializations#table), [incremental](/docs/build/materializations#incremental) and [dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables)|

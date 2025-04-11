@@ -9,22 +9,84 @@ To-do:
 - use the reference doc structure for this article/split into separate articles
 --->
 
-| Configuration    | Description    | 
-|------------------|----------------|
-|[`dataset`](/reference/resource-configs/bigquery-configs#use-project-and-dataset-in-configurations)|`schema` is equivalent to a `dataset` in BigQuery.|
-|[`project`](/reference/resource-configs/bigquery-configs#use-project-and-dataset-in-configurations)|`database` corresponds to a `project` in BigQuery.|
-|[`partition_by`](/reference/resource-configs/bigquery-configs#partition-clause)|`partition_by` partitions tables. It helps in reducing query latency and cost. Partition pruning works only with literal filters, not subqueries.|
-|[`cluster_by`](/reference/resource-configs/bigquery-configs#clustering-clause)|Clustered tables in BigQuery use a user-defined column sort order to enhance query performance and reduce costs.|
-|[KMS encryption](/reference/resource-configs/bigquery-configs#managing-kms-encryption)|Key Management Service (KMS) encryption &mdash; method of encrypting data using managed encryption keys provided by cloud services like Google Cloud KMS|
-|[`labels`](/reference/resource-configs/bigquery-configs#specifying-labels)|Can be provided in a model config, or in the `dbt_project.yml` and used for the tables and views that it creates.|
-|[`tags`](/reference/resource-configs/bigquery-configs#specifying-tags)|Used to label and categorize resources (such as datasets, tables, and projects) for organization, access control, and cost tracking.|
-|[Merge behavior (incremental models)](/reference/resource-configs/bigquery-configs#merge-behavior-incremental-models)|The `incremental_strategy` config controls how dbt builds incremental models, using a merge statement in BigQuery to refresh tables. The following strategies are supported &mdash; `append`, `insert_overwrite` and [`microbatch`](/docs/build/incremental-microbatch).|
-|[Controlling table expiration](/reference/resource-configs/bigquery-configs#controlling-table-expiration)|dbt-created tables never expire (default). Use setting `hours_to_expiration` to configure certain model(s) to expire after a set number of hours.|
-|[`Authorized views`](/reference/resource-configs/bigquery-configs#authorized-views)|When `grant_access_to` is specified for a view model, dbt grants it access to select from the listed datasets.|
-|[Materialized views](/reference/resource-configs/bigquery-configs#materialized-views)|See table for more information.|
-|[`Python models`](/reference/resource-configs/bigquery-configs#python-models)|The BigQuery adapter supports Python models with the `enable_list_inference` and `intermediate_format` configuration parameters.|
-|[Unit test limitations](/reference/resource-configs/bigquery-configs#unit-test-limitations)|In unit tests, you must specify all fields in a BigQuery `STRUCT`, not just a subset.|
+import AdapterConfigIntro from '/snippets/_adapter-configs-intro.md';
 
+<AdapterConfigIntro />
+
+<Expandable alt_header="Project and dataset">
+
+- `database` corresponds to a `project` in BigQuery.
+- `schema` is equivalent to a `dataset` in BigQuery.
+
+</Expandable>
+
+<Expandable alt_header="Using table partitioning and clustering">
+
+- `partition_by` partitions tables. It helps in reducing query latency and cost. Partition pruning works only with literal filters, not subqueries.
+- Clustered tables in BigQuery use a user-defined column sort order to enhance query performance and reduce costs.
+
+</Expandable>
+
+<Expandable alt_header="KMS encryption">
+
+- Key Management Service (KMS) encryption &mdash; for BigQuery tables using the `kms_key_name` model configuration.
+
+</Expandable>
+
+<Expandable alt_header="Labels and tags">
+
+- Lables can be provided in a model config, or in the `dbt_project.yml` and used for the tables and views that it creates.
+- Use tags to label and categorize resources (such as datasets, tables, and projects) for organization, access control, and cost tracking.
+
+</Expandable>
+
+<Expandable alt_header="Merge behavior (incremental models">
+
+- The `incremental_strategy` config controls how dbt builds incremental models, using a merge statement in BigQuery to refresh tables.
+- The following strategies are supported &mdash; `append`, `insert_overwrite` and [`microbatch`](/docs/build/incremental-microbatch).
+
+</Expandable>
+
+<Expandable alt_header="Controlling table expiration">
+
+- dbt-created tables never expire (default). Use setting `hours_to_expiration` to configure certain model(s) to expire after a set number of hours.
+
+</Expandable>
+
+<Expandable alt_header="Authorized view">
+
+- When `grant_access_to` is specified for a view model, dbt grants it access to select from the listed datasets.
+
+</Expandable>
+
+<Expandable alt_header="Materialized views">
+
+- The BigQuery adapter allows the use of materialized views with these parameters:
+
+  - [`on_configuration_change`](/reference/resource-configs/on_configuration_change)
+  - [`cluster_by`](/reference/resource-configs/bigquery-configs#clustering-clause)
+  - [`partition_by`](/reference/resource-configs/bigquery-configs#partition-clause)
+  - [`enable_refresh`](/reference/resource-configs/bigquery-configs#auto-refresh)
+  - [`refresh_interval_minutes`](/reference/resource-configs/bigquery-configs#auto-refresh)
+  - [`max_staleness`](/reference/resource-configs/bigquery-configs#auto-refresh)(in Preview)
+  - [`description`](/reference/resource-properties/description)
+  - [`labels`](/reference/resource-configs/bigquery-configs#specifying-labels)
+  - [`hours_to_expiration`](/reference/resource-configs/bigquery-configs#controlling-table-expiration)
+  - [`kms_key_name`](/reference/resource-configs/bigquery-configs#using-kms-encryption)
+
+</Expandable>
+
+<Expandable alt_header="Python models">
+
+- The BigQuery adapter supports Python models with the `enable_list_inference` and `intermediate_format` configuration parameters.
+
+</Expandable>
+
+<Expandable alt_header="Unit test limitations">
+
+- In unit tests, you must specify all fields in a BigQuery `STRUCT`, not just a subset.
+
+</Expandable>
 
 ## Use `project` and `dataset` in configurations
 

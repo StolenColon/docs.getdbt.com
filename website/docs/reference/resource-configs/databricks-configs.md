@@ -3,15 +3,62 @@ title: "Databricks configurations"
 id: "databricks-configs"
 ---
 
-| Configuration      | Description    | 
-|--------------------|----------------|
-|[Configuring tables](/reference/resource-configs/databricks-configs#configuring-tables)|See table for more information on the optional configs you can use when materializing a model as table.|
-|[Incremental models](/reference/resource-configs/databricks-configs#incremental-models-1)|The `incremental_strategy` config determines how dbt builds incremental models. The dbt-databricks plugin supports the following incremental materialization strategies &mdash; `append`, `insert_overwrite`, `merge`, [`microbatch`](/docs/build/incremental-microbatch) and `replace_where`.|
-|[Selecting compute per model](/reference/resource-configs/databricks-configs#selecting-compute-per-model)|From v1.7.2, you can assign which compute resource to use on a per-model basis. |
-|[`persist_docs`](/reference/resource-configs/databricks-configs#persisting-model-descriptions)|When the `persist_docs` is configured correctly, model descriptions will appear in the `Comment` field of `describe [table] extended` or `show table extended in [database] like '*'`.|
-|[Default file format configurations](/reference/resource-configs/databricks-configs#default-file-format-configurations)|Use the Delta or Hudi file format as the default file format to use advanced incremental strategies features.|
-|[Materialized views and streaming tables](/reference/resource-configs/databricks-configs#materialized-views-and-streaming-tables-1)|Alternatives to incremental tables that are powered by Delta Live Tables. A workspace that is enabled for Unity Catalog and serverless SQL Warehouses will be needed.|
-|[Setting table properties](/reference/resource-configs/databricks-configs#setting-table-properties)|Use `tblproperties` use to configure table properties for tables or views.|
+import AdapterConfigIntro from '/snippets/_adapter-configs-intro.md';
+
+<AdapterConfigIntro />
+
+<Expandable alt_header="Configuring tables">
+
+- When materializing a model as a table, you can include optional configs specific to the dbt-databricks plugin. The following configs are supported:
+
+  - `file_format`	
+  - `location_root`	
+  - `partition_by`	
+  - `liquid_clustered_by`
+  - `clustered_by`	
+  - `buckets`	
+  - `tblproperties`	
+  - `compression`
+
+</Expandable>
+
+<Expandable alt_header="Incremental models">
+
+- The `incremental_strategy` config determines how dbt builds incremental models. The dbt-databricks plugin supports the following incremental materialization strategies &mdash; `append`, `insert_overwrite`, `merge`, [`microbatch`](/docs/build/incremental-microbatch) and `replace_where`.
+
+</Expandable>
+
+<Expandable alt_header="Selecting compute per mode">
+
+- From v1.7.2, you can assign which compute resource to use on a per-model basis.
+- For SQL models, you can use a SQL Warehouse (serverless or provisioned) or an all-purpose cluster.
+- Refer to [Specifying compute for Python models](/reference/resource-configs/databricks-configs#specifying-compute-for-python-models) for details on how this feature interacts with Python models.
+
+</Expandable>
+
+<Expandable alt_header="persist_docs">
+
+- Configure `persist_docs` to add model descriptions to the `Comment` field shown in `describe [table] extended` or `show table extended in [database] like '*'`.
+
+</Expandable>
+
+<Expandable alt_header="Default file format configurations">
+
+- Use the Delta or Hudi file format (`file_format`) as the default file format to use advanced incremental strategies features.
+
+</Expandable>
+
+<Expandable alt_header="Materialized views and streaming tables">
+
+- Use Delta Live Tables as an alternative to incremental tables. To do this, enable Unity Catalog and serverless SQL Warehouses in your workspace. 
+
+</Expandable>
+
+<Expandable alt_header="Setting table properties">
+
+- Use `tblproperties` use to configure table properties for tables or views.
+
+</Expandable>
 
 ## Configuring tables
 
