@@ -46,7 +46,7 @@ Building visual models in the <Constant name="visual_editor" /> is currently in 
 <Constant name="query_page" /> is currently in private beta for [<Constant name="cloud" /> Enterprise accounts](https://www.getdbt.com/pricing). To join the private beta, reach out to your account team to begin this process.
 :::
 
-Use <Constant name="copilot" /> to build queries in the [<Constant name="query_page" />](/docs/collaborate/query-page) with natural language prompts to seamlessly explore and query data with an intuitive, context-rich interface. Before you begin, make sure you can [access the <Constant name="query_page" />](/docs/collaborate/access-query-page).
+Use <Constant name="copilot" /> to build queries in [<Constant name="query_page" />](/docs/collaborate/dbt-insights) with natural language prompts to seamlessly explore and query data with an intuitive, context-rich interface. Before you begin, make sure you can [access <Constant name="query_page" />](/docs/collaborate/access-dbt-insights).
 
 To begin building SQL queries with natural language prompts in the <Constant name="query_page" />:
 
