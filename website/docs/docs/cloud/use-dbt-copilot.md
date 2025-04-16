@@ -59,4 +59,4 @@ To begin building SQL queries with natural language prompts in the <Constant nam
 5. In the **Query console menu**, click the **Run** button to preview the data.
 6. Confirm the results or continue building your model. 
 
-<Lightbox src="/img/docs/query-page/qp-copilot.gif" width="95%" title="Query page dbt Copilot" />
+<Lightbox src="/img/docs/dbt-insights/insights-copilot.gif" width="95%" title="dbt Copilot in dbt Insights" />
