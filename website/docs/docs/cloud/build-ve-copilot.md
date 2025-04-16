@@ -1,7 +1,7 @@
 --- 
 title: "Build with dbt Copilot" 
 sidebar_label: "Build with dbt Copilot" 
-description: "Use dbt Copilot to build visual models in the Visual Editor with natural language prompts"
+description: "Use dbt Copilot to build visual models in Canvas with natural language prompts"
 ---
 
 # Build with dbt Copilot <Lifecycle status='beta,enterprise'/>

@@ -2,7 +2,7 @@
 title: "Navigate the interface" 
 id: visual-editor-interface      
 sidebar_label: "Navigate the interface" 
-description: "The Visual Editor interface contains an operator toolbar, operators, and a canvas to help you access and transform data through a seamless drag-and-drop dbt model creation experience in dbt Cloud." 
+description: "The dbt Canvas interface contains an operator toolbar, operators, and a canvas to help you access and transform data through a seamless drag-and-drop dbt model creation experience in dbt Cloud." 
 pagination_next: "docs/cloud/use-visual-editor"
 pagination_prev: "docs/cloud/visual-editor"
 
@@ -67,7 +67,7 @@ Currently, you can only have one output model in the <Constant name="visual_edit
 
 When you click on each operator, it opens a configuration panel. The configuration panel allows you to configure the operator, review the current model, preview changes to the model, view the SQL code for the node, and delete the operator.
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/visual-editor.png" width="90%" title="Visual editor interface that contains a node toolbar and canvas." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/visual-editor.png" width="90%" title="Canvas interface that contains a node toolbar and canvas." />
 
 If you have any feedback on additional operators that you might need, we'd love to hear it! Please contact your <Constant name="dbt" /> Labs account team and share your thoughts.
 
