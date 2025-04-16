@@ -16,17 +16,10 @@ Learn how to navigate <Constant name="query_page" /> interface and use the main 
 <Constant name="query_page" /> is available in private beta to Enterprise accounts. To join, please reach out to your account manager.
 :::
 
-<<<<<<< HEAD:website/docs/docs/collaborate/navigate-query-page.md
-The <Constant name="query_page" /> provides an interactive interface for writing, running, and analyzing SQL queries. This section highlights the main components of the <Constant name="query_page" />. 
-
-## Query console
-The query console is the main component of the <Constant name="query_page" />. It allows you to write, run, and analyze SQL queries. The Query console supports:
-=======
 <Constant name="query_page" /> provides an interactive interface for writing, running, and analyzing SQL queries. This section highlights the main components of <Constant name="query_page" />. 
 
 ## Query console
 The query console is the main component of <Constant name="query_page" />. It allows you to write, run, and analyze SQL queries. The Query console supports:
->>>>>>> current:website/docs/docs/collaborate/navigate-dbt-insights.md
 - Query console editor, which allows you to write, run, and analyze SQL queries:
   - It supports syntax highlighting and autocomplete suggestions 
   - Hyperlink from SQL code `ref` to the corresponding Explorer page
