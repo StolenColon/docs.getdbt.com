@@ -48,7 +48,7 @@ dbt <Constant name="query_page" /> is currently in private beta for [<Constant n
 
 Use <Constant name="copilot" /> to build queries in [<Constant name="query_page" />](/docs/collaborate/dbt-insights) with natural language prompts to seamlessly explore and query data with an intuitive, context-rich interface. Before you begin, make sure you can [access <Constant name="query_page" />](/docs/collaborate/access-dbt-insights).
 
-To begin building SQL queries with natural language prompts in the <Constant name="query_page" />:
+To begin building SQL queries with natural language prompts in  <Constant name="query_page" />:
 
 1. Click on the **<Constant name="copilot" />** icon in Query console sidebar menu.
 2. In the dbt Copilot prompt box, enter your prompt in natural language for dbt Copilot to build the SQL query you want. <!--You can also reference existing models using the `@` symbol. For example, to build a model that calculates the total price of orders, you can enter `@orders` in the prompt and it'll pull in and reference the `orders` model.-->
