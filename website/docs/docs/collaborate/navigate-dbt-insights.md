@@ -9,11 +9,7 @@ image: /img/docs/dbt-insights/insights-results.jpg
 # Navigate the dbt Insights interface <Lifecycle status="beta,enterprise" />
 
 <IntroText>
-<<<<<<< HEAD:website/docs/docs/collaborate/navigate-query-page.md
-Learn how to navigate the <Constant name="query_page" /> interface and use the main components.
-=======
 Learn how to navigate <Constant name="query_page" /> interface and use the main components.
->>>>>>> current:website/docs/docs/collaborate/navigate-dbt-insights.md
 </IntroText>
 
 :::tip
