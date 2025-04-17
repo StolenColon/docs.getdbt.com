@@ -8,7 +8,7 @@ displayed_sidebar: "docs"
 ### Resources
 
 - [Changelog](https://github.com/dbt-labs/dbt-core/blob/1.1.latest/CHANGELOG.md)
-- [dbt Core CLI Installation guide](/docs/core/installation-overview)
+- [<Constant name="core" /> CLI Installation guide](/docs/core/installation-overview)
 - [Cloud upgrade guide](/docs/dbt-versions/upgrade-dbt-version-in-cloud)
 
 ## What to know before upgrading
@@ -45,7 +45,7 @@ Expected a schema version of "https://schemas.getdbt.com/dbt/manifest/v5.json" i
 
 ### Advanced and experimental functionality
 
-**Fresh Rebuilds.** There's a new _experimental_ selection method in town: [`source_status:fresher`](/reference/node-selection/methods#the-source_status-method). Much like the `state:` and `result` methods, the goal is to use dbt metadata to run your DAG more efficiently. If dbt has access to previous and current results of `dbt source freshness` (the `sources.json` artifact), dbt can compare them to determine which sources have loaded new data, and select only resources downstream of "fresher" sources. Read more in [Understanding State](/reference/node-selection/syntax#about-node-selection) and [CI/CD in dbt Cloud](/docs/deploy/continuous-integration).
+**Fresh Rebuilds.** There's a new _experimental_ selection method in town: [`source_status:fresher`](/reference/node-selection/methods#source_status). Much like the `state:` and `result` methods, the goal is to use dbt metadata to run your DAG more efficiently. If dbt has access to previous and current results of `dbt source freshness` (the `sources.json` artifact), dbt can compare them to determine which sources have loaded new data, and select only resources downstream of "fresher" sources. Read more in [Understanding State](/reference/node-selection/syntax#about-node-selection) and [CI/CD in dbt Cloud](/docs/deploy/continuous-integration).
 
 
 [**dbt-Jinja functions**](/reference/dbt-jinja-functions) have a new landing page, and two new members:
@@ -65,4 +65,4 @@ Expected a schema version of "https://schemas.getdbt.com/dbt/manifest/v5.json" i
 
 ### Dependencies
 
-[Python compatibility](/faqs/Core/install-python-compatibility): dbt Core officially supports Python 3.10
+[Python compatibility](/faqs/Core/install-python-compatibility): <Constant name="core" /> officially supports Python 3.10

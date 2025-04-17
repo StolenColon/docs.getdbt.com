@@ -15,12 +15,17 @@
  */
 exports.versions = [
   {
+    version: "1.11",
+    customDisplay: "Cloud (Latest)",
+  },
+  {
     version: "1.10",
-    customDisplay: "Cloud (Versionless)",
+    isPrerelease: true,
   },
   {
     version: "1.9",
-    isPrerelease: true,
+    customDisplay: "1.9 (Compatible)",
+    EOLDate: "2025-12-08",
   },
   {
     version: "1.8",
@@ -42,6 +47,14 @@ exports.versions = [
  * @property {string} lastVersion The last version the page is visible in the sidebar
  */
 exports.versionedPages = [
+  {
+    page: "docs/build/sample-flag",
+    firstVersion: "1.10",
+  },
+  {
+    page: "docs/build/empty-flag",
+    firstVersion: "1.8",
+  },
   {
     page: "docs/build/incremental-microbatch",
     firstVersion: "1.9",

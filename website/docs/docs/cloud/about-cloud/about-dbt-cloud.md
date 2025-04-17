@@ -9,25 +9,37 @@ pagination_next: "docs/cloud/about-cloud/architecture"
 pagination_prev: null
 ---
 
-dbt Cloud is the fastest and most reliable way to deploy dbt. Develop, test, schedule, document, and investigate data models all in one browser-based UI. 
+<Constant name="cloud" /> is the fastest and most reliable way to deploy dbt. Develop, test, schedule, document, and investigate data models all in one browser-based UI. 
 
-In addition to providing a hosted architecture for running dbt across your organization, dbt Cloud comes equipped with turnkey support for scheduling jobs, CI/CD, hosting documentation, monitoring and alerting, an integrated development environment (IDE), and allows you to develop and run dbt commands from your local command line interface (CLI) or code editor.
+In addition to providing a hosted architecture for running dbt across your organization, <Constant name="cloud" /> comes equipped with turnkey support for scheduling jobs, CI/CD, hosting documentation, monitoring and alerting, an integrated development environment (<Constant name="cloud_ide" />), and allows you to develop and run dbt commands from your local command line interface (CLI) or code editor.
 
-dbt Cloud's [flexible plans](https://www.getdbt.com/pricing/) and features make it well-suited for data teams of any size &mdash; sign up for your [free 14-day trial](https://www.getdbt.com/signup/)! 
+<Constant name="cloud" />'s [flexible plans](https://www.getdbt.com/pricing/) and features make it well-suited for data teams of any size &mdash; sign up for your [free 14-day trial](https://www.getdbt.com/signup/)! 
 
 <div className="grid--3-col">
 
 <Card
     title="dbt Cloud CLI"
-    body="Use the dbt Cloud CLI to develop, test, run, and version control dbt projects and commands in your dbt Cloud development environment. Collaborate with team members, directly from the command line."
+    body="Use the dbt Cloud CLI to develop, test, run, and version control dbt projects and commands, directly from the command line."
     link="/docs/cloud/cloud-cli-installation"
     icon="dbt-bit"/>
 
 <Card
     title="dbt Cloud IDE"
-    body="The IDE is the easiest and most efficient way to develop dbt models, allowing you to build, test, run, and version control your dbt projects directly from your browser. Use dbt Copilot, a powerful AI engine that automatically generates documentation, tests, and semantic models."
+    body="The IDE is the easiest and most efficient way to develop dbt models, allowing you to build, test, run, and version control your dbt projects directly from your browser."
     link="/docs/cloud/dbt-cloud-ide/develop-in-the-cloud"
     icon="dbt-bit"/>
+
+<Card
+    title="Visual editor (beta)"
+    body="Develop with the Visual Editor, a seamless drag-and-drop experience that helps analysts quickly create and visualize dbt models in dbt Cloud."
+    link="/docs/cloud/visual-editor"
+    icon="dbt-bit"/>
+
+<Card
+    title="dbt Copilot*"
+    body="Use dbt Copilot to generate documentation, tests, semantic models, metrics, and SQL code from scratch, giving you the flexibility to modify or fix generated code."
+    link="/docs/cloud/dbt-copilot"
+    icon="copilot"/>
 
 <Card
     title="Manage environments"
@@ -77,6 +89,12 @@ dbt Cloud's [flexible plans](https://www.getdbt.com/pricing/) and features make 
     link="https://www.getdbt.com/security/"
     icon="dbt-bit"/>
 
+  <Card
+   title="Visualize and orchestrate exposures*"
+   body="Configure downstream exposures automatically from dashboards and understand how models are used in downstream tools. Proactively refresh the underlying data sources during scheduled dbt jobs."
+   link="/docs/cloud-integrations/downstream-exposures"
+   icon="dbt-bit"/>
+
    <Card
     title="dbt Semantic Layer*"
     body="Use the dbt Semantic Layer to define metrics alongside your dbt models and query them from any integrated analytics tool. Get the same answers everywhere, every time."
@@ -94,12 +112,19 @@ dbt Cloud's [flexible plans](https://www.getdbt.com/pricing/) and features make 
     body="Learn about dbt Explorer and how to interact with it to understand, improve, and leverage your data pipelines."
     link="/docs/collaborate/explore-projects"
     icon="dbt-bit"/>
+
+  <Card
+    title="dbt Insights*"
+    body="Learn how to query data and perform exploratory data analysis using dbt Insights."
+    link="/docs/collaborate/dbt-insights"
+    icon="dbt-bit"/>
+
 </div> <br />
 
 *These features are available on [selected plans](https://www.getdbt.com/pricing/).
+
 ## Related docs
 
-- [dbt Cloud plans and pricing](https://www.getdbt.com/pricing/)
-- [Quickstart guides](/guides)
-- [dbt Cloud IDE](/docs/cloud/dbt-cloud-ide/develop-in-the-cloud)
-
+- [<Constant name="cloud" /> plans and pricing](https://www.getdbt.com/pricing/)
+- [Quickstart guides](/docs/get-started-dbt)
+- [<Constant name="cloud_ide" />](/docs/cloud/dbt-cloud-ide/develop-in-the-cloud)

@@ -4,7 +4,7 @@ description: "Read this guide to learn about the BigQuery warehouse setup in dbt
 meta:
   maintained_by: dbt Labs
   authors: 'core dbt maintainers'
-  github_repo: 'dbt-labs/dbt-bigquery'
+  github_repo: 'dbt-labs/dbt-adapters'
   pypi_package: 'dbt-bigquery'
   min_core_version: 'v0.10.0'
   cloud_support: Supported
@@ -219,7 +219,8 @@ No timeout is set by default. (For historical reasons, some query types use a de
 
 :::caution Note
 
-The `job_execution_timeout_seconds` represents the number of seconds to wait for the [underlying HTTP transport](https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.job.QueryJob#google_cloud_bigquery_job_QueryJob_result). It _doesn't_ represent the maximum allowable time for a BigQuery job itself. So, if dbt-bigquery ran into an exception at 300 seconds, the actual BigQuery job could still be running for the time set in BigQuery's own timeout settings.
+The `job_execution_timeout_seconds` represents the number of seconds to wait for the [underlying HTTP transport](https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.job.QueryJob#google_cloud_bigquery_job_QueryJob_result). It _doesn't_ represent the maximum allowable time for a BigQuery job itself. 
+Normally, BigQuery keeps running the job even if this timeout is reached, however `dbt-bigquery` will send a request to BigQuery to cancel it.
 
 :::
   
@@ -386,6 +387,28 @@ my-profile:
       project: abc-123
       dataset: my_dataset
       execution_project: buck-stops-here-456
+```
+
+### Quota project
+
+By default, dbt will use the `quota_project_id` set within the credentials of the account you are using to authenticate to BigQuery.
+
+Optionally, you may specify `quota_project` to bill for query execution instead of the default quota project specified for the account from the environment.
+
+This can sometimes be required when impersonating service accounts that do not have the BigQuery API enabled within the project in which they are defined. Without overriding the quota project, it will fail to connect.
+
+If you choose to set a quota project, the account you use to authenticate must have the `Service Usage Consumer` role on that project.
+
+```yaml
+my-profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: abc-123
+      dataset: my_dataset
+      quota_project: my-bq-quota-project
 ```
 
 ### Running Python models on Dataproc

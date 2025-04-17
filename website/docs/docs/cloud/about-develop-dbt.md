@@ -5,13 +5,12 @@ description: "Learn how to develop your dbt projects using dbt Cloud."
 sidebar_label: "About developing in dbt" 
 pagination_next: "docs/cloud/about-cloud-develop-defer"
 hide_table_of_contents: true
+intro_text: "Develop dbt projects using dbt Cloud, a faster and more reliable way to deploy dbt and manage your project in a single, web-based UI."
 ---
 
-Develop dbt projects using dbt Cloud, which offers a fast and reliable way to work on your dbt project. It runs dbt Core in a hosted (single or multi-tenant) environment.
+You can develop in your browser using a <Constant name="cloud" />-powered command line interface (CLI), an integrated development environment (<Constant name="cloud_ide" />), or <Constant name="visual_editor" />.
 
-You can develop in your browser using an integrated development environment (IDE) or in a dbt Cloud-powered command line interface (CLI).
-
-<div className="grid--2-col" >
+<div className="grid--3-col" >
 
 <Card
     title="dbt Cloud CLI"
@@ -25,6 +24,12 @@ You can develop in your browser using an integrated development environment (IDE
     link="/docs/cloud/dbt-cloud-ide/develop-in-the-cloud"
     icon="dbt-bit"/>
 
+   <Card
+    title="Visual editor (beta)"
+    body="Develop with the Visual Editor, a seamless drag-and-drop experience that helps analysts quickly create and visualize dbt models in dbt Cloud."
+    link="/docs/cloud/visual-editor"
+    icon="dbt-bit"/>
+
 </div><br />
 
-To get started, you'll need a [dbt Cloud](https://www.getdbt.com/signup) account and a developer seat. For a more comprehensive guide about developing in dbt, refer to the [quickstart guides](/docs/get-started-dbt).
+To get started, you'll need a [<Constant name="cloud" />](https://www.getdbt.com/signup) account and a developer seat. For a more comprehensive guide about developing in dbt, refer to the [quickstart guides](/docs/get-started-dbt).

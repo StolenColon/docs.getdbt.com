@@ -5,31 +5,31 @@ description: "Integrate and use the JDBC API to query your metrics."
 tags: [Semantic Layer, API]
 ---
 
-The dbt Semantic Layer Java Database Connectivity (JDBC) API enables users to query metrics and dimensions using the JDBC protocol, while also providing standard metadata functionality. 
+The <Constant name="semantic_layer" /> Java Database Connectivity (JDBC) API enables users to query metrics and dimensions using the JDBC protocol, while also providing standard metadata functionality. 
 
 A JDBC driver is a software component enabling a Java application to interact with a data platform. Here's some more information about our JDBC API:
 
-- The Semantic Layer JDBC API utilizes the open-source JDBC driver with ArrowFlight SQL protocol.
+- The <Constant name="semantic_layer" /> JDBC API utilizes the open-source JDBC driver with ArrowFlight SQL protocol.
 - You can download the JDBC driver from [Maven](https://search.maven.org/remotecontent?filepath=org/apache/arrow/flight-sql-jdbc-driver/12.0.0/flight-sql-jdbc-driver-12.0.0.jar). 
-- The dbt Semantic Layer supports ArrowFlight SQL driver version 12.0.0 and higher. 
+- The <Constant name="semantic_layer" /> supports ArrowFlight SQL driver version 12.0.0 and higher. 
 - You can embed the driver into your application stack as needed, and you can use dbt Labs' [example project](https://github.com/dbt-labs/example-semantic-layer-clients) for reference.
 - If you’re a partner or user building a homegrown application, you’ll need to install an AWS root CA to the Java Trust [documentation](https://www.amazontrust.com/repository/) (specific to Java and JDBC call).
 
-dbt Labs partners can use the JDBC API to build integrations in their tools with the dbt Semantic Layer
+dbt Labs partners can use the JDBC API to build integrations in their tools with the <Constant name="semantic_layer" />
 
 ## Using the JDBC API
 
-If you are a dbt user or partner with access to dbt Cloud and the [dbt Semantic Layer](/docs/use-dbt-semantic-layer/dbt-sl), you can [setup](/docs/use-dbt-semantic-layer/setup-sl) and test this API with data from your own instance by configuring the Semantic Layer and obtaining the right JDBC connection parameters described in this document.
+If you are a dbt user or partner with access to <Constant name="cloud" /> and the [<Constant name="semantic_layer" />](/docs/use-dbt-semantic-layer/dbt-sl), you can [setup](/docs/use-dbt-semantic-layer/setup-sl) and test this API with data from your own instance by configuring the <Constant name="semantic_layer" /> and obtaining the right JDBC connection parameters described in this document.
 
-You *may* be able to use our JDBC API with tools that do not have an official integration with the dbt Semantic Layer. If the tool you use allows you to write SQL and either supports a generic JDBC driver option (such as DataGrip) or supports Dremio and uses ArrowFlightSQL driver version 12.0.0 or higher, you can access the Semantic Layer API.
+You *may* be able to use our JDBC API with tools that do not have an official integration with the <Constant name="semantic_layer" />. If the tool you use allows you to write SQL and either supports a generic JDBC driver option (such as DataGrip) or supports Dremio and uses ArrowFlightSQL driver version 12.0.0 or higher, you can access the <Constant name="semantic_layer" /> API.
 
-Refer to [Get started with the dbt Semantic Layer](/guides/sl-snowflake-qs) for more info.
+Refer to [Get started with the <Constant name="semantic_layer" />](/guides/sl-snowflake-qs) for more info.
 
-Note that the dbt Semantic Layer API doesn't support `ref` to call dbt objects. Instead, use the complete qualified table name. If you're using dbt macros at query time to calculate your metrics, you should move those calculations into your Semantic Layer metric definitions as code.
+Note that the <Constant name="semantic_layer" /> GraphQL API doesn't support `ref` to call dbt objects. Instead, use the complete qualified table name. If you're using dbt macros at query time to calculate your metrics, you should move those calculations into your <Constant name="semantic_layer" /> metric definitions as code.
 
 ## Authentication
 
-dbt Cloud authorizes requests to the dbt Semantic Layer API. You need to provide an environment ID, host, and [service account tokens](/docs/dbt-cloud-apis/service-tokens).
+<Constant name="cloud" /> authorizes requests to the <Constant name="semantic_layer" /> API. You need to provide an environment ID, host, and [service account tokens](/docs/dbt-cloud-apis/service-tokens).
 
 ## Connection parameters
 
@@ -52,7 +52,7 @@ jdbc:arrow-flight-sql://semantic-layer.cloud.getdbt.com:443?&environmentId=20233
 
 ## Querying the API for metric metadata
 
-The Semantic Layer JDBC API has built-in metadata calls which can provide a user with information about their metrics and dimensions.
+The <Constant name="semantic_layer" /> JDBC API has built-in metadata calls which can provide a user with information about their metrics and dimensions.
 
 Expand the following toggles for examples and metadata commands:
 
@@ -202,112 +202,20 @@ select * from semantic_layer.saved_queries()
 
 </Expandable>
 
-<!--
-<Tabs>
+<Expandable alt_header="Fetch metric aliases">
 
-<TabItem value="allmetrics" label="Defined metrics">
+You can query metrics using aliases for simpler or more intuitive names, even if the alias isn't defined in the metric configuration. The query returns the alias as the metric name, for example:
 
-Use this query to fetch all defined metrics in your dbt project:
-
-```bash
-select * from {{ 
-	semantic_layer.metrics() 
-}}
-```
-</TabItem>
-
-<TabItem value="alldimensions" label="Dimensions for a metric">
-
-Use this query to fetch all dimensions for a metric. 
-
-Note, `metrics` is a required argument that lists one or multiple metrics in it.
-
-```bash
-select * from {{ 
-	semantic_layer.dimensions(metrics=['food_order_amount'])}}
-```
-
-</TabItem>
-
-<TabItem value="dimensionvalueformetrics" label="Dimension values">
-
-Use this query to fetch dimension values for one or multiple metrics and a single dimension. 
-
-Note, `metrics` is a required argument that lists one or multiple metrics, and a single dimension. 
-
-```bash
-select * from {{ 
-semantic_layer.dimension_values(metrics=['food_order_amount'], group_by=['customer__customer_name'])}}
-```
-
-</TabItem>
-
-<TabItem value="queryablegranularitiesformetrics" label="Granularities for metrics">
-
-You can use this query to fetch queryable granularities for a list of metrics. 
-
-This API request allows you to only show the time granularities that make sense for the primary time dimension of the metrics (such as `metric_time`), but if you want queryable granularities for other time dimensions, you can use the `dimensions()` call, and find the column queryable_granularities.
-
-Note, `metrics` is a required argument that lists one or multiple metrics.
-
-```bash
+```sql
 select * from {{
-    semantic_layer.queryable_granularities(metrics=['food_order_amount', 'order_gross_profit'])}}
-```
-
-</TabItem>
-
-</Tabs>
-
-<Tabs>
-
-<TabItem value="metricsfordimensions" label="Available metrics given dimensions">
-
-Use this query to fetch available metrics given dimensions. This command is essentially the opposite of getting dimensions given a list of metrics.
-
-Note, `group_by` is a required argument that lists one or multiple dimensions.
-
-```bash
-select * from {{
-    semantic_layer.metrics_for_dimensions(group_by=['customer__customer_type'])
-
+    semantic_layer.query(metrics=[Metric("metric_name", alias="metric_alias")])
 }}
 ```
 
-</TabItem>
+In this example, if you define an alias for `revenue` as `banana`, the query will return a column named `banana` even if `banana` isn't defined in the metric configuration. However, when using `where` Jinja clauses, you need to reference the _actual_ metric name (`revenue` in this case) instead of the alias.
 
-<TabItem value="queryablegranularitiesalltimedimensions" label="Granularities for all time dimensions">
-
-You can use this example query to fetch available granularities for all time dimensions (the similar queryable granularities API call only returns granularities for the primary time dimensions for metrics). 
-
-The following call is a derivative of the `dimensions()` call and specifically selects the granularity field.
-
-```bash
-select NAME, QUERYABLE_GRANULARITIES from {{
-    semantic_layer.dimensions(
-        metrics=["order_total"]
-    )
-}}
-
-```
-
-</TabItem>
-
-<TabItem value="fetchprimarytimedimensionnames" label="Primary time dimension names">
-
-It may be useful in your application to expose the names of the time dimensions that represent `metric_time` or the common thread across all metrics.
-
-You can first query the `metrics()` argument to fetch a list of measures, then use the `measures()` call which will return the name(s) of the time dimensions that make up metric time. 
-
-```bash
-select * from {{
-    semantic_layer.measures(metrics=['orders'])
-}}
-```
-</TabItem>
-</Tabs>
-
--->
+For more a more detailed example, see [Query metric alias](#query-metric-alias).
+</Expandable>
 
 ## Querying the API for metric values
 
@@ -324,7 +232,7 @@ To query metric values, here are the following parameters that are available. Yo
 | `compile`   | If true, returns generated SQL for the data platform but does not execute | `compile=True`  |
 | `saved_query` | A saved query you can use for frequently used queries. | `select * from {{ semantic_layer.query(saved_query="new_customer_orders"` |
 
-## Note on time dimensions and `metric_time`
+### Note on time dimensions and `metric_time`
 
 You will notice that in the list of dimensions for all metrics, there is a dimension called `metric_time`. `Metric_time` is a reserved keyword for the measure-specific aggregation time dimensions. For any time-series metric, the `metric_time` keyword should always be available for use in queries. This is a common dimension across *all* metrics in a semantic graph. 
 
@@ -334,10 +242,25 @@ Additionally, when performing granularity calculations that are global (not spec
 
 Note that `metric_time` should be available in addition to any other time dimensions that are available for the metric(s). In the case where you are looking at one metric (or multiple metrics from the same data source), the values in the series for the primary time dimension and `metric_time` are equivalent.
 
-
 ## Examples
 
-Refer to the following examples to help you get started with the JDBC API.
+The following sections provide examples of how to query metrics using the JDBC API:
+
+<!-- no toc -->
+- [Fetch metadata for metrics](#fetch-metadata-for-metrics) &mdash; Filter/add any SQL outside of the templating syntax.
+- [Query common dimensions](#query-common-dimensions) &mdash; Select common dimensions for multiple metrics.
+- [Query grouped by time](#query-grouped-by-time) &mdash; Fetch revenue and new customers grouped by time.
+- [Query with a time grain](#query-with-a-time-grain) &mdash; Fetch multiple metrics with a change in time dimension granularities.
+- [Group by categorical dimension](#group-by-categorical-dimension) &mdash; Group by a categorical dimension.
+- [Query only a dimension](#query-only-a-dimension) &mdash; Get the full list of dimension values for the chosen dimension.
+- [Query by all dimensions](#query-by-all-dimensions) &mdash; Query by all valid dimensions.
+- [Query with where filters](#query-with-where-filters) &mdash; Use the `where` parameter to filter on dimensions and entities using parameters.
+- [Query with a limit](#query-with-a-limit) &mdash; Query using a `limit` or `order_by` clause.
+- [Query with order by examples](#query-with-order-by-examples) &mdash; Query with `order_by`, accepts basic string that's a Dimension, Metric, or Entity. Defaults to ascending order. Add a `-` sign in front of the object for descending order.
+- [Query with compile keyword](#query-with-compile-keyword) &mdash; Query using a compile keyword to preview the final SQL before execution.
+- [Query a saved query](#query-a-saved-query) &mdash; Query using a saved query with optional parameters like `limit` or `where`.
+- [Query metric alias](#query-metric-alias) &mdash; Query metrics using aliases, which allow you to use simpler or more intuitive names for metrics instead of their full definitions.
+- [Multi-hop joins](#multi-hop-joins) &mdash; Query across multiple related tables (multi-hop joins) using the `entity_path` argument to specify the path between related entities.
 
 ### Fetch metadata for metrics
 
@@ -402,6 +325,19 @@ select * from {{
     semantic_layer.query(group_by=['customer__customer_type'])
                   }}
 ```
+
+### Query by all dimensions
+
+You can use the `semantic_layer.query_with_all_group_bys` endpoint to query by all valid dimensions.
+
+```sql
+select * from {{
+    semantic_layer.query_with_all_group_bys(metrics =['revenue','orders','food_orders'],
+    compile= True)
+}}
+```
+
+This returns all dimensions that are valid for the set of metrics in the request.
 
 ### Query with where filters
 
@@ -499,7 +435,7 @@ semantic_layer.query(metrics=['food_order_amount', 'order_gross_profit'],
   }}
 ```
 
-### Query with Order By Examples 
+### Query with order by examples 
 
 Order By can take a basic string that's a Dimension, Metric, or Entity, and this will default to ascending order
 
@@ -577,6 +513,43 @@ select * from {{ semantic_layer.query(saved_query="new_customer_orders", limit=5
 
 The JDBC API will use the saved query (`new_customer_orders`) as defined and apply a limit of 5 records.
 
+### Query metric alias
+
+You can query metrics using aliases, which allow you to use simpler or more intuitive names for metrics instead of their full definitions. 
+
+```sql
+select * from {{
+    semantic_layer.query(metrics=[Metric("revenue", alias="metric_alias")])
+}}
+```
+
+For example, let's say your metric configuration includes an alias like `total_revenue_global` for the `order_total` metric. You can query the metric using the alias instead of the original name:
+
+```sql
+select * from {{
+    semantic_layer.query(metrics=[Metric("order_total", alias="total_revenue_global")], group_by=['metric_time'])
+}}
+```
+
+The result will be:
+
+```
+| METRIC_TIME   | TOTAL_REVENUE_GLOBAL |
+|:-------------:|:------------------:  |
+| 2023-12-01    |              1500.75 |
+| 2023-12-02    |              1725.50 |
+| 2023-12-03    |              1850.00 |
+```
+
+:::tip
+Note that you need to use the actual metric name when using the `where` Jinja clauses. For example, if you used `banana` as an alias for `revenue`, you need to use the actual metric name, `revenue`, in the `where` clause, not `banana`. 
+
+```graphql
+semantic_layer.query(metrics=[Metric("revenue", alias="banana")], where="{{ Metric('revenue') }} > 0")
+```
+
+:::
+
 ### Multi-hop joins
 
 In cases where you need to query across multiple related tables (multi-hop joins), use the `entity_path` argument to specify the path between related entities. The following are examples of how you can define these joins:
@@ -589,6 +562,7 @@ In cases where you need to query across multiple related tables (multi-hop joins
 	```sql
 	{{ Dimension('salesforce_account_owner__region',['salesforce_account']) }}
 	```
+
 
 ## FAQs
 
@@ -615,5 +589,5 @@ So for example, if the `time_dimension_name` is `ds` and the granularity level i
 
 ## Related docs
 
-- [dbt Semantic Layer integration best practices](/guides/sl-partner-integration-guide)
+- [<Constant name="semantic_layer" /> integration best practices](/guides/sl-partner-integration-guide)
 

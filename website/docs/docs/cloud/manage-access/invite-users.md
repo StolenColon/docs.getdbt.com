@@ -5,7 +5,7 @@ id: "invite-users"
 sidebar: "Invite users"
 ---
 
-dbt Cloud makes it easy to invite new users to your environment out of the box. This feature is available to all dbt Cloud customers on Teams or Enterprise plans (Developer plans are limited to a single user).
+<Constant name="cloud" /> makes it easy to invite new users to your environment out of the box. This feature is available to all <Constant name="cloud" /> customers on Teams or Enterprise plans (Developer plans are limited to a single user).
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ You must have proper permissions to invite new users:
 
 ## Invite new users
 
-1. In your dbt Cloud account, select your account name in the bottom left corner. Then select **Account settings**.
+1. In your <Constant name="cloud" /> account, select your account name in the bottom left corner. Then select **Account settings**.
 2. Under **Settings**, select **Users**.
 3. Click on **Invite users**.
 
@@ -60,13 +60,13 @@ If SSO is configured for the environment, the user clicks the link, is brought t
 </Tabs>
 
 
-Once the user completes this process, their email and user information will populate in the **Users** screen in dbt Cloud.
+Once the user completes this process, their email and user information will populate in the **Users** screen in <Constant name="cloud" />.
 
 ## FAQ
 
 * Is there a limit to the number of users I can invite? _Your ability to invite users is limited to the number of licenses you have available._
 * Why are users are clicking the invitation link and getting an `Invalid Invitation Code` error? _We have seen scenarios where embedded secure link technology (such as enterprise Outlooks [Safe Link](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-about?view=o365-worldwide) feature) can result in errors when clicking on the email link. Be sure to include the `getdbt.com` URL in the allowlists for these services._
-* Can I have a mixure of users with SSO and username/password authentication? _Once SSO is enabled, you will no longer be able to add local users. If you have contractors or similar contingent workers, we recommend you add them to your SSO service._
+* Can I have a mixture of users with SSO and username/password authentication? _Once SSO is enabled, you will no longer be able to add local users. If you have contractors or similar contingent workers, we recommend you add them to your SSO service._
 * What happens if I need to resend the invitation? _From the Users page, click on the invite record, and you will be presented with the option to resend the invitation._
 * What can I do if I entered an email address incorrectly? _From the Users page, click on the invite record, and you will be presented with the option to revoke it. Once revoked, generate a new invitation to the correct email address._
 

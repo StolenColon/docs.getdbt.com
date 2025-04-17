@@ -4,6 +4,12 @@ The following tools integrate with the dbt Semantic Layer:
 
 <div className="grid--3-col">
 
+<Card
+    title="Power BI"
+    link="/docs/cloud-integrations/semantic-layer/power-bi"
+    body="Use reports to query the dbt Semantic Layer with Power BI and produce dashboards with trusted data."
+    icon="pbi"/>
+
  <Card
     title="Tableau"
     link="/docs/cloud-integrations/semantic-layer/tableau"
@@ -105,6 +111,21 @@ The following tools integrate with the dbt Semantic Layer:
       <Icon name='fa-external-link' />
     </a>
 </div>
+
+<div className="card-container">
+  <Card
+    title="Sigma (Preview)"
+    body="Connect Sigma to the dbt Semantic Layer to allow you to leverage your predefined dbt metrics in Sigma workbooks."
+    link="https://help.sigmacomputing.com/docs/configure-a-dbt-semantic-layer-integration"
+    icon="sigma"/>
+    <a href="https://help.sigmacomputing.com/docs/configure-a-dbt-semantic-layer-integration"
+    className="external-link"
+      target="_blank"
+      rel="noopener noreferrer">
+      <Icon name='fa-external-link' />
+    </a>
+</div>
+
 
 <div className="card-container">
   <Card

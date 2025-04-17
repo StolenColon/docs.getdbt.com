@@ -1,5 +1,6 @@
 ---
 title: "Python models"
+description: "Configure Python models to enhance your dbt project."
 id: "python-models"
 ---
 
@@ -9,7 +10,7 @@ We encourage you to:
 - Read [the original discussion](https://github.com/dbt-labs/dbt-core/discussions/5261) that proposed this feature.
 - Contribute to [best practices for developing Python models in dbt](https://discourse.getdbt.com/t/dbt-python-model-dbt-py-best-practices/5204).
 - Share your thoughts and ideas on [next steps for Python models](https://github.com/dbt-labs/dbt-core/discussions/5742).
-- Join the **#dbt-core-python-models** channel in the [dbt Community Slack](https://www.getdbt.com/community/join-the-community/).
+- Join the **#<Constant name="core" />-python-models** channel in the [dbt Community Slack](https://www.getdbt.com/community/join-the-community/).
 
 
 ## Overview
@@ -265,9 +266,9 @@ Python models can't be materialized as `view` or `ephemeral`. Python isn't suppo
 
 For incremental models, like SQL models, you need to filter incoming tables to only new rows of data:
 
-<WHCode>
+<Tabs>
 
-<div warehouse="Snowpark">
+<TabItem value="Snowpark">
 
 <File name='models/my_python_model.py'>
 
@@ -294,9 +295,9 @@ def model(dbt, session):
 
 </File>
 
-</div>
+</TabItem>
 
-<div warehouse="PySpark">
+<TabItem value="PySpark">
 
 <File name='models/my_python_model.py'>
 
@@ -323,9 +324,9 @@ def model(dbt, session):
 
 </File>
 
-</div>
+</TabItem>
 
-</WHCode>
+</Tabs>
 
 ## Python-specific functionality
 
@@ -357,10 +358,9 @@ Currently, Python functions defined in one dbt model can't be imported and reuse
 You can also define functions that depend on third-party packages so long as those packages are installed and available to the Python runtime on your data platform. See notes on "Installing Packages" for [specific data platforms](#specific-data-platforms).
 
 In this example, we use the `holidays` package to determine if a given date is a holiday in France. The code below uses the pandas API for simplicity and consistency across platforms. The exact syntax, and the need to refactor for multi-node processing, still vary.
+<Tabs>
 
-<WHCode>
-
-<div warehouse="Snowpark">
+<TabItem value="Snowpark">
 
 <File name='models/my_python_model.py'>
 
@@ -394,9 +394,9 @@ def model(dbt, session):
 
 </File>
 
-</div>
+</TabItem>
 
-<div warehouse="PySpark">
+<TabItem value="PySpark">
 
 <File name='models/my_python_model.py'>
 
@@ -433,9 +433,9 @@ def model(dbt, session):
 
 </File>
 
-</div>
+</TabItem>
 
-</WHCode>
+</Tabs>
 
 #### Configuring packages
 
@@ -473,9 +473,9 @@ You can use the `@udf` decorator or `udf` function to define an "anonymous" func
 - [Snowpark Python: Creating UDFs](https://docs.snowflake.com/en/developer-guide/snowpark/python/creating-udfs.html)
 - [PySpark functions: udf](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.udf.html)
 
-<WHCode>
+<Tabs>
 
-<div warehouse="Snowpark">
+<TabItem value="Snowpark">
 
 <File name='models/my_python_model.py'>
 
@@ -515,9 +515,9 @@ def model(dbt, session):
 - Writing [`create function`](https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-batch.html) inside a SQL macro, to run as a hook or run-operation
 - [Registering from a staged file](https://docs.snowflake.com/en/developer-guide/snowpark/python/creating-udfs#creating-a-udf-from-a-python-source-file) within your Python model code
 
-</div>
+</TabItem>
 
-<div warehouse="PySpark">
+<TabItem value="PySpark">
 
 <File name='models/my_python_model.py'>
 
@@ -547,9 +547,9 @@ def model(dbt, session):
 
 </File>
 
-</div>
+</TabItem>
 
-</WHCode>
+</Tabs>
 
 #### Code reuse
 
@@ -598,22 +598,51 @@ Python models have capabilities that SQL models do not. They also have some draw
 - **These capabilities are very new.** As data warehouses develop new features, we expect them to offer cheaper, faster, and more intuitive mechanisms for deploying Python transformations. **We reserve the right to change the underlying implementation for executing Python models in future releases.** Our commitment to you is around the code in your model `.py` files, following the documented capabilities and guidance we're providing here.
 - **Lack of `print()` support.** The data platform runs and compiles your Python model without dbt's oversight. This means it doesn't display the output of commands such as Python's built-in [`print()`](https://docs.python.org/3/library/functions.html#print) function in dbt's logs.
 
+- <Expandable alt_header="Alternatives to using print() in Python models">
+
+    The following explains other methods you can use for debugging, such as writing messages to a dataframe column:
+    
+    - Using platform logs: Use your data platform's logs to debug your Python models.
+    - Return logs as a dataframe: Create a dataframe containing your logs and build it into the warehouse.
+    - Develop locally with DuckDB: Test and debug your models locally using DuckDB before deploying them.
+    
+    Here's an example of debugging in a Python model:
+
+    ```python
+    def model(dbt, session):
+        dbt.config(
+            materialized = "table"
+        )
+    
+        df = dbt.ref("my_source_table").df()
+    
+        # One option for debugging: write messages to temporary table column
+        # Pros: visibility
+        # Cons: won't work if table isn't building for some reason
+        msg = "something"
+        df["debugging"] = f"My debug message here: {msg}"
+    
+        return df
+    ```
+    </Expandable>
+
 As a general rule, if there's a transformation you could write equally well in SQL or Python, we believe that well-written SQL is preferable: it's more accessible to a greater number of colleagues, and it's easier to write code that's performant at scale. If there's a transformation you _can't_ write in SQL, or where ten lines of elegant and well-annotated Python could save you 1000 lines of hard-to-read Jinja-SQL, Python is the way to go.
 
 ## Specific data platforms {#specific-data-platforms}
 
-In their initial launch, Python models are supported on three of the most popular data platforms: Snowflake, Databricks, and BigQuery/GCP (via Dataproc). Both Databricks and GCP's Dataproc use PySpark as the processing framework. Snowflake uses its own framework, Snowpark, which has many similarities to PySpark.
+Python models are supported on many of our adapters, including Snowflake, Databricks, and BigQuery/GCP (via Dataproc). Both Databricks and GCP's Dataproc use PySpark as the processing framework. Snowflake uses its own framework, Snowpark, which has many similarities to PySpark.
 
-<WHCode>
+<Tabs>
 
-<div warehouse="Snowflake">
+<TabItem value="Snowflake">
 
 **Additional setup:** You will need to [acknowledge and accept Snowflake Third Party Terms](https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-packages.html#getting-started) to use Anaconda packages.
 
 **Installing packages:** Snowpark supports several popular packages via Anaconda. Refer to the [complete list](https://repo.anaconda.com/pkgs/snowflake/) for more details. Packages are installed when your model is run. Different models can have different package dependencies. If you use third-party packages, Snowflake recommends using a dedicated virtual warehouse for best performance rather than one with many concurrent users.
 
 **Python version:** To specify a different python version, use the following configuration:
-```
+
+```python
 def model(dbt, session):
     dbt.config(
         materialized = "table",
@@ -621,11 +650,13 @@ def model(dbt, session):
     )
 ```
 
+You can use the `python_version` config to run a Snowpark model with [Python versions](https://docs.snowflake.com/en/developer-guide/snowpark/python/setup) 3.9, 3.10, or 3.11.
+
 <VersionBlock firstVersion="1.8">
 
 **External access integrations and secrets**: To query external APIs within dbt Python models, use Snowflake’s [external access](https://docs.snowflake.com/en/developer-guide/external-network-access/external-network-access-overview) together with [secrets](https://docs.snowflake.com/en/developer-guide/external-network-access/secret-api-reference). Here are some additional configurations you can use:
 
-```
+```python
 import pandas
 import snowflake.snowpark as snowpark
 
@@ -645,24 +676,45 @@ def model(dbt, session: snowpark.Session):
 
 </VersionBlock>
 
-**About "sprocs":** dbt submits Python models to run as _stored procedures_, which some people call _sprocs_ for short. By default, dbt will create a named sproc containing your model's compiled Python code, and then _call_ it to execute. Snowpark has an Open Preview feature for _temporary_ or _anonymous_ stored procedures ([docs](https://docs.snowflake.com/en/sql-reference/sql/call-with.html)), which are faster and leave a cleaner query history. You can switch this feature on for your models by configuring `use_anonymous_sproc: True`. We plan to switch this on for all dbt + Snowpark Python models starting with the release of dbt Core version 1.4.
-
-<File name='dbt_project.yml'>
-
-```yml
-# I asked Snowflake Support to enable this Private Preview feature,
-# and now my dbt-py models run even faster!
-models:
-  use_anonymous_sproc: True
-```
-
-</File>
-
 **Docs:** ["Developer Guide: Snowpark Python"](https://docs.snowflake.com/en/developer-guide/snowpark/python/index.html)
 
-</div>
+#### Third-party Snowflake packages
 
-<div warehouse="Databricks">
+To use a third-party Snowflake package that isn't available in Snowflake Anaconda, upload your package by following [this example](https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-packages#importing-packages-through-a-snowflake-stage), and then configure the `imports` setting in the dbt Python model to reference to the zip file in your Snowflake staging.
+
+Here’s a complete example configuration using a zip file, including using `imports` in a Python model:
+
+```python
+
+def model(dbt, session):
+    # Configure the model
+    dbt.config(
+        materialized="table",
+        imports=["@mystage/mycustompackage.zip"],  # Specify the external package location
+    )
+    
+    # Example data transformation using the imported package
+    # (Assuming `some_external_package` has a function we can call)
+    data = {
+        "name": ["Alice", "Bob", "Charlie"],
+        "score": [85, 90, 88]
+    }
+    df = pd.DataFrame(data)
+
+    # Process data with the external package
+    df["adjusted_score"] = df["score"].apply(lambda x: some_external_package.adjust_score(x))
+    
+    # Return the DataFrame as the model output
+    return df
+
+```
+
+For more information on using this configuration, refer to [Snowflake's documentation](https://community.snowflake.com/s/article/how-to-use-other-python-packages-in-snowpark) on uploading and using other python packages in Snowpark not published on Snowflake's Anaconda channel.
+
+
+</TabItem>
+
+<TabItem value="Databricks">
 
 **Submission methods:** Databricks supports a few different mechanisms to submit PySpark code, each with relative advantages. Some are better for supporting iterative development, while others are better for supporting lower-cost production deployments. The options are:
 - `all_purpose_cluster` (default): dbt will run your Python model using the cluster ID configured as `cluster` in your connection profile or for this specific model. These clusters are more expensive but also much more responsive. We recommend using an interactive all-purpose cluster for quicker iteration in development.
@@ -710,9 +762,9 @@ If not configured, `dbt-spark` will use the built-in defaults: the all-purpose c
 - [PySpark DataFrame syntax](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.html)
 - [Databricks: Introduction to DataFrames - Python](https://docs.databricks.com/spark/latest/dataframes-datasets/introduction-to-dataframes-python.html)
 
-</div>
+</TabItem>
 
-<div warehouse="BigQuery">
+<TabItem value="BigQuery">
 
 The `dbt-bigquery` adapter uses a service called Dataproc to submit your Python models as PySpark jobs. That Python/PySpark code will read from your tables and views in BigQuery, perform all computation in Dataproc, and write the final result back to BigQuery.
 
@@ -763,13 +815,40 @@ storage.objects.create
 storage.objects.delete
 ```
 
-**Installing packages:** If you are using a Dataproc Cluster (as opposed to Dataproc Serverless), you can add third-party packages while creating the cluster.
+**Installing packages:** 
 
-Google recommends installing Python packages on Dataproc clusters via initialization actions:
-- [How initialization actions are used](https://github.com/GoogleCloudDataproc/initialization-actions/blob/master/README.md#how-initialization-actions-are-used)
-- [Actions for installing via `pip` or `conda`](https://github.com/GoogleCloudDataproc/initialization-actions/tree/master/python)
+Installation of third-party packages on Dataproc varies depending on whether it's a [cluster](https://cloud.google.com/dataproc/docs/guides/create-cluster) or [serverless](https://cloud.google.com/dataproc-serverless/docs).  
 
-You can also install packages at cluster creation time by [defining cluster properties](https://cloud.google.com/dataproc/docs/tutorials/python-configuration#image_version_20): `dataproc:pip.packages` or `dataproc:conda.packages`.
+- **Dataproc Cluster** &mdash; Google recommends installing Python packages while creating the cluster via initialization actions:  
+    - [How initialization actions are used](https://github.com/GoogleCloudDataproc/initialization-actions/blob/master/README.md#how-initialization-actions-are-used)  
+    - [Actions for installing via `pip` or `conda`](https://github.com/GoogleCloudDataproc/initialization-actions/tree/master/python)
+
+    You can also install packages at cluster creation time by [defining cluster properties](https://cloud.google.com/dataproc/docs/tutorials/python-configuration#image_version_20): `dataproc:pip.packages` or `dataproc:conda.packages`.  
+
+- **Dataproc Serverless** &mdash; Google recommends using a [custom docker image](https://cloud.google.com/dataproc-serverless/docs/guides/custom-containers) to install thrid-party packages. The image needs to be hosted in [Google Artifact Registry](https://cloud.google.com/artifact-registry/docs). It can then be used by providing the image path in dbt profiles:
+    
+    <File name='profiles.yml'>
+    ```yml
+    my-profile:
+        target: dev
+        outputs:
+            dev:
+            type: bigquery
+            method: oauth
+            project: abc-123
+            dataset: my_dataset
+            
+            # for dbt Python models to be run on Dataproc Serverless
+            gcs_bucket: dbt-python
+            dataproc_region: us-central1
+            submission_method: serverless
+            dataproc_batch:
+                runtime_config:
+                    container_image: {HOSTNAME}/{PROJECT_ID}/{IMAGE}:{TAG}
+    ```
+
+
+    </File>
 
 <Lightbox src="/img/docs/building-a-dbt-project/building-models/python-models/dataproc-pip-packages.png" title="Adding packages to install via pip at cluster startup"/>
 
@@ -780,7 +859,7 @@ You can also install packages at cluster creation time by [defining cluster prop
 - [Create a Cloud Storage bucket](https://cloud.google.com/storage/docs/creating-buckets)
 - [PySpark DataFrame syntax](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.html)
 
-</div>
+</TabItem>
 
-</WHCode>
+</Tabs>
 
