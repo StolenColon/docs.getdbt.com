@@ -1,10 +1,10 @@
 ---
-title: "Quickstart for the dbt Cloud Visual Editor"
+title: "Quickstart for the dbt Cloud Canvas"
 id: "visual-editor"
 level: 'Beginner'
 icon: 'dbt'
 hide_table_of_contents: true
-tags: ['Visual Editor','Analyst', 'dbt Cloud','model']
+tags: ['Canvas','Analyst', 'dbt Cloud','model']
 recently_updated: true
 ---
 
@@ -36,24 +36,24 @@ The examples in this guide use the [Jaffle Shop](https://github.com/dbt-labs/jaf
 
 :::
 
-## Access the Visual Editor
+## Access Canvas
 
 To access the <Constant name="visual_editor" />:
 
 1. Click **Develop** from the main menu. If you do not see the **Develop** option, ensure you have selected a **Project** from the menu.
 2. Click **<Constant name="visual_editor" />**.
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-main-menu.png" width="60%" title="Visual Editor in the Develop section of the main menu."/>
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-main-menu.png" width="60%" title="Canvas in the Develop section of the main menu."/>
 
 3. From the right side, click **Get started** and then click **Create new model**.
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-create-new-model.png" width="90%" title="Create a new model from the Visual Editor landing page."/>
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-create-new-model.png" width="90%" title="Create a new model from the Canvas landing page."/>
 
 ## Navigating the interface
 
 The <Constant name="visual_editor" /> comprises a series of menus activated by clicking icons surrounding the border of the larger canvas. With none of the menu items activated, the workspace looks like this:
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-screen.png" width="90%" title="The Visual Editor canvas. The number of items is defined in this section." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-screen.png" width="90%" title="The Canvas workspace. The number of items is defined in this section." />
 
 Click on an icon to expand its section or execute an action depending on its purpose. The options are as follows:
 
@@ -83,7 +83,7 @@ Operators are divided into three types:
 - **Transform:** Transform operators change and shape your data.
 - **Output:** Output operators define your model name and location.
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/operators.png" width="90%" title="The operator’s menu on the side of the Visual Editor canvas." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/operators.png" width="90%" title="The operator’s menu on the side of the Canvas workspace." />
 
 Read more about the [individual operators](/docs/cloud/visual-editor-interface#operators) to understand the basic purpose of each. The <Constant name="dbt" /> model created by the <Constant name="visual_editor" /> builds off of existing models. In this guide, there will be input (source) models and an output model (what you are building) which will be _your model_.  
 
@@ -253,7 +253,7 @@ Have <Constant name="dbt" /> [<Constant name="copilot" />](/docs/cloud/dbt-copil
 
 The models built in the <Constant name="visual_editor" /> are a part of your larger dbt project. They are stored in the `visual_editor` folder of your `/models` directory. This is all done automatically; you don't have to configure any paths or directories. 
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-model-folder.png" width="90%" title="Example of the Visual Editor's model path in GitHub." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/ve-model-folder.png" width="90%" title="Example of the Canvas's model path in GitHub." />
 
 However, it won't be created in your <Constant name="git" /> repo until you commit your first model. So, back in the model's view:
 
@@ -265,7 +265,7 @@ However, it won't be created in your <Constant name="git" /> repo until you comm
 
 The following example uses GitHub as the provider:
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/demo-model-github.png" width="90%" title="Example of the screen you're taken to in GitHub when you create a pull request from the Visual Editor." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/demo-model-github.png" width="90%" title="Example of the screen you're taken to in GitHub when you create a pull request from Canvas." />
 
 5. Click **Create pull request** in the GitHub window.
 6. Complete the **Add a title** and **Add a description** fields. If your description is split between both, copy all the contents to the description field and give it a shorter title.

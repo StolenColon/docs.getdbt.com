@@ -1,15 +1,15 @@
 --- 
-title: "About the Visual Editor" 
+title: "About Canvas" 
 id: visual-editor       
-sidebar_label: "About the Visual Editor" 
-description: "The Visual Editor enables you to quickly create and visualize dbt models through a visual, drag-and-drop experience inside of dbt Cloud." 
+sidebar_label: "About Canvas" 
+description: "Canvas enables you to quickly create and visualize dbt models through a visual, drag-and-drop experience inside of dbt Cloud." 
 pagination_next: "docs/cloud/visual-editor-interface"
 pagination_prev: null
 ---
 
 import Prerequisites from '/snippets/_visual-editor-prerequisites.md';
 
-# About the Visual Editor <Lifecycle status='beta, enterprise'/> 
+# About Canvas <Lifecycle status='beta, enterprise'/> 
 
 <p style={{ color: '#717d7d', fontSize: '1.1em' }}>
 The <Constant name="visual_editor" /> helps you quickly access and transform data through a visual, drag-and-drop experience and with a built-in AI for custom code generation.
@@ -29,7 +29,7 @@ These models compile directly to SQL and are indistinguishable from other <Const
 - Models can be materialized into production through [<Constant name="cloud" /> orchestration](/docs/deploy/deployments), or be built directly into a user's development schema.
 - Integrate with [<Constant name="explorer" />](/docs/collaborate/explore-projects) and the [<Constant name="cloud_ide" />](/docs/cloud/dbt-cloud-ide/develop-in-the-cloud).
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/visual-editor.png" width="90%" title="Create or edit dbt models with the Visual editor, enabling everyone to develop with dbt through a drag-and-drop experience inside of dbt Cloud." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/visual-editor.png" width="90%" title="Create or edit dbt models with Canvas, enabling everyone to develop with dbt through a drag-and-drop experience inside of dbt Cloud." />
 
 <Prerequisites feature={'/snippets/_visual-editor-prerequisites.md'} />
 

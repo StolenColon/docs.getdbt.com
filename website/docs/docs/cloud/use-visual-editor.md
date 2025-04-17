@@ -2,7 +2,7 @@
 title: "Edit and create dbt models" 
 id: use-visual-editor      
 sidebar_label: "Edit and create dbt models" 
-description: "Access and use the Visual Editor to create or edit dbt models through a visual, drag-and-drop experience inside of dbt Cloud." 
+description: "Access and use Canvas to create or edit dbt models through a visual, drag-and-drop experience inside of dbt Cloud." 
 pagination_prev: "docs/cloud/visual-editor-interface"
 pagination_next: "docs/cloud/build-ve-copilot"
 ---
@@ -21,7 +21,7 @@ The <Constant name="visual_editor" /> provides users with a seamless and drag-an
 To join the private beta, [register your interest](https://docs.google.com/forms/d/e/1FAIpQLScPjRGyrtgfmdY919Pf3kgqI5E95xxPXz-8JoVruw-L9jVtxg/viewform) or reach out to your account team to begin this process.
 :::
 
-## Access Visual Editor
+## Access Canvas
 
 Before accessing the editor, you should have a <Constant name="cloud" /> project already set up. This includes a <Constant name="git" /> repository, data platform connection, environments, and developer credentials. If you don't have this set up, please contact your <Constant name="cloud" /> Admin.
 
@@ -30,7 +30,7 @@ To access the <Constant name="visual_editor" />:
 - Navigate to the left hand side panel.
 - Click **Develop** and then select **<Constant name="visual_editor" />**.
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/access-visual-editor.png" width="80%" title="Access the Visual Editor by selecting 'Develop' from the navigation menu." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/access-visual-editor.png" width="80%" title="Access Canvas by selecting 'Develop' from the navigation menu." />
 
 <Prerequisites feature={'/snippets/_visual-editor-prerequisites.md'} />
 
@@ -72,7 +72,7 @@ To create a <Constant name="dbt" /> SQL model, click on **Create a new model** a
 ## Edit an existing model
 To edit an existing model, navigate to the <Constant name="visual_editor" />, click on the **Get Started** button on the upper right, and click **Edit existing model**. This will allow you to select the model you'd like to edit.
 
-<Lightbox src="/img/docs/dbt-cloud/visual-editor/edit-model.png" width="90%" title="Edit a model in the Visual Editor using the 'Edit a model' button." />
+<Lightbox src="/img/docs/dbt-cloud/visual-editor/edit-model.png" width="90%" title="Edit a model in Canvas using the 'Edit a model' button." />
 
 ## Version control
 

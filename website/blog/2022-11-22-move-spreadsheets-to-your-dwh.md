@@ -70,7 +70,7 @@ An obvious choice if you have data to load into your warehouse would be your exi
 
 [Fivetran’s browser uploader](https://fivetran.com/docs/files/browser-upload) does exactly what it says on the tin: you upload a file to their web portal and it creates a table containing that data in a predefined schema in your warehouse. With a visual interface to modify data types, it’s easy for anyone to use. And with an account type with the permission to only upload files, you don’t need to worry about your stakeholders accidentally breaking anything either.
 
-<Lightbox src="/img/blog/2022-11-22-move-spreadsheets-to-your-dwh/fivetran-uploader-1.png" title="Converting data types from text to dates and numbers is easy in the visual editor" />
+<Lightbox src="/img/blog/2022-11-22-move-spreadsheets-to-your-dwh/fivetran-uploader-1.png" title="Converting data types from text to dates and numbers is easy in Canvas" />
 
 <Lightbox src="/img/blog/2022-11-22-move-spreadsheets-to-your-dwh/fivetran-uploader-2.png" title="Picking the matching date format from a list of options to convert them to a standardized format" />
 
