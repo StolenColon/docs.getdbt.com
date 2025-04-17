@@ -12,7 +12,7 @@ import Prerequisites from '/snippets/_visual-editor-prerequisites.md';
 # Edit and create dbt models <Lifecycle status='beta, enterprise'/> 
 
 <p style={{ color: '#717d7d', fontSize: '1.1em' }}>
-Access and use <Constant name="visual_editor" /> to create or edit <Constant name="dbt" /> models through a visual, drag-and-drop experience. Use the built-in AI for custom code generation in your development experience.
+Access and use <Constant name="visual_editor" /> to create or edit dbt models through a visual, drag-and-drop experience. Use the built-in AI for custom code generation in your development experience.
 </p>
 
 :::tip Beta feature
@@ -35,7 +35,8 @@ To access <Constant name="visual_editor" />:
 <Prerequisites feature={'/snippets/_visual-editor-prerequisites.md'} />
 
 ## Create a model
-To create a <Constant name="dbt" /> SQL model, click on **Create a new model** and perform the following steps. Note that you can't create source models in <Constant name="visual_editor" />. This is because you need to have production run with sources already created.
+
+To create a dbt SQL model, click on **Create a new model** and perform the following steps. Note that you can't create source models in <Constant name="visual_editor" />. This is because you need to have production run with sources already created.
 
 1. Drag an operator from the operator toolbar and drop it onto the canvas.
 2. Click on the operator to open its configuration panel:	
@@ -78,7 +79,7 @@ To edit an existing model, navigate to <Constant name="visual_editor" />, click 
 
 Testing and documenting your models is an important part of the development process.  
 
-Stay tuned! Coming very soon, you'll be able to version control your <Constant name="dbt" /> modes in <Constant name="visual_editor" />. This ensures you can track changes and revert to previous versions if needed.
+Stay tuned! Coming very soon, you'll be able to version control your dbt modes in <Constant name="visual_editor" />. This ensures you can track changes and revert to previous versions if needed.
 
 <!-- leaving this section here in case there's more to add later if needed
 ## Limitations
