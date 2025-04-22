@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 intro_text: "Use the --warn-error flag to promote all warnings to errors or --warn-error-options for granular control through options."
 ---
 
-Enabling `WARN_ERROR` config or setting the `--warn-error` flag will convert _all_ dbt warnings into errors. Any time dbt would normally warn, it will instead raise an error. Examples include `--select` criteria that selects no resources, deprecations, configurations with no associated models, invalid test configurations, or tests and freshness checks that are configured to return warnings.
+Enabling `WARN_ERROR` config or setting the `--warn-error` flag will convert dbt warnings into errors. Any time dbt would normally warn, it will instead raise an error. Examples include `--select` criteria that selects no resources, deprecations, configurations with no associated models, invalid test configurations, or tests and freshness checks that are configured to return warnings.
 
 <File name='Usage'>
 
@@ -35,7 +35,6 @@ This means that if a new warning is introduced in a future version of <Constant 
 :::
 
 </VersionBlock>
-
 
 
 ## Use `--warn-error-options` for targeted warnings
@@ -73,11 +72,24 @@ The `error` parameter can be set to `"all"` or `"*"` to treat all warnings as er
 - When `error` is set to `"all"` or `"*"`, the optional `warn` parameter can be set to exclude specific warnings from being treated as exceptions.
 - Use the `silence` parameter to ignore warnings. To silence certain warnings you want to ignore, you can specify them in the `silence` parameter. This is useful in large projects where certain warnings aren't critical and can be ignored to keep the noise low and logs clean.
 
-Here's how you can use [`--warn-error-options`](#use---warn-error-options-for-targeted-warnings) flag to promote _specific_ warnings to errors:
+Here's how you can use the [`--warn-error-options`](#use---warn-error-options-for-targeted-warnings) flag to promote _specific_ warnings to errors:
 - [Test warnings](/reference/resource-configs/severity) with the `--warn-error-options '{"error": ["LogTestResults"]}'` flag.
 - Jinja [exception warnings](/reference/dbt-jinja-functions/exceptions#warn) with `--warn-error-options '{"error": ["JinjaLogWarning"]}'`.
 - No nodes selected with `--warn-error-options '{"error": ["NoNodesForSelectionCriteria"]}'`.
 - Adapter deprecation warnings with `--warn-error-options '{"error": ["AdapterDeprecationWarning"]}'`.
+
+</VersionBlock>
+
+<VersionBlock firstVersion="1.10">
+
+### Set deprecation warnings as errors
+
+You can use the [`--warn-error-options`](#use---warn-error-options-for-targeted-warnings) flag to promote _deprecation_ warnings to errors, for example:
+
+- Select only deprecations warnings as errors with `--warn-error-options="{'error': ['deprecations']}"`
+- Select all deprecations except one and a specific warning as errors with `--warn-error-options="{'error': ['deprecations', 'SomeOtherWarning], 'exclude': ['DeprecationIDontWantErroring]}"`
+- Select all warnings except deprecations as errors with `--warn-error-options="{'error': 'all', 'warn': ['deprecations']}"`
+- Select a specific deprecation warning as an error while silencing all others with `--warn-error-options="{'error': ['OneSpecificDeprecation'], 'silence': ['deprecations']}"`
 
 </VersionBlock>
 

@@ -49,6 +49,15 @@ You can read more about each of these behavior changes in the following links:
 
 - (Introduced, disabled by default) [`validate_macro_args`](/reference/global-configs/behavior-changes#macro-argument-validation). If the flag is set to `True`, dbt will raise a warning if the argument `type` names you've added in your macro YAMLs don't match the argument names in your macro or if the argument types aren't valid according to the [supported types](/reference/resource-properties/arguments#supported-types).
 
+### Deprecation warnings as errors
+
+You can now use the [`--warn-error`](/reference/global-configs/warning) flag to set deprecation warnings as errors. Using [`--warn-error-option`](/reference/global-configs/warning#use---warn-error-options-for-targeted-warnings) you can set targeted feature deprecation warnings as errors in combination with other settings to cover scenarios such as:
+
+- Selecting only deprecation warnings as errors with `--warn-error-options="{'error': ['deprecations']}"`
+- Selecting a specific deprecation warning as an error while silencing all others with `--warn-error-options="{'error': ['OneSpecificDeprecation'], 'silence': ['deprecations']}"`
+- And more!
+
+
 ## Quick hits
 
 - Provide the [`loaded_at_query`](/reference/resource-properties/freshness#loaded_at_query) property for source freshness to specify custom SQL to generate the `maxLoadedAt` time stamp on the source (versus the [built-in query](https://github.com/dbt-labs/dbt-adapters/blob/6c41bedf27063eda64375845db6ce5f7535ef6aa/dbt/include/global_project/macros/adapters/freshness.sql#L4-L16), which uses the `loaded_at_field`). You cannot define `loaded_at_query` if the `loaded_at_field` config is also provided.
