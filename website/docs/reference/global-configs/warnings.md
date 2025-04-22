@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 intro_text: "Use the --warn-error flag to promote all warnings to errors or --warn-error-options for granular control through options."
 ---
 
-Enabling `WARN_ERROR` config or setting the `--warn-error` flag will convert dbt warnings into errors. Any time dbt would normally warn, it will instead raise an error. Examples include `--select` criteria that selects no resources, deprecations, configurations with no associated models, invalid test configurations, or tests and freshness checks that are configured to return warnings.
+Enabling `WARN_ERROR` config or setting the `--warn-error` flag will convert _all_ dbt warnings into errors. Any time dbt would normally warn, it will instead raise an error. Examples include `--select` criteria that selects no resources, deprecations, configurations with no associated models, invalid test configurations, or tests and freshness checks that are configured to return warnings.
 
 <File name='Usage'>
 
