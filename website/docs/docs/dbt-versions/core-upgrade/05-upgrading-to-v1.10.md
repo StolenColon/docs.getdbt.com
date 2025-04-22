@@ -51,7 +51,7 @@ You can read more about each of these behavior changes in the following links:
 
 ### Deprecation warnings as errors
 
-You can now use the [`--warn-error`](/reference/global-configs/warning) flag to set deprecation warnings as errors. Using [`--warn-error-option`](/reference/global-configs/warning#use---warn-error-options-for-targeted-warnings), you can set targeted feature deprecation warnings as errors in combination with other settings to cover scenarios such as:
+You can now use the [`--warn-error`](/reference/global-configs/warnings) flag to set deprecation warnings as errors. Using [`--warn-error-option`](/reference/global-configs/warnings#use---warn-error-options-for-targeted-warnings), you can set targeted feature deprecation warnings as errors in combination with other settings to cover scenarios such as:
 
 - Selecting only deprecation warnings as errors with `--warn-error-options="{'error': ['deprecations']}"`
 - Selecting a specific deprecation warning as an error while silencing all others with `--warn-error-options="{'error': ['OneSpecificDeprecation'], 'silence': ['deprecations']}"`
