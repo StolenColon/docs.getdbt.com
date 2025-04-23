@@ -86,7 +86,7 @@ Here's how you can use the [`--warn-error-options`](#use---warn-error-options-fo
 
 You can use the [`--warn-error-options`](#use---warn-error-options-for-targeted-warnings) flag to promote _deprecation_ warnings to errors, for example:
 
-- Select only deprecations warnings as errors with `--warn-error-options="{'error': ['deprecations']}"`
+- Set only deprecation warnings as errors with `--warn-error-options="{'error': ['deprecations']}"`
 - Select all deprecations except one and a specific warning as errors with `--warn-error-options="{'error': ['deprecations', 'SomeOtherWarning], 'exclude': ['DeprecationIDontWantErroring]}"`
 - Select all warnings as errors except deprecation warnings with `--warn-error-options="{'error': 'all', 'warn': ['deprecations']}"`
 - Select a specific deprecation warning as an error while silencing all other deprecation warnings with `--warn-error-options="{'error': ['OneSpecificDeprecation'], 'silence': ['deprecations']}"`
