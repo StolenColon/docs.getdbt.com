@@ -89,7 +89,7 @@ You can use the [`--warn-error-options`](#use---warn-error-options-for-targeted-
 - Select only deprecations warnings as errors with `--warn-error-options="{'error': ['deprecations']}"`
 - Select all deprecations except one and a specific warning as errors with `--warn-error-options="{'error': ['deprecations', 'SomeOtherWarning], 'exclude': ['DeprecationIDontWantErroring]}"`
 - Select all warnings except deprecations as errors with `--warn-error-options="{'error': 'all', 'warn': ['deprecations']}"`
-- Select a specific deprecation warning as an error while silencing all others with `--warn-error-options="{'error': ['OneSpecificDeprecation'], 'silence': ['deprecations']}"`
+- Select a specific deprecation warning as an error while silencing all other deprecation warnings with `--warn-error-options="{'error': ['OneSpecificDeprecation'], 'silence': ['deprecations']}"`
 
 </VersionBlock>
 
