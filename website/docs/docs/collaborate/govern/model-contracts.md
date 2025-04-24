@@ -16,6 +16,10 @@ Defining a dbt model is as easy as writing a SQL `select` statement. Your query 
 
 While this is ideal for quick and iterative development, for some models, constantly changing the shape of its returned dataset poses a risk when other people and processes are querying that model. It's better to define a set of upfront "guarantees" that define the shape of your model. We call this set of guarantees a "contract." While building your model, dbt will verify that your model's transformation will produce a dataset matching up with its contract, or it will fail to build.
 
+import ModelGovernanceRollback from '/snippets/_model-governance-rollback.md';
+
+<ModelGovernanceRollback />
+
 ## Where are contracts supported?
 
 At present, model contracts are supported for:
@@ -32,7 +36,6 @@ Model contracts are _not_ supported for:
 - Custom materializations (unless added by the author).
 - Models with recursive <Term id="cte" />'s in BigQuery.
 - Other resource types, such as `sources`, `seeds`, `snapshots`, and so on.
-
 
 ## How to define a contract
 
@@ -209,7 +212,7 @@ In some cases, you can replace a data test with its equivalent constraint. This 
 
 Currently, dbt contracts apply to **all** columns defined in a model, and they require declaring explicit expectations about **all** of those columns. The explicit declaration of a contract is not an accident—it's very much the intent of this feature.
 
-At the same time, for models with many columns, we understand that this can mean a _lot_ of yaml. We are investigating the feasibility of supporting "inferred" contracts. This would enable you to define constraints and strict data typing for a subset of columns, while still detecting breaking changes on other columns by comparing against the same model in production. This isn't the same as a "partial" contract, because all columns in the model are still checked at runtime, and matched up with what's defined _explicitly_ in your yaml contract or _implicitly_ with the comparison state. If you're interested in "inferred" contract, please upvote or comment on [dbt-core#7432](https://github.com/dbt-labs/dbt-core/issues/7432).
+At the same time, for models with many columns, we understand that this can mean a _lot_ of yaml. We are investigating the feasibility of supporting "inferred" contracts. This would enable you to define constraints and strict data typing for a subset of columns, while still detecting breaking changes on other columns by comparing against the same model in production. This isn't the same as a "partial" contract, because all columns in the model are still checked at runtime, and matched up with what's defined _explicitly_ in your yaml contract or _implicitly_ with the comparison state. If you're interested in "inferred" contract, please upvote or comment on [<Constant name="core" />#7432](https://github.com/dbt-labs/dbt-core/issues/7432).
 
 
 ### How are breaking changes handled?

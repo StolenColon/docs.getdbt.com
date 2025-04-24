@@ -19,16 +19,6 @@ dbt run --select [...] --defer --state path/to/artifacts
 dbt test --select [...] --defer --state path/to/artifacts
 ```
 
-
-<VersionBlock lastVersion="0.20">
-
-```shell
-dbt run --models [...] --defer --state path/to/artifacts
-dbt test --models [...] --defer --state path/to/artifacts
-```
-
-</VersionBlock>
-
 By default, dbt uses the [`target`](/reference/dbt-jinja-functions/target) namespace to resolve `ref` calls.
 
 When `--defer` is enabled, dbt resolves ref calls using the state manifest instead, but only if:
@@ -223,6 +213,6 @@ dbt will check to see if `dev_alice.model_a` exists. If it doesn't exist, dbt wi
 
 ## Related docs
 
-- [Using defer in dbt Cloud](/docs/cloud/about-cloud-develop-defer)
+- [Using defer in <Constant name="cloud" />](/docs/cloud/about-cloud-develop-defer)
 - [on_configuration_change](/reference/resource-configs/on_configuration_change)
 

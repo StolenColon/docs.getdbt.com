@@ -10,7 +10,7 @@ We encourage you to:
 - Read [the original discussion](https://github.com/dbt-labs/dbt-core/discussions/5261) that proposed this feature.
 - Contribute to [best practices for developing Python models in dbt](https://discourse.getdbt.com/t/dbt-python-model-dbt-py-best-practices/5204).
 - Share your thoughts and ideas on [next steps for Python models](https://github.com/dbt-labs/dbt-core/discussions/5742).
-- Join the **#dbt-core-python-models** channel in the [dbt Community Slack](https://www.getdbt.com/community/join-the-community/).
+- Join the **#<Constant name="core" />-python-models** channel in the [dbt Community Slack](https://www.getdbt.com/community/join-the-community/).
 
 
 ## Overview
@@ -630,7 +630,7 @@ As a general rule, if there's a transformation you could write equally well in S
 
 ## Specific data platforms {#specific-data-platforms}
 
-In their initial launch, Python models are supported on three of the most popular data platforms: Snowflake, Databricks, and BigQuery/GCP (via Dataproc). Both Databricks and GCP's Dataproc use PySpark as the processing framework. Snowflake uses its own framework, Snowpark, which has many similarities to PySpark.
+Python models are supported on many of our adapters, including Snowflake, Databricks, and BigQuery/GCP (via Dataproc). Both Databricks and GCP's Dataproc use PySpark as the processing framework. Snowflake uses its own framework, Snowpark, which has many similarities to PySpark.
 
 <Tabs>
 

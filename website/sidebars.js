@@ -124,6 +124,7 @@ const sidebarSettings = {
                     "docs/cloud/manage-access/set-up-sso-okta",
                     "docs/cloud/manage-access/set-up-sso-google-workspace",
                     "docs/cloud/manage-access/set-up-sso-microsoft-entra-id",
+                    "docs/cloud/manage-access/scim",
                     "docs/cloud/manage-access/set-up-snowflake-oauth",
                     "docs/cloud/manage-access/set-up-databricks-oauth",
                     "docs/cloud/manage-access/set-up-bigquery-oauth",
@@ -215,6 +216,7 @@ const sidebarSettings = {
                 "docs/core/connect-data-platform/bigquery-setup",
                 "docs/core/connect-data-platform/databricks-setup",
                 "docs/core/connect-data-platform/fabric-setup",
+                "docs/core/connect-data-platform/fabricspark-setup",
                 "docs/core/connect-data-platform/postgres-setup",
                 "docs/core/connect-data-platform/redshift-setup",
                 "docs/core/connect-data-platform/snowflake-setup",
@@ -302,14 +304,14 @@ const sidebarSettings = {
         },
         {
           type: "category",
-          label: "dbt Cloud Visual Editor",
+          label: "dbt Canvas",
           collapsed: true,
-          link: { type: "doc", id: "docs/cloud/visual-editor" },
+          link: { type: "doc", id: "docs/cloud/canvas" },
           items: [
-            "docs/cloud/visual-editor",
-            "docs/cloud/visual-editor-interface", 
-            "docs/cloud/use-visual-editor",
-            "docs/cloud/build-ve-copilot",
+            "docs/cloud/canvas",
+            "docs/cloud/canvas-interface", 
+            "docs/cloud/use-canvas",
+            "docs/cloud/build-canvas-copilot",
           ],
         },
         ],
@@ -536,6 +538,16 @@ const sidebarSettings = {
             "docs/deploy/webhooks",
           ],
         },
+        {
+          type: "category",
+          label: "Hybrid projects",
+          collapsed: true,
+          link: { type: "doc", id: "docs/deploy/hybrid-projects" },
+          items: [
+            "docs/deploy/hybrid-projects",
+            "docs/deploy/hybrid-setup",
+          ],
+        },
         "docs/deploy/deployment-tools",
       ],
     }, // end of "Deploy dbt"
@@ -571,6 +583,16 @@ const sidebarSettings = {
                 "docs/collaborate/model-query-history",
               ],
             },
+          ],
+        },
+        {
+          type: "category",
+          label: "Analyze with dbt Insights",
+          link: { type: "doc", id: "docs/collaborate/dbt-insights" },
+          items: [
+            "docs/collaborate/dbt-insights", // main query page doc
+            "docs/collaborate/access-dbt-insights", // info on how to access and use query page
+            "docs/collaborate/navigate-dbt-insights", // navigate query page doc
           ],
         },
         {
@@ -775,7 +797,7 @@ const sidebarSettings = {
         "docs/cloud/dbt-copilot-faqs",
         ],
       },
-    {
+      {
       type: "category",
       label: "dbt Cloud integrations",
       link: { type: "doc", id: "docs/cloud-integrations/overview" },
@@ -874,6 +896,17 @@ const sidebarSettings = {
     "docs/dbt-support",
     {
       type: "category",
+      label: "Cost management",
+      link: {
+        type: "doc",
+        id: "docs/cloud/cost-management/cost-management",
+      },
+      items: [
+          "docs/cloud/cost-management/cost-management",
+      ],
+    },
+    {
+      type: "category",
       label: "Frequently asked questions",
       link: {
         type: "generated-index",
@@ -937,6 +970,7 @@ const sidebarSettings = {
         slug: "/reference/resource-configs/resource-configs",
       },
       items: [
+        "reference/resource-configs/azuresynapse-configs",
         "reference/resource-configs/athena-configs",
         "reference/resource-configs/impala-configs",
         "reference/resource-configs/spark-configs",
@@ -944,13 +978,14 @@ const sidebarSettings = {
         "reference/resource-configs/clickhouse-configs",
         "reference/resource-configs/databricks-configs",
         "reference/resource-configs/doris-configs",
+        "reference/resource-configs/duckdb-configs",        
+        "reference/resource-configs/fabric-configs",
+        "reference/resource-configs/fabricspark-configs",
         "reference/resource-configs/firebolt-configs",
         "reference/resource-configs/greenplum-configs",
         "reference/resource-configs/infer-configs",
         "reference/resource-configs/ibm-netezza-config",
         "reference/resource-configs/materialize-configs",
-        "reference/resource-configs/azuresynapse-configs",
-        "reference/resource-configs/fabric-configs",
         "reference/resource-configs/mssql-configs",
         "reference/resource-configs/mindsdb-configs",
         "reference/resource-configs/oracle-configs",
@@ -1148,7 +1183,7 @@ const sidebarSettings = {
           link: { type: "doc", id: "reference/macro-properties" },
           items: [
             "reference/macro-properties",
-            "reference/resource-properties/argument-type",
+            "reference/resource-properties/arguments",
           ],
         },
       ],
