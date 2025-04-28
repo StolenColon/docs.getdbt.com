@@ -22,9 +22,9 @@ The user's assigned license determines the specific capabilities they can access
 | Use Jobs | ✅ | ❌ | ❌ |
 | Manage Account | ✅ | ❌ | ✅ |
 | API Access | ✅ | ❌ | ❌ |
-| Use [<Constant name="explorer" />](/docs/collaborate/explore-projects) | ✅  | ✅ | ❌  |
+| Use [<Constant name="explorer" />](/docs/explore/explore-projects) | ✅  | ✅ | ❌  |
 | Use [Source Freshness](/docs/deploy/source-freshness) | ✅ | ✅ | ❌ |
-| Use [Docs](/docs/collaborate/build-and-view-your-docs) | ✅ | ✅ | ❌ |
+| Use [Docs](/docs/explore/build-and-view-your-docs) | ✅ | ✅ | ❌ |
 | Receive [Job notifications](/docs/deploy/job-notifications) |  ✅ |  ✅  |  ✅ | 
 
 *Available on Enterprise and Team plans only and doesn't count toward seat usage. Please note, that IT seats are limited to 1 seat per Team or Enterprise account.
@@ -140,7 +140,7 @@ change.
 
 <Lightbox src="/img/docs/dbt-cloud/access-control/license-manual.png" width="55%" title="Manually assigning licenses"/>
 
-### Mapped configuration <Lifecycle status="enterprise"/> 
+### Mapped configuration <Lifecycle status="managed" /> 
 
 If your account is connected to an Identity Provider (IdP) for [Single Sign On](/docs/cloud/manage-access/sso-overview), you can automatically map IdP user groups to specific groups in <Constant name="cloud" /> and assign license types to those groups. To configure license mappings, navigate to the **Account Settings** > **Groups & Licenses** > **License Mappings** page. From here, you can create or edit SSO mappings for both Read-Only and Developer license types.
 
