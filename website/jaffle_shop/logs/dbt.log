@@ -741,3 +741,2143 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m18:49:08.110233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fb83950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fbfe210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fa27350>]}
 [0m18:49:08.110713 [debug] [MainThread]: Flushing usage events
 [0m18:49:08.481235 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:33:17.874335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103e9c980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053fbed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053fbd90>]}
+
+
+============================== 15:33:17.876126 | ac2b85c4-ec69-41aa-8e9a-9237b62ebdab ==============================
+[0m15:33:17.876126 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:33:17.876446 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:33:18.249012 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:33:18.249281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4bf490>]}
+[0m15:33:18.298017 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4eb020>]}
+[0m15:33:18.321007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c584d50>]}
+[0m15:33:18.321353 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:33:18.415687 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:33:18.416137 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:33:18.416328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c5818b0>]}
+[0m15:33:18.813804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd5f770>]}
+[0m15:33:18.836993 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:33:18.838396 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:33:18.849762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb42d00>]}
+[0m15:33:18.849968 [info ] [MainThread]: Found 1 model, 487 macros
+[0m15:33:18.850123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0656d0>]}
+[0m15:33:18.850819 [info ] [MainThread]: 
+[0m15:33:18.850987 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:33:18.851107 [info ] [MainThread]: 
+[0m15:33:18.851314 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:33:18.851681 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3'
+[0m15:33:18.851863 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:33:19.345976 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3, now list_organic-bivouac-458413-s3_jaffle_shop)
+[0m15:33:19.346912 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:33:20.018409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0a9d30>]}
+[0m15:33:20.019484 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:33:20.110073 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m15:33:20.110429 [info ] [Thread-1 (]: 1 of 1 START sql view model jaffle_shop.customers .............................. [RUN]
+[0m15:33:20.110685 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.customers)
+[0m15:33:20.110844 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m15:33:20.114015 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m15:33:20.114586 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m15:33:20.128157 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m15:33:20.128733 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+
+  create or replace view `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+  OPTIONS()
+  as with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from `dbt-tutorial`.jaffle_shop.customers
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from `dbt-tutorial`.jaffle_shop.orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final;
+
+
+[0m15:33:20.128952 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:33:21.213998 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:2755f34a-b6da-4738-91a5-fea5ca259b39&page=queryresults
+[0m15:33:21.763926 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ac2b85c4-ec69-41aa-8e9a-9237b62ebdab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1041e6490>]}
+[0m15:33:21.764330 [info ] [Thread-1 (]: 1 of 1 OK created sql view model jaffle_shop.customers ......................... [[32mCREATE VIEW (0 processed)[0m in 1.65s]
+[0m15:33:21.764664 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m15:33:21.765337 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:33:21.827074 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:33:21.827224 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m15:33:21.827348 [info ] [MainThread]: 
+[0m15:33:21.827484 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.98 seconds (2.98s).
+[0m15:33:21.827781 [debug] [MainThread]: Command end result
+[0m15:33:21.836908 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:33:21.837654 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:33:21.840144 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:33:21.840285 [info ] [MainThread]: 
+[0m15:33:21.840460 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:33:21.840597 [info ] [MainThread]: 
+[0m15:33:21.840745 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m15:33:21.842729 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.9978867, "process_user_time": 1.800569, "process_kernel_time": 0.251774, "process_mem_max_rss": "217448448", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:33:21.842968 [debug] [MainThread]: Command `dbt run` succeeded at 15:33:21.842931 after 4.00 seconds
+[0m15:33:21.843135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d2e09d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd69950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105460e50>]}
+[0m15:33:21.843288 [debug] [MainThread]: Flushing usage events
+[0m15:33:22.280789 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:34:03.487682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a1c980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108867ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108867d90>]}
+
+
+============================== 15:34:03.489500 | 5095aa9b-6522-4265-bcef-0d02b27dceaa ==============================
+[0m15:34:03.489500 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:34:03.489833 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:34:03.863633 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:34:03.863915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f067490>]}
+[0m15:34:03.909390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f08f020>]}
+[0m15:34:03.932490 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f128d50>]}
+[0m15:34:03.932783 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:34:03.997567 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:34:04.035110 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:34:04.035293 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:34:04.045542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f520320>]}
+[0m15:34:04.069507 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:34:04.070848 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:34:04.076603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f628670>]}
+[0m15:34:04.076797 [info ] [MainThread]: Found 1 model, 487 macros
+[0m15:34:04.076961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f5f2a90>]}
+[0m15:34:04.077635 [info ] [MainThread]: 
+[0m15:34:04.077806 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:34:04.077938 [info ] [MainThread]: 
+[0m15:34:04.078160 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:34:04.078531 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3'
+[0m15:34:04.078722 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:34:04.565494 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3, now list_organic-bivouac-458413-s3_jaffle_shop)
+[0m15:34:04.566441 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:34:05.049333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f41f110>]}
+[0m15:34:05.050588 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:34:05.143254 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m15:34:05.143581 [info ] [Thread-1 (]: 1 of 1 START sql view model jaffle_shop.customers .............................. [RUN]
+[0m15:34:05.143821 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.customers)
+[0m15:34:05.143975 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m15:34:05.149663 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m15:34:05.150048 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m15:34:05.163860 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m15:34:05.164296 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+
+  create or replace view `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+  OPTIONS()
+  as with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from `dbt-tutorial`.jaffle_shop.customers
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from `dbt-tutorial`.jaffle_shop.orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final;
+
+
+[0m15:34:05.164511 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:34:06.099087 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:f7d8bb45-d3f4-474f-a769-204b8fe53367&page=queryresults
+[0m15:34:06.669917 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5095aa9b-6522-4265-bcef-0d02b27dceaa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f6915a0>]}
+[0m15:34:06.670298 [info ] [Thread-1 (]: 1 of 1 OK created sql view model jaffle_shop.customers ......................... [[32mCREATE VIEW (0 processed)[0m in 1.53s]
+[0m15:34:06.670595 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m15:34:06.671233 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:34:06.731758 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:34:06.731928 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m15:34:06.732067 [info ] [MainThread]: 
+[0m15:34:06.732213 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.65 seconds (2.65s).
+[0m15:34:06.732531 [debug] [MainThread]: Command end result
+[0m15:34:06.742075 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:34:06.742776 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:34:06.745293 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:34:06.745454 [info ] [MainThread]: 
+[0m15:34:06.745634 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:34:06.745759 [info ] [MainThread]: 
+[0m15:34:06.745909 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m15:34:06.747947 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.2900684, "process_user_time": 1.454334, "process_kernel_time": 0.230176, "process_mem_max_rss": "211632128", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:34:06.748214 [debug] [MainThread]: Command `dbt run` succeeded at 15:34:06.748172 after 3.29 seconds
+[0m15:34:06.748392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f641770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f63b920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f52b5d0>]}
+[0m15:34:06.748551 [debug] [MainThread]: Flushing usage events
+[0m15:34:07.141330 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:36:21.444342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b38980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108983ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108983d90>]}
+
+
+============================== 15:36:21.446142 | fb6e7f51-be4a-4d5a-9542-4fb714da6d09 ==============================
+[0m15:36:21.446142 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:36:21.446445 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m15:36:21.814454 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:36:21.814734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f197490>]}
+[0m15:36:21.860243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f1bf240>]}
+[0m15:36:21.883187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f258d50>]}
+[0m15:36:21.883487 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:36:21.947773 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:36:21.973943 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m15:36:21.974202 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082bdb80>]}
+[0m15:36:22.350316 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+[0m15:36:22.352371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f75b310>]}
+[0m15:36:22.377605 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:36:22.379086 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:36:22.384856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f58d640>]}
+[0m15:36:22.385063 [info ] [MainThread]: Found 1 model, 487 macros
+[0m15:36:22.385217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f792210>]}
+[0m15:36:22.385927 [info ] [MainThread]: 
+[0m15:36:22.386084 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:36:22.386200 [info ] [MainThread]: 
+[0m15:36:22.386413 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:36:22.386800 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3'
+[0m15:36:22.387002 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:36:22.885970 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3, now list_organic-bivouac-458413-s3_jaffle_shop)
+[0m15:36:22.886908 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:36:23.408393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f7cf1d0>]}
+[0m15:36:23.409377 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:36:23.502292 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m15:36:23.502638 [info ] [Thread-1 (]: 1 of 1 START sql table model jaffle_shop.customers ............................. [RUN]
+[0m15:36:23.502886 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.customers)
+[0m15:36:23.503053 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m15:36:23.506257 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m15:36:23.506607 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m15:36:23.513537 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:36:24.206622 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m15:36:24.207657 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+  
+    
+
+    create or replace table `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from `dbt-tutorial`.jaffle_shop.customers
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from `dbt-tutorial`.jaffle_shop.orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+    );
+  
+[0m15:36:24.824961 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:ad1cd729-fee7-4e3f-b975-50a2c8f03cec&page=queryresults
+[0m15:36:27.556109 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fb6e7f51-be4a-4d5a-9542-4fb714da6d09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d32490>]}
+[0m15:36:27.556928 [info ] [Thread-1 (]: 1 of 1 OK created sql table model jaffle_shop.customers ........................ [[32mCREATE TABLE (100.0 rows, 4.3 KiB processed)[0m in 4.05s]
+[0m15:36:27.557497 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m15:36:27.558714 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:36:27.633263 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:36:27.633499 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m15:36:27.633673 [info ] [MainThread]: 
+[0m15:36:27.634050 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.25 seconds (5.25s).
+[0m15:36:27.634464 [debug] [MainThread]: Command end result
+[0m15:36:27.643970 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:36:27.644720 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:36:27.647281 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:36:27.647422 [info ] [MainThread]: 
+[0m15:36:27.647593 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:36:27.647718 [info ] [MainThread]: 
+[0m15:36:27.647849 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m15:36:27.649942 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.2362647, "process_user_time": 1.889393, "process_kernel_time": 0.242687, "process_mem_max_rss": "217038848", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:36:27.650207 [debug] [MainThread]: Command `dbt run` succeeded at 15:36:27.650163 after 6.24 seconds
+[0m15:36:27.650386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f62f6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f80c050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089e8e50>]}
+[0m15:36:27.650560 [debug] [MainThread]: Flushing usage events
+[0m15:36:28.055400 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:37:21.630191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1037c0980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10460bed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10460bd90>]}
+
+
+============================== 15:37:21.632043 | a791928a-d330-474d-90e4-5f5da3229381 ==============================
+[0m15:37:21.632043 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:37:21.632363 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:37:22.015490 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:37:22.015787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae0b490>]}
+[0m15:37:22.061150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae33240>]}
+[0m15:37:22.085531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aeccd50>]}
+[0m15:37:22.085877 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:37:22.152941 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:37:22.191000 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:37:22.191205 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:37:22.193529 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+[0m15:37:22.202369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2ac320>]}
+[0m15:37:22.227327 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:37:22.228704 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:37:22.234903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b3d4670>]}
+[0m15:37:22.235124 [info ] [MainThread]: Found 1 model, 487 macros
+[0m15:37:22.235274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b39aa90>]}
+[0m15:37:22.236000 [info ] [MainThread]: 
+[0m15:37:22.236189 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:37:22.236327 [info ] [MainThread]: 
+[0m15:37:22.236551 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:37:22.236938 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3'
+[0m15:37:22.237133 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:37:22.735398 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3, now list_organic-bivouac-458413-s3_jaffle_shop)
+[0m15:37:22.736395 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:37:23.221070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b23eed0>]}
+[0m15:37:23.222328 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:37:23.314617 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m15:37:23.315018 [info ] [Thread-1 (]: 1 of 1 START sql table model jaffle_shop.customers ............................. [RUN]
+[0m15:37:23.315264 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.customers)
+[0m15:37:23.315432 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m15:37:23.321653 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m15:37:23.322112 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m15:37:23.329317 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:37:23.724852 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m15:37:23.725603 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+  
+    
+
+    create or replace table `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from `dbt-tutorial`.jaffle_shop.customers
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from `dbt-tutorial`.jaffle_shop.orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+    );
+  
+[0m15:37:24.400978 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:4b227c45-fbfb-4f65-8260-4b87fceade11&page=queryresults
+[0m15:37:27.309041 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a791928a-d330-474d-90e4-5f5da3229381', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b42d230>]}
+[0m15:37:27.309768 [info ] [Thread-1 (]: 1 of 1 OK created sql table model jaffle_shop.customers ........................ [[32mCREATE TABLE (100.0 rows, 4.3 KiB processed)[0m in 3.99s]
+[0m15:37:27.310293 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m15:37:27.311333 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:37:27.383867 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:37:27.384037 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m15:37:27.384174 [info ] [MainThread]: 
+[0m15:37:27.384312 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.15 seconds (5.15s).
+[0m15:37:27.384614 [debug] [MainThread]: Command end result
+[0m15:37:27.393945 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:37:27.394688 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:37:27.397188 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:37:27.397332 [info ] [MainThread]: 
+[0m15:37:27.397516 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:37:27.397649 [info ] [MainThread]: 
+[0m15:37:27.397799 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m15:37:27.399823 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.799775, "process_user_time": 1.534143, "process_kernel_time": 0.256563, "process_mem_max_rss": "212844544", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:37:27.400075 [debug] [MainThread]: Command `dbt run` succeeded at 15:37:27.400028 after 5.80 seconds
+[0m15:37:27.400313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b3e9810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b3e3920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b210750>]}
+[0m15:37:27.400520 [debug] [MainThread]: Flushing usage events
+[0m15:37:27.794720 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:37:46.196446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1055e4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077fbed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077fbd90>]}
+
+
+============================== 15:37:46.198377 | 3bbf83a0-4207-4f75-a0f2-e7d0aed64498 ==============================
+[0m15:37:46.198377 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:37:46.198704 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'profiles_dir': '/Users/nataliefiann/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --full-refresh', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:37:46.566761 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:37:46.567036 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x130dbf490>]}
+[0m15:37:46.612677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x130deb240>]}
+[0m15:37:46.635789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x130e84d50>]}
+[0m15:37:46.636101 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:37:46.699884 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:37:46.736936 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:37:46.737115 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:37:46.739289 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+[0m15:37:46.747758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131b68320>]}
+[0m15:37:46.772279 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:37:46.773579 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:37:46.779329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131c8c670>]}
+[0m15:37:46.779518 [info ] [MainThread]: Found 1 model, 487 macros
+[0m15:37:46.779666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131c52a90>]}
+[0m15:37:46.780338 [info ] [MainThread]: 
+[0m15:37:46.780496 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:37:46.780620 [info ] [MainThread]: 
+[0m15:37:46.780837 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:37:46.781209 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3'
+[0m15:37:46.781398 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:37:47.288003 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3, now list_organic-bivouac-458413-s3_jaffle_shop)
+[0m15:37:47.288896 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:37:47.696705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131af7110>]}
+[0m15:37:47.697802 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:37:47.788413 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m15:37:47.788791 [info ] [Thread-1 (]: 1 of 1 START sql table model jaffle_shop.customers ............................. [RUN]
+[0m15:37:47.789044 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.customers)
+[0m15:37:47.789201 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m15:37:47.794643 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m15:37:47.795009 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m15:37:47.802099 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:37:48.240220 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m15:37:48.241178 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+  
+    
+
+    create or replace table `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from `dbt-tutorial`.jaffle_shop.customers
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from `dbt-tutorial`.jaffle_shop.orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+    );
+  
+[0m15:37:49.008841 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:4115ec43-a0e2-471a-b93b-c66a7f5fe7b1&page=queryresults
+[0m15:37:52.836244 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bbf83a0-4207-4f75-a0f2-e7d0aed64498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131ced230>]}
+[0m15:37:52.837030 [info ] [Thread-1 (]: 1 of 1 OK created sql table model jaffle_shop.customers ........................ [[32mCREATE TABLE (100.0 rows, 4.3 KiB processed)[0m in 5.05s]
+[0m15:37:52.837548 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m15:37:52.838601 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:37:52.911148 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:37:52.911343 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m15:37:52.911485 [info ] [MainThread]: 
+[0m15:37:52.911625 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 6.13 seconds (6.13s).
+[0m15:37:52.911952 [debug] [MainThread]: Command end result
+[0m15:37:52.921553 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:37:52.922306 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:37:52.924800 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:37:52.924946 [info ] [MainThread]: 
+[0m15:37:52.925124 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:37:52.925252 [info ] [MainThread]: 
+[0m15:37:52.925392 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m15:37:52.927465 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.7611957, "process_user_time": 1.521286, "process_kernel_time": 0.23718, "process_mem_max_rss": "211746816", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:37:52.927738 [debug] [MainThread]: Command `dbt run` succeeded at 15:37:52.927694 after 6.76 seconds
+[0m15:37:52.927920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131ca1810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131c9f920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131ac8750>]}
+[0m15:37:52.928089 [debug] [MainThread]: Flushing usage events
+[0m15:37:53.346803 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:44:50.884319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1037e4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10462fed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10462fd90>]}
+
+
+============================== 15:44:50.886690 | 8c4a8553-c74c-48d1-ad3f-b9c3c48e861b ==============================
+[0m15:44:50.886690 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:44:50.886992 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:44:51.558571 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:44:51.558872 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae43490>]}
+[0m15:44:51.602704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae6b240>]}
+[0m15:44:51.626159 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af04d50>]}
+[0m15:44:51.626462 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:44:51.698401 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:44:51.725433 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m15:44:51.725704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103f69b80>]}
+[0m15:44:52.121410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b40b4d0>]}
+[0m15:44:52.146375 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:44:52.147990 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:44:52.158721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b239640>]}
+[0m15:44:52.158946 [info ] [MainThread]: Found 3 models, 487 macros
+[0m15:44:52.159100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b456210>]}
+[0m15:44:52.159874 [info ] [MainThread]: 
+[0m15:44:52.160038 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:44:52.160161 [info ] [MainThread]: 
+[0m15:44:52.160371 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:44:52.161994 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3'
+[0m15:44:52.162169 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:44:52.690036 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3, now list_organic-bivouac-458413-s3_jaffle_shop)
+[0m15:44:52.691061 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:44:53.305508 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4733e0>]}
+[0m15:44:53.306566 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:44:53.395188 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m15:44:53.395440 [debug] [Thread-2 (]: Began running node model.jaffle_shop.stg_customers
+[0m15:44:53.395704 [info ] [Thread-1 (]: 1 of 2 START sql table model jaffle_shop.customers ............................. [RUN]
+[0m15:44:53.395955 [info ] [Thread-2 (]: 2 of 2 START sql table model jaffle_shop.stg_customers ......................... [RUN]
+[0m15:44:53.396182 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.customers)
+[0m15:44:53.396378 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.jaffle_shop.stg_customers'
+[0m15:44:53.396526 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m15:44:53.396659 [debug] [Thread-2 (]: Began compiling node model.jaffle_shop.stg_customers
+[0m15:44:53.399865 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m15:44:53.400566 [debug] [Thread-2 (]: Writing injected SQL for node "model.jaffle_shop.stg_customers"
+[0m15:44:53.400920 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m15:44:53.408231 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:44:53.408486 [debug] [Thread-2 (]: Began executing node model.jaffle_shop.stg_customers
+[0m15:44:53.419859 [debug] [Thread-2 (]: Writing runtime sql for node "model.jaffle_shop.stg_customers"
+[0m15:44:53.480516 [debug] [Thread-2 (]: On model.jaffle_shop.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_customers"} */
+
+  
+    
+
+    create or replace table `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_customers`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from `dbt-tutorial`.jaffle_shop.customers
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from `dbt-tutorial`.jaffle_shop.orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+    );
+  
+[0m15:44:53.480803 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:44:53.909398 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m15:44:53.911262 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+  
+    
+
+    create or replace table `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from `dbt-tutorial`.jaffle_shop.customers
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from `dbt-tutorial`.jaffle_shop.orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+    );
+  
+[0m15:44:54.358076 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:4a24e21e-0c66-447c-9123-da075ccf2549&page=queryresults
+[0m15:44:54.550572 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:6dc027f5-321b-4a1d-884e-9a83a7e29116&page=queryresults
+[0m15:44:56.923622 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1039de490>]}
+[0m15:44:56.924370 [info ] [Thread-2 (]: 2 of 2 OK created sql table model jaffle_shop.stg_customers .................... [[32mCREATE TABLE (100.0 rows, 4.3 KiB processed)[0m in 3.53s]
+[0m15:44:56.924866 [debug] [Thread-2 (]: Finished running node model.jaffle_shop.stg_customers
+[0m15:44:57.117522 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8c4a8553-c74c-48d1-ad3f-b9c3c48e861b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b437c50>]}
+[0m15:44:57.118827 [info ] [Thread-1 (]: 1 of 2 OK created sql table model jaffle_shop.customers ........................ [[32mCREATE TABLE (100.0 rows, 4.3 KiB processed)[0m in 3.72s]
+[0m15:44:57.119654 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m15:44:57.121563 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:44:57.207926 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:44:57.208211 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m15:44:57.208352 [debug] [MainThread]: Connection 'model.jaffle_shop.stg_customers' was properly closed.
+[0m15:44:57.208577 [info ] [MainThread]: 
+[0m15:44:57.208749 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 5.05 seconds (5.05s).
+[0m15:44:57.209250 [debug] [MainThread]: Command end result
+[0m15:44:57.219867 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:44:57.220683 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:44:57.223305 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:44:57.223453 [info ] [MainThread]: 
+[0m15:44:57.223619 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:44:57.223751 [info ] [MainThread]: 
+[0m15:44:57.223890 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m15:44:57.226808 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.373455, "process_user_time": 1.993063, "process_kernel_time": 0.306824, "process_mem_max_rss": "216219648", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:44:57.227117 [debug] [MainThread]: Command `dbt run` succeeded at 15:44:57.227075 after 6.37 seconds
+[0m15:44:57.227294 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104690e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100a9c520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104652e10>]}
+[0m15:44:57.227459 [debug] [MainThread]: Flushing usage events
+[0m15:44:57.587960 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:46:07.475964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105bd0980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a1bed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a1bd90>]}
+
+
+============================== 15:46:07.477832 | 90a60dae-f8d7-427f-b37f-c7acb7913dfe ==============================
+[0m15:46:07.477832 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:46:07.478151 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt test', 'send_anonymous_usage_stats': 'True'}
+[0m15:46:07.849137 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:46:07.849449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '90a60dae-f8d7-427f-b37f-c7acb7913dfe', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d22f490>]}
+[0m15:46:07.895357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '90a60dae-f8d7-427f-b37f-c7acb7913dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d257240>]}
+[0m15:46:07.918712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '90a60dae-f8d7-427f-b37f-c7acb7913dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d2f0d50>]}
+[0m15:46:07.919016 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:46:07.984562 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:46:08.022486 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 1 files changed.
+[0m15:46:08.022758 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models/models/schema.yml
+[0m15:46:08.022936 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop://models/models/models/stg_orders.sql
+[0m15:46:08.196068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '90a60dae-f8d7-427f-b37f-c7acb7913dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d6f2b70>]}
+[0m15:46:08.228637 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:46:08.230006 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:46:08.242666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '90a60dae-f8d7-427f-b37f-c7acb7913dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d9e8050>]}
+[0m15:46:08.242882 [info ] [MainThread]: Found 3 models, 9 data tests, 487 macros
+[0m15:46:08.243043 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '90a60dae-f8d7-427f-b37f-c7acb7913dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10db271e0>]}
+[0m15:46:08.243958 [info ] [MainThread]: 
+[0m15:46:08.244128 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:46:08.244252 [info ] [MainThread]: 
+[0m15:46:08.244460 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:46:08.246358 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3_jaffle_shop'
+[0m15:46:08.246545 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:46:08.709519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '90a60dae-f8d7-427f-b37f-c7acb7913dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d877d10>]}
+[0m15:46:08.710665 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:46:08.797976 [debug] [Thread-1 (]: Began running node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:46:08.798213 [debug] [Thread-2 (]: Began running node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:46:08.798387 [debug] [Thread-4 (]: Began running node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:46:08.798536 [debug] [Thread-3 (]: Began running node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:46:08.798729 [info ] [Thread-1 (]: 1 of 9 START test accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned  [RUN]
+[0m15:46:08.798952 [info ] [Thread-2 (]: 2 of 9 START test not_null_customers_customer_id ............................... [RUN]
+[0m15:46:08.799142 [info ] [Thread-4 (]: 4 of 9 START test not_null_stg_orders_customer_id .............................. [RUN]
+[0m15:46:08.799327 [info ] [Thread-3 (]: 3 of 9 START test not_null_stg_customers_customer_id ........................... [RUN]
+[0m15:46:08.799537 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad)
+[0m15:46:08.799733 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d'
+[0m15:46:08.799913 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5'
+[0m15:46:08.800089 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa'
+[0m15:46:08.800240 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:46:08.800380 [debug] [Thread-2 (]: Began compiling node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:46:08.800511 [debug] [Thread-4 (]: Began compiling node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:46:08.800644 [debug] [Thread-3 (]: Began compiling node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:46:08.804741 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m15:46:08.808777 [debug] [Thread-2 (]: Writing injected SQL for node "test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d"
+[0m15:46:08.810645 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:46:08.812139 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:46:08.812704 [debug] [Thread-3 (]: Began executing node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:46:08.818819 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:46:08.819016 [debug] [Thread-4 (]: Began executing node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:46:08.821212 [debug] [Thread-3 (]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:46:08.821379 [debug] [Thread-2 (]: Began executing node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:46:08.822430 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m15:46:08.823205 [debug] [Thread-4 (]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:46:08.824222 [debug] [Thread-2 (]: Writing runtime sql for node "test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d"
+[0m15:46:08.824623 [debug] [Thread-3 (]: On test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_customers`
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:08.824844 [debug] [Thread-1 (]: On test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'placed','shipped','completed','return_pending','returned'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:08.825123 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:46:08.825311 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:46:08.825504 [debug] [Thread-2 (]: On test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:08.825691 [debug] [Thread-4 (]: On test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:08.825915 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:46:08.826112 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:46:09.553452 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:e2c7a1bb-b783-46eb-af95-f1fa64376ee7&page=queryresults
+[0m15:46:09.554460 [error] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:e2c7a1bb-b783-46eb-af95-f1fa64376ee7&page=queryresults
+[0m15:46:09.568287 [debug] [Thread-4 (]: Database Error in test not_null_stg_orders_customer_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/not_null_stg_orders_customer_id.sql
+[0m15:46:09.569033 [error] [Thread-4 (]: 4 of 9 ERROR not_null_stg_orders_customer_id ................................... [[31mERROR[0m in 0.77s]
+[0m15:46:09.569670 [debug] [Thread-4 (]: Finished running node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:46:09.570063 [debug] [Thread-4 (]: Began running node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:46:09.570587 [debug] [Thread-7 (]: Marking all children of 'test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5' to be skipped because of status 'error'.  Reason: Database Error in test not_null_stg_orders_customer_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/not_null_stg_orders_customer_id.sql.
+[0m15:46:09.571016 [info ] [Thread-4 (]: 5 of 9 START test not_null_stg_orders_order_id ................................. [RUN]
+[0m15:46:09.572192 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5, now test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64)
+[0m15:46:09.572569 [debug] [Thread-4 (]: Began compiling node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:46:09.577200 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:46:09.577989 [debug] [Thread-4 (]: Began executing node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:46:09.579668 [debug] [Thread-4 (]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:46:09.580268 [debug] [Thread-4 (]: On test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select order_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+where order_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:09.580574 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m15:46:09.688334 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:637b2476-4c54-4feb-ae5e-1b7cc867d680&page=queryresults
+[0m15:46:09.688656 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:637b2476-4c54-4feb-ae5e-1b7cc867d680&page=queryresults
+[0m15:46:09.691149 [debug] [Thread-1 (]: Database Error in test accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/accepted_values_stg_orders_4f514bf94b77b7ea437830eec4421c58.sql
+[0m15:46:09.691433 [error] [Thread-1 (]: 1 of 9 ERROR accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned  [[31mERROR[0m in 0.89s]
+[0m15:46:09.691713 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:46:09.691903 [debug] [Thread-1 (]: Began running node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:46:09.692151 [debug] [Thread-7 (]: Marking all children of 'test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad' to be skipped because of status 'error'.  Reason: Database Error in test accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/accepted_values_stg_orders_4f514bf94b77b7ea437830eec4421c58.sql.
+[0m15:46:09.692362 [info ] [Thread-1 (]: 6 of 9 START test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [RUN]
+[0m15:46:09.692649 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad, now test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500)
+[0m15:46:09.692855 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:46:09.695780 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:46:09.696232 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:46:09.697458 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:46:09.697912 [debug] [Thread-1 (]: On test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with child as (
+    select customer_id as from_field
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+    where customer_id is not null
+),
+
+parent as (
+    select customer_id as to_field
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_customers`
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:09.698120 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:46:09.843823 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:46643b2f-f1c5-4a81-9655-dbc3cff85ef5&page=queryresults
+[0m15:46:09.898467 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:2853f6d7-86a7-48dc-acc2-e96fca554b0b&page=queryresults
+[0m15:46:10.183099 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:db887705-3dd6-44d9-8ebe-d9fbf99d83ca&page=queryresults
+[0m15:46:10.183468 [error] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:db887705-3dd6-44d9-8ebe-d9fbf99d83ca&page=queryresults
+[0m15:46:10.186877 [debug] [Thread-4 (]: Database Error in test not_null_stg_orders_order_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/not_null_stg_orders_order_id.sql
+[0m15:46:10.187215 [error] [Thread-4 (]: 5 of 9 ERROR not_null_stg_orders_order_id ...................................... [[31mERROR[0m in 0.62s]
+[0m15:46:10.187562 [debug] [Thread-4 (]: Finished running node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:46:10.187797 [debug] [Thread-4 (]: Began running node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:46:10.188107 [debug] [Thread-7 (]: Marking all children of 'test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64' to be skipped because of status 'error'.  Reason: Database Error in test not_null_stg_orders_order_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/not_null_stg_orders_order_id.sql.
+[0m15:46:10.188372 [info ] [Thread-4 (]: 7 of 9 START test unique_customers_customer_id ................................. [RUN]
+[0m15:46:10.188732 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64, now test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1)
+[0m15:46:10.189026 [debug] [Thread-4 (]: Began compiling node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:46:10.193405 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1"
+[0m15:46:10.193920 [debug] [Thread-4 (]: Began executing node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:46:10.195109 [debug] [Thread-4 (]: Writing runtime sql for node "test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1"
+[0m15:46:10.195540 [debug] [Thread-4 (]: On test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with dbt_test__target as (
+
+  select customer_id as unique_field
+  from `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+  where customer_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:10.195787 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m15:46:10.358181 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:87fd24b9-3628-4d8d-9406-bcff6515ca5a&page=queryresults
+[0m15:46:10.358569 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:87fd24b9-3628-4d8d-9406-bcff6515ca5a&page=queryresults
+[0m15:46:10.361846 [debug] [Thread-1 (]: Database Error in test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/relationships_stg_orders_96411fe0c89b49c3f4da955dfd358ba0.sql
+[0m15:46:10.362213 [error] [Thread-1 (]: 6 of 9 ERROR relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [[31mERROR[0m in 0.67s]
+[0m15:46:10.362570 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:46:10.362805 [debug] [Thread-1 (]: Began running node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:46:10.363120 [debug] [Thread-7 (]: Marking all children of 'test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500' to be skipped because of status 'error'.  Reason: Database Error in test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/relationships_stg_orders_96411fe0c89b49c3f4da955dfd358ba0.sql.
+[0m15:46:10.363383 [info ] [Thread-1 (]: 8 of 9 START test unique_stg_customers_customer_id ............................. [RUN]
+[0m15:46:10.363917 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500, now test.jaffle_shop.unique_stg_customers_customer_id.c7614daada)
+[0m15:46:10.364213 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:46:10.366545 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.unique_stg_customers_customer_id.c7614daada"
+[0m15:46:10.367005 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:46:10.368239 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_shop.unique_stg_customers_customer_id.c7614daada"
+[0m15:46:10.368729 [debug] [Thread-1 (]: On test.jaffle_shop.unique_stg_customers_customer_id.c7614daada: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.unique_stg_customers_customer_id.c7614daada"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with dbt_test__target as (
+
+  select customer_id as unique_field
+  from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_customers`
+  where customer_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:10.368981 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:46:10.687247 [info ] [Thread-3 (]: 3 of 9 PASS not_null_stg_customers_customer_id ................................. [[32mPASS[0m in 1.89s]
+[0m15:46:10.688056 [debug] [Thread-3 (]: Finished running node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:46:10.688531 [debug] [Thread-3 (]: Began running node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:46:10.689045 [info ] [Thread-3 (]: 9 of 9 START test unique_stg_orders_order_id ................................... [RUN]
+[0m15:46:10.689641 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a)
+[0m15:46:10.690093 [debug] [Thread-3 (]: Began compiling node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:46:10.695083 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a"
+[0m15:46:10.695883 [debug] [Thread-3 (]: Began executing node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:46:10.697942 [debug] [Thread-3 (]: Writing runtime sql for node "test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a"
+[0m15:46:10.698610 [debug] [Thread-3 (]: On test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with dbt_test__target as (
+
+  select order_id as unique_field
+  from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+  where order_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m15:46:10.699059 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:46:10.833924 [info ] [Thread-2 (]: 2 of 9 PASS not_null_customers_customer_id ..................................... [[32mPASS[0m in 2.03s]
+[0m15:46:10.834273 [debug] [Thread-2 (]: Finished running node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:46:11.230701 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:9295c266-b162-4e66-9317-df400ab5021a&page=queryresults
+[0m15:46:11.301441 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:8160f42a-8442-47af-96e4-a86f4c14eafc&page=queryresults
+[0m15:46:11.684994 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:14cc73d8-530f-47a1-847e-fa045a89ac65&page=queryresults
+[0m15:46:11.687168 [error] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:14cc73d8-530f-47a1-847e-fa045a89ac65&page=queryresults
+[0m15:46:11.695705 [debug] [Thread-3 (]: Database Error in test unique_stg_orders_order_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/unique_stg_orders_order_id.sql
+[0m15:46:11.696638 [error] [Thread-3 (]: 9 of 9 ERROR unique_stg_orders_order_id ........................................ [[31mERROR[0m in 1.01s]
+[0m15:46:11.697651 [debug] [Thread-3 (]: Finished running node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:46:11.698518 [debug] [Thread-7 (]: Marking all children of 'test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a' to be skipped because of status 'error'.  Reason: Database Error in test unique_stg_orders_order_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/unique_stg_orders_order_id.sql.
+[0m15:46:11.949010 [info ] [Thread-4 (]: 7 of 9 PASS unique_customers_customer_id ....................................... [[32mPASS[0m in 1.76s]
+[0m15:46:11.949393 [debug] [Thread-4 (]: Finished running node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:46:12.019353 [info ] [Thread-1 (]: 8 of 9 PASS unique_stg_customers_customer_id ................................... [[32mPASS[0m in 1.66s]
+[0m15:46:12.019842 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:46:12.020814 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:46:12.091994 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:46:12.092160 [debug] [MainThread]: Connection 'test.jaffle_shop.unique_stg_customers_customer_id.c7614daada' was properly closed.
+[0m15:46:12.092274 [debug] [MainThread]: Connection 'test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d' was properly closed.
+[0m15:46:12.092374 [debug] [MainThread]: Connection 'test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1' was properly closed.
+[0m15:46:12.092478 [debug] [MainThread]: Connection 'test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m15:46:12.092601 [info ] [MainThread]: 
+[0m15:46:12.092740 [info ] [MainThread]: Finished running 9 data tests in 0 hours 0 minutes and 3.85 seconds (3.85s).
+[0m15:46:12.093461 [debug] [MainThread]: Command end result
+[0m15:46:12.104109 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:46:12.104889 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:46:12.107848 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:46:12.108000 [info ] [MainThread]: 
+[0m15:46:12.108164 [info ] [MainThread]: [31mCompleted with 5 errors, 0 partial successs, and 0 warnings:[0m
+[0m15:46:12.108295 [info ] [MainThread]: 
+[0m15:46:12.108458 [error] [MainThread]:   Database Error in test not_null_stg_orders_customer_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/not_null_stg_orders_customer_id.sql
+[0m15:46:12.108585 [info ] [MainThread]: 
+[0m15:46:12.108734 [error] [MainThread]:   Database Error in test accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/accepted_values_stg_orders_4f514bf94b77b7ea437830eec4421c58.sql
+[0m15:46:12.108855 [info ] [MainThread]: 
+[0m15:46:12.108995 [error] [MainThread]:   Database Error in test not_null_stg_orders_order_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/not_null_stg_orders_order_id.sql
+[0m15:46:12.109110 [info ] [MainThread]: 
+[0m15:46:12.109251 [error] [MainThread]:   Database Error in test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/relationships_stg_orders_96411fe0c89b49c3f4da955dfd358ba0.sql
+[0m15:46:12.109369 [info ] [MainThread]: 
+[0m15:46:12.109503 [error] [MainThread]:   Database Error in test unique_stg_orders_order_id (models/models/schema.yml)
+  Not found: Table organic-bivouac-458413-s3:jaffle_shop.stg_orders was not found in location US
+  compiled code at target/run/jaffle_shop/models/models/schema.yml/unique_stg_orders_order_id.sql
+[0m15:46:12.109616 [info ] [MainThread]: 
+[0m15:46:12.109745 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=5 SKIP=0 TOTAL=9
+[0m15:46:12.112224 [debug] [MainThread]: Resource report: {"command_name": "test", "command_wall_clock_time": 4.6661906, "process_user_time": 2.238128, "process_kernel_time": 0.26607, "process_mem_max_rss": "223657984", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:46:12.112494 [debug] [MainThread]: Command `dbt test` failed at 15:46:12.112455 after 4.67 seconds
+[0m15:46:12.112674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10db9dc80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd080f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd084b0>]}
+[0m15:46:12.112828 [debug] [MainThread]: Flushing usage events
+[0m15:46:12.553718 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:47:01.506922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c44980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f37ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f37d90>]}
+
+
+============================== 15:47:01.508720 | 88247637-1505-4e71-ac9a-802b7ddb6402 ==============================
+[0m15:47:01.508720 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:47:01.509020 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --models stg_orders', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:47:01.922024 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:47:01.922305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1247bf490>]}
+[0m15:47:01.965731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1247eb240>]}
+[0m15:47:01.988559 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124884d50>]}
+[0m15:47:01.988846 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:47:02.054498 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:47:02.102141 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:47:02.102325 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:47:02.117481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124bf89b0>]}
+[0m15:47:02.147275 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:47:02.148572 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:47:02.155928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1248f5e10>]}
+[0m15:47:02.156127 [info ] [MainThread]: Found 3 models, 9 data tests, 487 macros
+[0m15:47:02.156280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124d901f0>]}
+[0m15:47:02.156960 [info ] [MainThread]: 
+[0m15:47:02.157120 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:47:02.157237 [info ] [MainThread]: 
+[0m15:47:02.157441 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:47:02.157835 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3'
+[0m15:47:02.158055 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:47:02.636489 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3, now list_organic-bivouac-458413-s3_jaffle_shop)
+[0m15:47:02.637276 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:47:03.106831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124d5f110>]}
+[0m15:47:03.108066 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:47:03.200222 [debug] [Thread-1 (]: Began running node model.jaffle_shop.stg_orders
+[0m15:47:03.200562 [info ] [Thread-1 (]: 1 of 1 START sql table model jaffle_shop.stg_orders ............................ [RUN]
+[0m15:47:03.200796 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.stg_orders)
+[0m15:47:03.200952 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.stg_orders
+[0m15:47:03.204892 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.stg_orders"
+[0m15:47:03.205254 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.stg_orders
+[0m15:47:03.222547 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.stg_orders"
+[0m15:47:03.222950 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_orders"} */
+
+  
+    
+
+    create or replace table `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      select
+    id as order_id,
+    user_id as customer_id,
+    order_date,
+    status
+
+from `dbt-tutorial`.jaffle_shop.orders
+    );
+  
+[0m15:47:03.223133 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:04.070031 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:51a43cfa-3baf-473a-b0f5-f3e1cc1902db&page=queryresults
+[0m15:47:06.492251 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '88247637-1505-4e71-ac9a-802b7ddb6402', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124dc2a40>]}
+[0m15:47:06.492853 [info ] [Thread-1 (]: 1 of 1 OK created sql table model jaffle_shop.stg_orders ....................... [[32mCREATE TABLE (99.0 rows, 3.3 KiB processed)[0m in 3.29s]
+[0m15:47:06.493340 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.stg_orders
+[0m15:47:06.494394 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:47:06.566241 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:47:06.566468 [debug] [MainThread]: Connection 'model.jaffle_shop.stg_orders' was properly closed.
+[0m15:47:06.566618 [info ] [MainThread]: 
+[0m15:47:06.566772 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 4.41 seconds (4.41s).
+[0m15:47:06.567090 [debug] [MainThread]: Command end result
+[0m15:47:06.577643 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:47:06.578553 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:47:06.581145 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:47:06.581293 [info ] [MainThread]: 
+[0m15:47:06.581468 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:47:06.581591 [info ] [MainThread]: 
+[0m15:47:06.581725 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m15:47:06.583783 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.107367, "process_user_time": 1.518984, "process_kernel_time": 0.239802, "process_mem_max_rss": "212074496", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:47:06.584040 [debug] [MainThread]: Command `dbt run` succeeded at 15:47:06.584002 after 5.11 seconds
+[0m15:47:06.584203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124944b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124f42690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1249162d0>]}
+[0m15:47:06.584357 [debug] [MainThread]: Flushing usage events
+[0m15:47:06.981533 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:47:30.209718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105eec980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107137ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107137d90>]}
+
+
+============================== 15:47:30.211575 | 70034333-3fd1-4076-8230-2ad45a8e5219 ==============================
+[0m15:47:30.211575 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:47:30.211870 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:47:30.576884 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:47:30.577157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '70034333-3fd1-4076-8230-2ad45a8e5219', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eabf490>]}
+[0m15:47:30.622390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '70034333-3fd1-4076-8230-2ad45a8e5219', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eaeb240>]}
+[0m15:47:30.645266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '70034333-3fd1-4076-8230-2ad45a8e5219', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eb84d50>]}
+[0m15:47:30.645568 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:47:30.710820 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:47:30.758822 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:47:30.759007 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:47:30.774513 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '70034333-3fd1-4076-8230-2ad45a8e5219', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f8f09b0>]}
+[0m15:47:30.804599 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:47:30.805953 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:47:30.818316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '70034333-3fd1-4076-8230-2ad45a8e5219', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fa82f90>]}
+[0m15:47:30.818522 [info ] [MainThread]: Found 3 models, 9 data tests, 487 macros
+[0m15:47:30.818675 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '70034333-3fd1-4076-8230-2ad45a8e5219', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fc09bf0>]}
+[0m15:47:30.819581 [info ] [MainThread]: 
+[0m15:47:30.819747 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:47:30.819870 [info ] [MainThread]: 
+[0m15:47:30.820086 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:47:30.822031 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3_jaffle_shop'
+[0m15:47:30.822214 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:47:31.233752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '70034333-3fd1-4076-8230-2ad45a8e5219', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f89f7d0>]}
+[0m15:47:31.234819 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:47:31.323545 [debug] [Thread-2 (]: Began running node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:47:31.323814 [debug] [Thread-4 (]: Began running node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:47:31.323995 [debug] [Thread-1 (]: Began running node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:47:31.324147 [debug] [Thread-3 (]: Began running node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:47:31.324334 [info ] [Thread-2 (]: 2 of 9 START test not_null_customers_customer_id ............................... [RUN]
+[0m15:47:31.324556 [info ] [Thread-4 (]: 4 of 9 START test not_null_stg_orders_customer_id .............................. [RUN]
+[0m15:47:31.324773 [info ] [Thread-1 (]: 1 of 9 START test accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned  [RUN]
+[0m15:47:31.324955 [info ] [Thread-3 (]: 3 of 9 START test not_null_stg_customers_customer_id ........................... [RUN]
+[0m15:47:31.325208 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d'
+[0m15:47:31.325399 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5'
+[0m15:47:31.325555 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad)
+[0m15:47:31.325734 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa'
+[0m15:47:31.325887 [debug] [Thread-2 (]: Began compiling node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:47:31.326032 [debug] [Thread-4 (]: Began compiling node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:47:31.326170 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:47:31.326304 [debug] [Thread-3 (]: Began compiling node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:47:31.334538 [debug] [Thread-2 (]: Writing injected SQL for node "test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d"
+[0m15:47:31.336122 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:47:31.340306 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m15:47:31.341763 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:47:31.342246 [debug] [Thread-4 (]: Began executing node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:47:31.342449 [debug] [Thread-2 (]: Began executing node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:47:31.342602 [debug] [Thread-3 (]: Began executing node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:47:31.342742 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:47:31.350736 [debug] [Thread-4 (]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:47:31.351563 [debug] [Thread-2 (]: Writing runtime sql for node "test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d"
+[0m15:47:31.352670 [debug] [Thread-3 (]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:47:31.353472 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m15:47:31.353974 [debug] [Thread-2 (]: On test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:31.354184 [debug] [Thread-4 (]: On test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:31.354391 [debug] [Thread-1 (]: On test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'placed','shipped','completed','return_pending','returned'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:31.354583 [debug] [Thread-3 (]: On test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_customers`
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:31.354756 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:47:31.354924 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:47:31.355117 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:31.355268 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:47:32.231375 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:f02cea4c-5163-44e9-b442-65ef788ccf74&page=queryresults
+[0m15:47:32.232606 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:84b04ead-12d5-4b8a-b07c-d41fe2cf08f4&page=queryresults
+[0m15:47:32.333369 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:28165c7b-b753-41ca-87e7-283c400cf18f&page=queryresults
+[0m15:47:32.456966 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:7d25dc5e-3add-4793-9481-57afdb96be89&page=queryresults
+[0m15:47:33.021031 [info ] [Thread-2 (]: 2 of 9 PASS not_null_customers_customer_id ..................................... [[32mPASS[0m in 1.70s]
+[0m15:47:33.022269 [debug] [Thread-2 (]: Finished running node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:47:33.022840 [debug] [Thread-2 (]: Began running node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:47:33.023450 [info ] [Thread-2 (]: 5 of 9 START test not_null_stg_orders_order_id ................................. [RUN]
+[0m15:47:33.024047 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d, now test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64)
+[0m15:47:33.024468 [debug] [Thread-2 (]: Began compiling node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:47:33.030491 [debug] [Thread-2 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:47:33.032208 [info ] [Thread-3 (]: 3 of 9 PASS not_null_stg_customers_customer_id ................................. [[32mPASS[0m in 1.71s]
+[0m15:47:33.032963 [debug] [Thread-3 (]: Finished running node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:47:33.033418 [debug] [Thread-3 (]: Began running node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:47:33.033820 [debug] [Thread-2 (]: Began executing node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:47:33.034301 [info ] [Thread-3 (]: 6 of 9 START test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [RUN]
+[0m15:47:33.036534 [debug] [Thread-2 (]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:47:33.036966 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500)
+[0m15:47:33.037435 [debug] [Thread-3 (]: Began compiling node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:47:33.045755 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:47:33.046172 [debug] [Thread-2 (]: On test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select order_id
+from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+where order_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:33.046586 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:47:33.120172 [debug] [Thread-3 (]: Began executing node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:47:33.121360 [debug] [Thread-3 (]: Writing runtime sql for node "test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:47:33.124897 [info ] [Thread-4 (]: 4 of 9 PASS not_null_stg_orders_customer_id .................................... [[32mPASS[0m in 1.80s]
+[0m15:47:33.125181 [debug] [Thread-4 (]: Finished running node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:47:33.125380 [debug] [Thread-3 (]: On test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with child as (
+    select customer_id as from_field
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+    where customer_id is not null
+),
+
+parent as (
+    select customer_id as to_field
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_customers`
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:33.125594 [debug] [Thread-4 (]: Began running node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:47:33.125795 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:47:33.125963 [info ] [Thread-4 (]: 7 of 9 START test unique_customers_customer_id ................................. [RUN]
+[0m15:47:33.126218 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5, now test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1)
+[0m15:47:33.126375 [debug] [Thread-4 (]: Began compiling node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:47:33.129175 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1"
+[0m15:47:33.190421 [debug] [Thread-4 (]: Began executing node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:47:33.191457 [debug] [Thread-4 (]: Writing runtime sql for node "test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1"
+[0m15:47:33.191815 [debug] [Thread-4 (]: On test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with dbt_test__target as (
+
+  select customer_id as unique_field
+  from `organic-bivouac-458413-s3`.`jaffle_shop`.`customers`
+  where customer_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:33.192026 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m15:47:33.253453 [info ] [Thread-1 (]: 1 of 9 PASS accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned  [[32mPASS[0m in 1.93s]
+[0m15:47:33.253918 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:47:33.254091 [debug] [Thread-1 (]: Began running node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:47:33.254265 [info ] [Thread-1 (]: 8 of 9 START test unique_stg_customers_customer_id ............................. [RUN]
+[0m15:47:33.254482 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad, now test.jaffle_shop.unique_stg_customers_customer_id.c7614daada)
+[0m15:47:33.254637 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:47:33.256420 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.unique_stg_customers_customer_id.c7614daada"
+[0m15:47:33.256726 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:47:33.257511 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_shop.unique_stg_customers_customer_id.c7614daada"
+[0m15:47:33.257798 [debug] [Thread-1 (]: On test.jaffle_shop.unique_stg_customers_customer_id.c7614daada: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.unique_stg_customers_customer_id.c7614daada"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with dbt_test__target as (
+
+  select customer_id as unique_field
+  from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_customers`
+  where customer_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:33.257960 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:33.971895 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:ccb8fbf8-47d1-42b0-9862-fa30946e2508&page=queryresults
+[0m15:47:33.973046 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:cabfb405-9e23-42d0-9651-3525f793b6c4&page=queryresults
+[0m15:47:33.974213 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:a53af4bb-b33c-40fa-8940-30b9d8fa35e4&page=queryresults
+[0m15:47:34.099443 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:6c51662a-9dec-4d05-b42b-dfeb50c267e0&page=queryresults
+[0m15:47:34.691322 [info ] [Thread-1 (]: 8 of 9 PASS unique_stg_customers_customer_id ................................... [[32mPASS[0m in 1.44s]
+[0m15:47:34.692798 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:47:34.693477 [debug] [Thread-1 (]: Began running node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:47:34.694096 [info ] [Thread-1 (]: 9 of 9 START test unique_stg_orders_order_id ................................... [RUN]
+[0m15:47:34.694751 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.unique_stg_customers_customer_id.c7614daada, now test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a)
+[0m15:47:34.695246 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:47:34.748875 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a"
+[0m15:47:34.746605 [info ] [Thread-4 (]: 7 of 9 PASS unique_customers_customer_id ....................................... [[32mPASS[0m in 1.62s]
+[0m15:47:34.750755 [info ] [Thread-2 (]: 5 of 9 PASS not_null_stg_orders_order_id ....................................... [[32mPASS[0m in 1.73s]
+[0m15:47:34.751845 [debug] [Thread-4 (]: Finished running node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:47:34.753791 [debug] [Thread-2 (]: Finished running node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:47:34.754601 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:47:34.757028 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a"
+[0m15:47:34.757555 [debug] [Thread-1 (]: On test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with dbt_test__target as (
+
+  select order_id as unique_field
+  from `organic-bivouac-458413-s3`.`jaffle_shop`.`stg_orders`
+  where order_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m15:47:34.757788 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:34.872769 [info ] [Thread-3 (]: 6 of 9 PASS relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [[32mPASS[0m in 1.84s]
+[0m15:47:34.873115 [debug] [Thread-3 (]: Finished running node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:47:35.559380 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:ca3d8b87-d99f-4b69-b857-7b06673a6813&page=queryresults
+[0m15:47:36.381539 [info ] [Thread-1 (]: 9 of 9 PASS unique_stg_orders_order_id ......................................... [[32mPASS[0m in 1.69s]
+[0m15:47:36.382440 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:47:36.384068 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:47:36.466747 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:47:36.466920 [debug] [MainThread]: Connection 'test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m15:47:36.467039 [debug] [MainThread]: Connection 'test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64' was properly closed.
+[0m15:47:36.467147 [debug] [MainThread]: Connection 'test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1' was properly closed.
+[0m15:47:36.467253 [debug] [MainThread]: Connection 'test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500' was properly closed.
+[0m15:47:36.467386 [info ] [MainThread]: 
+[0m15:47:36.467534 [info ] [MainThread]: Finished running 9 data tests in 0 hours 0 minutes and 5.65 seconds (5.65s).
+[0m15:47:36.468242 [debug] [MainThread]: Command end result
+[0m15:47:36.478887 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:47:36.479692 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:47:36.482702 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:47:36.482849 [info ] [MainThread]: 
+[0m15:47:36.483015 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:47:36.483145 [info ] [MainThread]: 
+[0m15:47:36.483277 [info ] [MainThread]: Done. PASS=9 WARN=0 ERROR=0 SKIP=0 TOTAL=9
+[0m15:47:36.485431 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 6.3055167, "process_user_time": 2.128943, "process_kernel_time": 0.264017, "process_mem_max_rss": "217038848", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:47:36.485679 [debug] [MainThread]: Command `dbt test` succeeded at 15:47:36.485642 after 6.31 seconds
+[0m15:47:36.485837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fb7e6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fc1b110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fc1b430>]}
+[0m15:47:36.485985 [debug] [MainThread]: Flushing usage events
+[0m15:47:36.925473 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:48:27.653180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107fec980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092fbc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092fbed0>]}
+
+
+============================== 15:48:27.654975 | 18c6c60f-69ee-4a5e-a382-23ad3061b8f2 ==============================
+[0m15:48:27.654975 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:48:27.655280 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:48:28.021382 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:48:28.021666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '18c6c60f-69ee-4a5e-a382-23ad3061b8f2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c4bf5c0>]}
+[0m15:48:28.066683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '18c6c60f-69ee-4a5e-a382-23ad3061b8f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c4ef240>]}
+[0m15:48:28.089510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '18c6c60f-69ee-4a5e-a382-23ad3061b8f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c684d50>]}
+[0m15:48:28.089815 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m15:48:28.154430 [debug] [MainThread]: checksum: 0d3acddb5afbce98f9888b13248063cae3d09e6e329263e3ffe4b2a6aa072c8d, vars: {}, profile: , target: , version: 1.9.0b4
+[0m15:48:28.202351 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:48:28.202766 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop://models/models/schema.yml
+[0m15:48:28.369185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '18c6c60f-69ee-4a5e-a382-23ad3061b8f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11daf5400>]}
+[0m15:48:28.375867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '18c6c60f-69ee-4a5e-a382-23ad3061b8f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11deffd90>]}
+[0m15:48:28.376078 [info ] [MainThread]: Found 3 models, 9 data tests, 487 macros
+[0m15:48:28.376249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '18c6c60f-69ee-4a5e-a382-23ad3061b8f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11df6ea90>]}
+[0m15:48:28.377131 [info ] [MainThread]: 
+[0m15:48:28.377305 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:48:28.377429 [info ] [MainThread]: 
+[0m15:48:28.377628 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:48:28.379254 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_organic-bivouac-458413-s3_jaffle_shop'
+[0m15:48:28.379471 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:48:28.838110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '18c6c60f-69ee-4a5e-a382-23ad3061b8f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11de6f650>]}
+[0m15:48:28.839147 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:48:28.930162 [debug] [Thread-3 (]: Began running node model.jaffle_shop.stg_orders
+[0m15:48:28.930429 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m15:48:28.930595 [debug] [Thread-2 (]: Began running node model.jaffle_shop.stg_customers
+[0m15:48:28.930807 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.jaffle_shop.stg_orders'
+[0m15:48:28.930981 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_organic-bivouac-458413-s3_jaffle_shop, now model.jaffle_shop.customers)
+[0m15:48:28.931169 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.jaffle_shop.stg_customers'
+[0m15:48:28.931310 [debug] [Thread-3 (]: Began compiling node model.jaffle_shop.stg_orders
+[0m15:48:28.931445 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m15:48:28.931572 [debug] [Thread-2 (]: Began compiling node model.jaffle_shop.stg_customers
+[0m15:48:28.934559 [debug] [Thread-3 (]: Writing injected SQL for node "model.jaffle_shop.stg_orders"
+[0m15:48:28.935244 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m15:48:28.935894 [debug] [Thread-2 (]: Writing injected SQL for node "model.jaffle_shop.stg_customers"
+[0m15:48:28.936319 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m15:48:28.936497 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:48:28.936661 [debug] [Thread-2 (]: Began executing node model.jaffle_shop.stg_customers
+[0m15:48:28.936804 [debug] [Thread-3 (]: Began executing node model.jaffle_shop.stg_orders
+[0m15:48:28.994860 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:48:28.995247 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m15:48:28.995399 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:48:28.995764 [debug] [Thread-1 (]: Began running node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:48:29.053691 [debug] [Thread-4 (]: Began running node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:48:29.053865 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.jaffle_shop.customers, now test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1)
+[0m15:48:29.111822 [debug] [Thread-3 (]: Finished running node model.jaffle_shop.stg_orders
+[0m15:48:29.114712 [debug] [Thread-2 (]: Finished running node model.jaffle_shop.stg_customers
+[0m15:48:29.114911 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d'
+[0m15:48:29.115068 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:48:29.115361 [debug] [Thread-4 (]: Began compiling node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:48:29.115519 [debug] [Thread-3 (]: Began running node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:48:29.115679 [debug] [Thread-2 (]: Began running node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:48:29.118336 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1"
+[0m15:48:29.121686 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d"
+[0m15:48:29.121874 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.jaffle_shop.stg_orders, now test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad)
+[0m15:48:29.122043 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.jaffle_shop.stg_customers, now test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m15:48:29.122296 [debug] [Thread-3 (]: Began compiling node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:48:29.122468 [debug] [Thread-2 (]: Began compiling node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:48:29.124398 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m15:48:29.126079 [debug] [Thread-2 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:48:29.126258 [debug] [Thread-4 (]: Began executing node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:48:29.126411 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:48:29.126633 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:48:29.126794 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:48:29.127056 [debug] [Thread-3 (]: Began executing node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:48:29.127249 [debug] [Thread-2 (]: Began executing node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:48:29.185523 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:48:29.244002 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1
+[0m15:48:29.244155 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:48:29.244432 [debug] [Thread-4 (]: Finished running node test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d
+[0m15:48:29.303124 [debug] [Thread-1 (]: Began running node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:48:29.303537 [debug] [Thread-3 (]: Finished running node test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m15:48:29.303763 [debug] [Thread-4 (]: Began running node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:48:29.303971 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.unique_customers_customer_id.c5af1ff4b1, now test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64)
+[0m15:48:29.363168 [debug] [Thread-3 (]: Began running node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:48:29.363521 [debug] [Thread-2 (]: Finished running node test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:48:29.363690 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_customers_customer_id.5c9bf9911d, now test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a)
+[0m15:48:29.363842 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:48:29.363985 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad, now test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m15:48:29.364142 [debug] [Thread-2 (]: Began running node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:48:29.364317 [debug] [Thread-4 (]: Began compiling node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:48:29.366343 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:48:29.366522 [debug] [Thread-3 (]: Began compiling node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:48:29.366693 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_stg_orders_customer_id.af79d5e4b5, now test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500)
+[0m15:48:29.368206 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a"
+[0m15:48:29.370108 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:48:29.370308 [debug] [Thread-2 (]: Began compiling node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:48:29.372335 [debug] [Thread-2 (]: Writing injected SQL for node "test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:48:29.372535 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:48:29.372701 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:48:29.372853 [debug] [Thread-4 (]: Began executing node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:48:29.373078 [debug] [Thread-2 (]: Began executing node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:48:29.373249 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m15:48:29.373402 [debug] [Thread-3 (]: Began executing node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:48:29.373566 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:48:29.431949 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:48:29.432092 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:48:29.490474 [debug] [Thread-4 (]: Finished running node test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a
+[0m15:48:29.549038 [debug] [Thread-1 (]: Began running node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:48:29.549450 [debug] [Thread-2 (]: Finished running node test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:48:29.549692 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_shop.not_null_stg_orders_order_id.81cfe2fe64, now test.jaffle_shop.unique_stg_customers_customer_id.c7614daada)
+[0m15:48:29.608986 [debug] [Thread-3 (]: Finished running node test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:48:29.609139 [debug] [Thread-1 (]: Began compiling node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:48:29.610840 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_shop.unique_stg_customers_customer_id.c7614daada"
+[0m15:48:29.611166 [debug] [Thread-1 (]: Began executing node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:48:29.611314 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:48:29.670779 [debug] [Thread-1 (]: Finished running node test.jaffle_shop.unique_stg_customers_customer_id.c7614daada
+[0m15:48:29.671336 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:48:29.671460 [debug] [MainThread]: Connection 'test.jaffle_shop.unique_stg_customers_customer_id.c7614daada' was properly closed.
+[0m15:48:29.671565 [debug] [MainThread]: Connection 'test.jaffle_shop.not_null_stg_customers_customer_id.e2cfb1f9aa' was properly closed.
+[0m15:48:29.671666 [debug] [MainThread]: Connection 'test.jaffle_shop.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500' was properly closed.
+[0m15:48:29.671761 [debug] [MainThread]: Connection 'test.jaffle_shop.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m15:48:29.672447 [debug] [MainThread]: Command end result
+[0m15:48:29.702742 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:48:29.704056 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:48:29.706895 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/run_results.json
+[0m15:48:29.709016 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m15:48:29.709161 [info ] [MainThread]: Building catalog
+[0m15:48:29.711159 [debug] [ThreadPool]: Acquiring new bigquery connection 'organic-bivouac-458413-s3.information_schema'
+[0m15:48:29.720238 [debug] [ThreadPool]: On organic-bivouac-458413-s3.information_schema: /* {"app": "dbt", "dbt_version": "1.9.0b4", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "organic-bivouac-458413-s3.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.__TABLES__ tables
+    left join `organic-bivouac-458413-s3`.`jaffle_shop`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `organic-bivouac-458413-s3`.`jaffle_shop`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('jaffle_shop')
+                            and upper(table_name) = upper('customers')
+                            ) or (
+                                upper(table_schema) = upper('jaffle_shop')
+                            and upper(table_name) = upper('stg_orders')
+                            ) or (
+                                upper(table_schema) = upper('jaffle_shop')
+                            and upper(table_name) = upper('stg_customers')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `organic-bivouac-458413-s3`.`jaffle_shop`.INFORMATION_SCHEMA.COLUMNS columns
+    join `organic-bivouac-458413-s3`.`jaffle_shop`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m15:48:29.720716 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:48:30.350718 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=organic-bivouac-458413-s3&j=bq:US:c765892d-fbef-4574-a24a-a9e96f325643&page=queryresults
+[0m15:48:32.299627 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:48:32.388569 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/catalog.json
+[0m15:48:32.400118 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/manifest.json
+[0m15:48:32.400874 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/semantic_manifest.json
+[0m15:48:32.401022 [info ] [MainThread]: Catalog written to /Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/target/catalog.json
+[0m15:48:32.403452 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 4.780434, "process_user_time": 2.299695, "process_kernel_time": 0.227964, "process_mem_max_rss": "217399296", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:48:32.403752 [debug] [MainThread]: Command `dbt docs generate` succeeded at 15:48:32.403709 after 4.78 seconds
+[0m15:48:32.403898 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m15:48:32.404014 [debug] [MainThread]: Connection 'organic-bivouac-458413-s3.information_schema' was properly closed.
+[0m15:48:32.404153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11dc9fa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092e6990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092e6f30>]}
+[0m15:48:32.404301 [debug] [MainThread]: Flushing usage events
+[0m15:48:32.784400 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:48:51.594209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076b4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084ffc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084ffed0>]}
+
+
+============================== 15:48:51.596077 | 8b19ffd8-8c81-4f68-98b3-76999a361337 ==============================
+[0m15:48:51.596077 [info ] [MainThread]: Running with dbt=1.9.0-b4
+[0m15:48:51.596376 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nataliefiann/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/jaffle_shop/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs serve', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:48:51.973988 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `data-paths` config has been renamed to `seed-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m15:48:51.974272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '8b19ffd8-8c81-4f68-98b3-76999a361337', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d0bf5c0>]}
+[0m15:48:52.020192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8b19ffd8-8c81-4f68-98b3-76999a361337', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d0ef350>]}
+[0m15:48:52.043354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8b19ffd8-8c81-4f68-98b3-76999a361337', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d188d50>]}
+[0m15:49:26.444397 [error] [MainThread]: Encountered an error:
+
+[0m15:49:26.452669 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/venv/lib/python3.13/site-packages/dbt/cli/main.py", line 301, in docs_serve
+    results = task.run()
+  File "/Users/nataliefiann/Documents/Github/docs.getdbt.com/website/venv/lib/python3.13/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+[0m15:49:26.459640 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_wall_clock_time": 34.89643, "process_user_time": 0.916514, "process_kernel_time": 0.166827, "process_mem_max_rss": "201179136", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:49:26.460600 [debug] [MainThread]: Command `dbt docs serve` failed at 15:49:26.460397 after 34.90 seconds
+[0m15:49:26.461252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d481310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d4814f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1083ddb70>]}
+[0m15:49:26.461746 [debug] [MainThread]: Flushing usage events
+[0m15:49:26.843923 [debug] [MainThread]: An error was encountered while trying to flush usage events
