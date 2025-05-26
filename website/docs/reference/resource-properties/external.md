@@ -21,7 +21,8 @@ sources:
             - name: <column_name>
               data_type: <string>
               description: <string>
-              meta: {dictionary}
+              config:
+                meta: {dictionary}
             - ...
           <additional_property>: <additional_value>
 ```

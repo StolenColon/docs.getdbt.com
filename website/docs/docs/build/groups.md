@@ -89,8 +89,8 @@ By default, all models within a group have the `protected` [access modifier](/re
 ```yml
 models:
   - name: finance_private_model
-    access: private
     config:
+      access: private
       group: finance
 
   # in a different group!

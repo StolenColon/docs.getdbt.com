@@ -235,6 +235,7 @@ models:
       - name: id
         tests:
           - unique:
+            config:
               tags: ['my_tag']
 ```
 
