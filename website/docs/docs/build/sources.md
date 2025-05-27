@@ -145,7 +145,6 @@ sources:
   - name: jaffle_shop
     database: raw
     freshness: # default freshness
-      # changed to config in v1.10
       warn_after: {count: 12, period: hour}
       error_after: {count: 24, period: hour}
     loaded_at_field: _etl_loaded_at
@@ -153,7 +152,6 @@ sources:
     tables:
       - name: orders
         freshness: # make this a little more strict
-          # changed to config in v1.10
           warn_after: {count: 6, period: hour}
           error_after: {count: 12, period: hour}
 
@@ -162,7 +160,6 @@ sources:
 
       - name: product_skus
         freshness: null # do not check freshness for this table
-          # changed to config in v1.10
 ```
 
 </File>
