@@ -6,29 +6,27 @@ version: 2
 
 sources:
   - name: <source_name>
-    config:
-      freshness: # changed to config in v1.10
-        warn_after:
-          [count](#count): <positive_integer>
-          [period](#period): minute | hour | day
-        error_after:
-          [count](#count): <positive_integer>
-          [period](#period): minute | hour | day
-        [filter](#filter): <boolean_sql_expression>
+    freshness:
+      warn_after:
+        [count](#count): <positive_integer>
+        [period](#period): minute | hour | day
+      error_after:
+        [count](#count): <positive_integer>
+        [period](#period): minute | hour | day
+      [filter](#filter): <boolean_sql_expression>
     [loaded_at_field](#loaded_at_field): <column_name_or_expression>
     [loaded_at_query](#loaded_at_query) <sql_expression> # v1.10 or higher. Should not be used if loaded_at_field is defined
 
     tables:
       - name: <table_name>
-        config:
-          freshness: # changed to config in v1.10
-            warn_after:
-              [count](#count): <positive_integer>
-              [period](#period): minute | hour | day
-            error_after:
-              [count](#count): <positive_integer>
-              [period](#period): minute | hour | day
-            [filter](#filter): <boolean_sql_expression>
+        freshness:
+          warn_after:
+            [count](#count): <positive_integer>
+            [period](#period): minute | hour | day
+          error_after:
+            [count](#count): <positive_integer>
+            [period](#period): minute | hour | day
+          [filter](#filter): <boolean_sql_expression>
         [loaded_at_field](#loaded_at_field): <column_name_or_expression>
         [loaded_at_query](#loaded_at_query) <sql_expression> # v1.10 or higher. Should not be used if loaded_at_field is defined
 
@@ -103,11 +101,10 @@ Examples:
 
 sources:
   - name: your_source
-    config:
-      freshness: # changed to config in v1.10
-        error_after:
-          count: 2
-          period: hour
+    freshness:
+      error_after:
+        count: 2
+        period: hour
     loaded_at_query: |
       select max(_sdc_batched_at) from (
       select * from {{ this }}
@@ -123,11 +120,10 @@ sources:
   - name: ecom
     schema: raw
     description: E-commerce data for the Jaffle Shop
-    config:
-      freshness: # changed to config in v1.10
-        warn_after:
-          count: 24
-          period: hour
+    freshness:
+      warn_after:
+        count: 24
+        period: hour
     tables:
       - name: raw_orders
         description: One record per order
@@ -176,11 +172,10 @@ version: 2
 sources:
   - name: jaffle_shop
     database: raw
-    config:
-      freshness: # default freshness
-        # changed to config in v1.10
-        warn_after: {count: 12, period: hour}
-        error_after: {count: 24, period: hour}
+
+    freshness: # default freshness
+      warn_after: {count: 12, period: hour}
+      error_after: {count: 24, period: hour}
 
     loaded_at_field: _etl_loaded_at
 
@@ -188,19 +183,15 @@ sources:
       - name: customers # this will use the freshness defined above
 
       - name: orders
-        config:
-          freshness: # make this a little more strict
-            # changed to config in v1.10
-            warn_after: {count: 6, period: hour}
-            error_after: {count: 12, period: hour}
-            # Apply a where clause in the freshness query
-            filter: datediff('day', _etl_loaded_at, current_timestamp) < 2
+        freshness: # make this a little more strict
+          warn_after: {count: 6, period: hour}
+          error_after: {count: 12, period: hour}
+          # Apply a where clause in the freshness query
+          filter: datediff('day', _etl_loaded_at, current_timestamp) < 2
 
 
       - name: product_skus
-        config:
-          freshness: # do not check freshness for this table
-            # changed to config in v1.10
+        freshness: # do not check freshness for this table
 ```
 
 </File>
