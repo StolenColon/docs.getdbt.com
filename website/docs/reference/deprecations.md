@@ -2,7 +2,18 @@
 title: "Deprecations"
 ---
 
-As dbt runs, it generates different categories of [events](/reference/events-logging), one of which is _deprecations_. Deprecations are a special type of warning that lets you know that there are problems in parts of your project that will result in breaking changes in a future version of dbt. It is important to resolve any deprecation warnings in your project before the changes are made.
+:::note
+
+Deprecated functionality still works in the v1.10 release, but it is no longer supported and will be removed in a future version.  
+
+This means the deprecated features only present a warning but don't prevent runs and other commands (unless you've configured [warnings as errors](/reference/global-configs/warnings)). 
+
+When the functionality is eventually removed, it will cause errors in your dbt runs after you upgrade if the deprecations are not addressed.
+
+
+:::
+
+As dbt runs, it generates different categories of [events](/reference/events-logging), one of which is _deprecations_. Deprecations are a special type of warning that lets you know that there are problems in parts of your project that will result in breaking changes in a future version of dbt. Although it’s just a warning for now, it is important to resolve any deprecation warnings in your project to enable you to work with more safety, feedback, and confidence going forward.
 
 ## Identify deprecation warnings
 
@@ -124,6 +135,15 @@ DBT_TARGET_PATH env var instead.
 #### ConfigTargetPathDeprecation warning resolution
 
 Remove `target-path` from your `dbt_project.yml` and specify it via either the CLI flag `--target-path` or environment variable [`DBT_TARGET_PATH`](/reference/global-configs/logs#log-and-target-paths).
+
+### CustomOutputPathInSourceFreshnessDeprecation
+
+dbt has deprecated the `--output` (or `-o`) flag for overriding the location of source freshness results from the `sources.json` file destination.
+
+#### CustomOutputPathInSourceFreshnessDeprecation warning resolution
+
+Remove the `--output` or `-o` flag and associated path configuration from any jobs running dbt source freshness commands.
+There is no alternative for changing the location of only the source freshness results. However, you can still use `--target-path` to write _all_ artifacts from the step to a custom location.
 
 ### ExposureNameDeprecation
 
@@ -362,3 +382,33 @@ hello!
 #### UnexpectedJinjaBlockDeprecation warning resolution
 
 Delete the unexpected Jinja blocks.
+
+### WEOIncludeExcludeDeprecation
+
+The `include` and `exclude` options for `warn_error_options` have been deprecated and replaced with `error` and `warn`, respectively.
+
+#### WEOIncludeExcludeDeprecation warning resolution
+
+Anywhere `warn_error_options` is configured, replace:
+- `include` with `error`
+- `exclude` with `warn`
+
+For example:
+
+```yaml
+...
+  flags:
+    warn_error_options:
+      include:
+        - NoNodesForSelectionCriteria
+```
+
+Should now be configured as:
+
+```yaml
+...
+  flags:
+    warn_error_options:
+      error:
+        - NoNodesForSelectionCriteria
+```
