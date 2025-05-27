@@ -7,7 +7,7 @@ version: 2
 sources:
   - name: <source_name>
     config:
-      freshness:
+      freshness: # changed to config in v1.10
         warn_after:
           [count](#count): <positive_integer>
           [period](#period): minute | hour | day
@@ -21,7 +21,7 @@ sources:
     tables:
       - name: <table_name>
         config:
-          freshness:
+          freshness: # changed to config in v1.10
             warn_after:
               [count](#count): <positive_integer>
               [period](#period): minute | hour | day
@@ -104,7 +104,7 @@ Examples:
 sources:
   - name: your_source
     config:
-      freshness:
+      freshness: # changed to config in v1.10
         error_after:
           count: 2
           period: hour
@@ -124,7 +124,7 @@ sources:
     schema: raw
     description: E-commerce data for the Jaffle Shop
     config:
-      freshness:
+      freshness: # changed to config in v1.10
         warn_after:
           count: 24
           period: hour
@@ -178,6 +178,7 @@ sources:
     database: raw
     config:
       freshness: # default freshness
+        # changed to config in v1.10
         warn_after: {count: 12, period: hour}
         error_after: {count: 24, period: hour}
 
@@ -189,6 +190,7 @@ sources:
       - name: orders
         config:
           freshness: # make this a little more strict
+            # changed to config in v1.10
             warn_after: {count: 6, period: hour}
             error_after: {count: 12, period: hour}
             # Apply a where clause in the freshness query
@@ -198,6 +200,7 @@ sources:
       - name: product_skus
         config:
           freshness: # do not check freshness for this table
+            # changed to config in v1.10
 ```
 
 </File>

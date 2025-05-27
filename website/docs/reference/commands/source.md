@@ -28,7 +28,7 @@ sources:
   - name: jaffle_shop
     database: raw
     config:
-      freshness:
+      freshness: # changed to config in v1.10
         warn_after: {count: 12, period: hour}
         error_after: {count: 24, period: hour}
 
@@ -39,14 +39,14 @@ sources:
 
       - name: orders
         config:
-          freshness:
+          freshness: # changed to config in v1.10
               warn_after: {count: 6, period: hour}
               error_after: {count: 12, period: hour}
               filter: datediff('day', _etl_loaded_at, current_timestamp) < 2
 
       - name: product_skus
         config:
-          freshness: null
+          freshness: null # changed to config in v1.10
 
 ```
 </File>

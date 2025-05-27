@@ -86,7 +86,7 @@ resource_type:
     columns:
       - name: column_name
         config:
-          tags: <string> | [<string>]
+          tags: <string> | [<string>] # changed to config in v1.10
         tests:
           test-name:
             config:
@@ -353,27 +353,27 @@ version: 2
 exposures:
   - name: my_exposure
     config:
-      tags: ['exposure_tag']
+      tags: ['exposure_tag'] # changed to config in v1.10
     ...
 
 sources:
   - name: source_name
     config:
-      tags: ['top_level']
+      tags: ['top_level'] # changed to config in v1.10
 
     tables:
       - name: table_name
         config:
-          tags: ['table_level']
+          tags: ['table_level'] # changed to config in v1.10
 
         columns:
           - name: column_name
             config:
-              tags: ['column_level']
+              tags: ['column_level'] # changed to config in v1.10
             tests:
               - unique:
                 config:
-                  tags: ['test_level']
+                  tags: ['test_level'] # changed to config in v1.10
 ```
 
 </File>

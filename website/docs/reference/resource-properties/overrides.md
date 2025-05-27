@@ -70,7 +70,7 @@ sources:
   - name: github
     overrides: github_source
     config:
-      freshness:
+      freshness: # changed to config in v1.10
         warn_after:
           count: 1
           period: day
@@ -81,7 +81,7 @@ sources:
     tables:
       - name: issue_assignee
         config:
-          freshness:
+          freshness: # changed to config in v1.10
             warn_after:
               count: 2
               period: day

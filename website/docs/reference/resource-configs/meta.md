@@ -48,7 +48,7 @@ models:
     columns:
       - name: column_name
         config:
-          meta: {<dictionary>}
+          meta: {<dictionary>} # changed to config in v1.10
 
 ```
 
@@ -91,7 +91,7 @@ version: 2
         columns:
           - name: column_name
             config:
-              meta: {<dictionary>}
+              meta: {<dictionary>} # changed to config in v1.10
 
 ```
 
@@ -123,7 +123,7 @@ seeds:
     columns:
       - name: column_name
         config:
-          meta: {<dictionary>}
+          meta: {<dictionary>} # changed to config in v1.10
 
 ```
 
@@ -157,7 +157,7 @@ snapshots:
     columns:
       - name: column_name
         config:
-          meta: {<dictionary>}
+          meta: {<dictionary>} # changed to config in v1.10
 
 ```
 
@@ -229,7 +229,7 @@ version: 2
 [macros](/reference/macro-properties):
   - name: macro_name
     config:
-      meta: {<dictionary>}
+      meta: {<dictionary>} # changed to config in v1.10
 
     arguments:
       - name: argument_name
@@ -259,7 +259,7 @@ version: 2
 exposures:
   - name: exposure_name
     config:
-      meta: {<dictionary>}
+      meta: {<dictionary>} # changed to config in v1.10
 
 ```
 
@@ -456,7 +456,7 @@ sources:
         columns:
           - name: email
             config:
-              meta:
+              meta: # changed to config in v1.10
                 contains_pii: true
 
 ```

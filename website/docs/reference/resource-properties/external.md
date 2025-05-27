@@ -22,7 +22,7 @@ sources:
               data_type: <string>
               description: <string>
               config:
-                meta: {dictionary}
+                meta: {dictionary} # changed to config in v1.10
             - ...
           <additional_property>: <additional_value>
 ```

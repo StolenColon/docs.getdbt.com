@@ -56,6 +56,7 @@ models:
       - "hello"
     config:
       tags: # whereas this is the tag resource path
+        # changed to config in v1.10
         # The below config applies to models in the
         # models/tags/ directory.
         # Note: you don't _need_ a leading + here,

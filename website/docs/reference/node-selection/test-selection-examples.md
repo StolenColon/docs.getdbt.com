@@ -207,7 +207,7 @@ models:
     columns:
       - name: order_id
         config:
-          tags: [my_column_tag]
+          tags: [my_column_tag] # changed to config in v1.10
         tests:
           - unique
 
@@ -239,7 +239,7 @@ models:
         tests:
           - unique:
             config:
-              tags: [my_test_tag]
+              tags: [my_test_tag] # changed to config in v1.10
 
 ```
 

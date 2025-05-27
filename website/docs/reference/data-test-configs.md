@@ -236,7 +236,7 @@ models:
         tests:
           - unique:
             config:
-              tags: ['my_tag']
+              tags: ['my_tag'] # changed to config in v1.10
 ```
 
 </File>

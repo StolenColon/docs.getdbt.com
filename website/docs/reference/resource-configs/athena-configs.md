@@ -74,7 +74,7 @@ id: "athena-configs"
   +lf_tags_config:
     enabled: true
     config:
-      tags:
+      tags: # changed to config in v1.10
         tag1: value1
         tag2: value2
     tags_columns:
@@ -339,7 +339,7 @@ models:
     columns:
       - name: id
         config:
-          meta:
+          meta: # changed to config in v1.10
             primary_key: true
 ```
 

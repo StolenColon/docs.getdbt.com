@@ -39,7 +39,7 @@ version: 2
 models:
   - name: MODEL_NAME
     config:
-      group: GROUP
+      group: GROUP # changed to config in v1.10
 
 ```
 
@@ -79,7 +79,7 @@ models:
 seeds:
   - name: [SEED_NAME]
     config:
-      group: GROUP_NAME
+      group: GROUP_NAME # changed to config in v1.10
 ```
 
 </File>
@@ -197,7 +197,7 @@ version: 2
 analyses:
   - name: ANALYSIS_NAME
     config:
-      group: GROUP_NAME
+      group: GROUP_NAME # changed to config in v1.10
 ```
 
 </File>
@@ -301,11 +301,11 @@ This is useful if you want to prevent other groups from building on top of model
 models:
   - name: finance_model
     config:
-      group: finance
-      access: private
+      group: finance # changed to config in v1.10
+      access: private # changed to config in v1.10
   - name: marketing_model
     config:
-      group: marketing
+      group: marketing # changed to config in v1.10
 ```
 </File>
 

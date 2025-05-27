@@ -20,7 +20,7 @@ sources:
   - name: jaffle_shop
     database: raw
     config:
-      freshness:
+      freshness: # changed to config in v1.10
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
 
@@ -29,7 +29,7 @@ sources:
     tables:
       - name: orders
       - name: product_skus
-        config:
+        config: # changed to config in v1.10
           freshness: null # do not check freshness for this table
 ```
 

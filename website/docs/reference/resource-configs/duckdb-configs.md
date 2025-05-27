@@ -217,7 +217,7 @@ You may reference external files in your dbt models either directly or as dbt so
 sources:
   - name: external_source
     config:
-      meta:
+      meta: # changed to config in v1.10
         external_location: "s3://my-bucket/my-sources/{name}.parquet"
     tables:
       - name: source1
@@ -246,7 +246,7 @@ If one of the source tables deviates from the pattern or needs some other specia
 sources:
   - name: external_source
     config:
-      meta:
+      meta: # changed to config in v1.10
         external_location: "s3://my-bucket/my-sources/{name}.parquet"
     tables:
       - name: source1

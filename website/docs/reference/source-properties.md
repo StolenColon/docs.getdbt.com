@@ -111,12 +111,12 @@ sources:
 
     config:
       # meta fields are rendered in auto-generated documentation
-      meta:
+      meta: # changed to config in v1.10
         contains_pii: true
         owner: "@alice"
 
       # Add tags to this source
-      tags:
+      tags: # changed to config in v1.10
         - ecom
         - pii
 

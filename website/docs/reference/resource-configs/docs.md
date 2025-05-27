@@ -44,7 +44,7 @@ version: 2
 models:
   - name: model_name
     config:
-      docs:
+      docs: # changed to config in v1.10
         show: true | false
         node_color: color_id # Use name (such as node_color: purple) or hex code with quotes (such as node_color: "#cd7f32")
 ```
@@ -82,7 +82,7 @@ version: 2
 seeds:
   - name: seed_name
     config:
-      docs:
+      docs: # changed to config in v1.10
         show: true | false
         node_color: color_id # Use name (such as node_color: purple) or hex code with quotes (such as node_color: "#cd7f32")
 ```
@@ -115,7 +115,7 @@ version: 2
 snapshots:
   - name: snapshot_name
     config:
-      docs:
+      docs: # changed to config in v1.10
         show: true | false
         node_color: color_id # Use name (such as node_color: purple) or hex code with quotes (such as node_color: "#cd7f32")
 ```
@@ -136,7 +136,7 @@ version: 2
 analyses:
   - name: analysis_name
     config:
-      docs:
+      docs: # changed to config in v1.10
         show: true | false
         node_color: color_id # Use name (such as node_color: purple) or hex code with quotes (such as node_color: "#cd7f32")
 ```
@@ -156,7 +156,7 @@ version: 2
 macros:
   - name: macro_name
     config:
-      docs:
+      docs: # changed to config in v1.10
         show: true | false
 ```
 </File>

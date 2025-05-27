@@ -90,7 +90,7 @@ By default, all models within a group have the `protected` [access modifier](/re
 models:
   - name: finance_private_model
     config:
-      access: private
+      access: private # changed to config in v1.10
       group: finance
 
   # in a different group!
