@@ -107,7 +107,7 @@ import AdapterConfigIntro from '/snippets/_adapter-configs-intro.md';
 |[Copying grants](/reference/resource-configs/snowflake-configs#copying-grants)|`copy_grants` = `true', dbt adds the copy grants DDL qualifier when rebuilding tables and views. The default is false.|
 |[Secure views](/reference/resource-configs/snowflake-configs#secure-views)|Use the `secure` config for view models which can be used to limit access to sensitive data.|
 |[Source freshness known limitation](/reference/resource-configs/snowflake-configs#source-freshness-known-limitation)|Snowflake determines source freshness using the `LAST_ALTERED` information.|
-[Pagination for object results](/reference/resource-configs/snowflake-configs#pagination-for-object-results)|Environments with over 100,000 objects in a schema can adjust the results per page and page limit using the `list_relations_per_page` and list_relations_page_limit~ flags in the `dbt_project.yml`.|
+[Pagination for object results](/reference/resource-configs/snowflake-configs#pagination-for-object-results)|Environments with over 100,000 objects in a schema can adjust the results per page and page limit using the `list_relations_per_page` and `list_relations_page_limit` flags in the `dbt_project.yml`.|
 
 <VersionBlock firstVersion="1.9">
 
