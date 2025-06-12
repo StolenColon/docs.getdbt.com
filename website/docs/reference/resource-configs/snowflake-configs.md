@@ -96,7 +96,7 @@ import AdapterConfigIntro from '/snippets/_adapter-configs-intro.md';
 
 | Configuration    | Description    | 
 |------------------|----------------|
-|[Iceberg table format](/reference/resource-configs/snowflake-configs#iceberg-table-format)|The dbt-snowflake adapter supports the Iceberg table format and is available for three of the Snowflake materializations [table](/docs/build/materializations#table), [incremental](/docs/build/materializations#incremental) and [dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables)|
+|[Iceberg table format](/reference/resource-configs/snowflake-configs#iceberg-table-format)|The dbt-snowflake adapter supports the Iceberg table format and is available for three of the Snowflake materializations: [table](/docs/build/materializations#table), [incremental](/docs/build/materializations#incremental), and [dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables)|
 |[Dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables)|Specific to Snowflake but follows the implementation of [materialized views](/docs/build/materializations#Materialized-View).|
 |[Temporary tables](/reference/resource-configs/snowflake-configs#temporary-tables)|The `tmp_relation_type` configuration lets you opt into using temporary tables for incremental builds.|
 |[Transient tables](/reference/resource-configs/snowflake-configs#transient-tables)| Snowflake transient tables reduce storage costs by skipping history and fail-safe. dbt creates them by default, but you can disable them in dbt_project.yml using the `transient: false` config.|
