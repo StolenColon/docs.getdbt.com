@@ -9,7 +9,7 @@ Every [dbt project](/docs/build/projects) needs a `dbt_project.yml` file — thi
 
 - By default, dbt looks for the `dbt_project.yml` in your current working directory and its parents, but you can set a different directory using the `--project-dir` flag or the `DBT_PROJECT_DIR` environment variable.
 
-- Specify your dbt Cloud project ID in the `dbt_project.yml` file using `project-id` under the `dbt-cloud` config. Find your project ID in your dbt Cloud project URL: For example, in `https://YOUR_ACCESS_URL/11/projects/123456`, the project ID is `123456`.
+- Specify your <Constant name="cloud" /> project ID in the `dbt_project.yml` file using `project-id` under the `dbt-cloud` config. Find your project ID in your <Constant name="cloud" /> project URL: For example, in `https://YOUR_ACCESS_URL/11/projects/123456`, the project ID is `123456`.
 
 
 - Note, you can't set up a "property" in the `dbt_project.yml` file if it's not a config (an example is [macros](/reference/macro-properties)). This applies to all types of resources. Refer to [Configs and properties](/reference/configs-and-properties) for more detail.
@@ -52,6 +52,9 @@ The following example is a list of all available configurations in the `dbt_proj
   [project-id](/docs/cloud/configure-cloud-cli#configure-the-dbt-cloud-cli): project_id # Required
   [defer-env-id](/docs/cloud/about-cloud-develop-defer#defer-in-dbt-cloud-cli): environment_id # Optional
 
+[exposures](/docs/build/exposures):
+  +[enabled](/reference/resource-configs/enabled): true | false
+
 [quoting](/reference/project-configs/quoting):
   database: true | false
   schema: true | false
@@ -91,7 +94,7 @@ vars:
   - macro_namespace: packagename
     search_order: [packagename]
 
-[restrict-access](/docs/collaborate/govern/model-access): true | false
+[restrict-access](/docs/mesh/govern/model-access): true | false
 
 ```
 
