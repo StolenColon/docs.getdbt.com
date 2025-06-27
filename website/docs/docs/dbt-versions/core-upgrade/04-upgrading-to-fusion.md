@@ -5,6 +5,7 @@ description: New features and changes in Fusion
 displayed_sidebar: "docs"
 ---
 
+import FusionAdapter from '/snippets/_fusion-dwh.md';
 import FusionBeta from '/snippets/_fusion-beta-callout.md';
 
 <FusionBeta />
@@ -20,6 +21,12 @@ import AboutFusion from '/snippets/_about-fusion.md';
 At the same time, we want to take this opportunity to _strengthen the framework_ by removing deprecated functionality, rationalizing confusing behavior, and providing more rigorous validation on erroneous inputs. This means that there is some work involved in preparing an existing dbt project for readiness on Fusion.
 
 That work is documented below — it should be simple, straightforward, and in many cases, auto-fixable with the [`dbt-autofix`](https://github.com/dbt-labs/dbt-autofix) helper.
+
+### Supported adapters
+
+The following are the supported adapters and auth methods for the dbt Fusion engine:
+
+<FusionAdapter />
 
 ### A clean slate
 
