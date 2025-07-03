@@ -169,14 +169,14 @@ grant all on future tables in database raw to role snowflake_role_name;
 
 :::
 
-## Build your first model
+## Build your first models
 
 You have two options for working with files in the <Constant name="cloud_ide" />:
 
 - Create a new branch (recommended) &mdash; Create a new branch to edit and commit your changes. Navigate to **Version Control** on the left sidebar and click **Create branch**.
 - Edit in the protected primary branch &mdash; If you prefer to edit, format, or lint files and execute dbt commands directly in your primary git branch. The <Constant name="cloud_ide" /> prevents commits to the protected branch, so you will be prompted to commit your changes to a new branch.
 
-Name the new branch `add-customers-model`.
+Name the new branch `add-customers-and-orders-models`.
 
 1. Click the **...** next to the `models` directory, then select **Create file**.  
 2. Name the file `customers.sql`, then click **Create**.
@@ -240,7 +240,31 @@ final as (
 select * from final
 ```
 
-4. Enter `dbt run` in the command prompt at the bottom of the screen. You should get a successful run and see the three models.
+4. Click the **...** next to the `models` directory, then select **Create file**.  
+5. Name the file `orders.sql`, then click **Create**.
+6. Copy the following query into the file and click **Save**.
+
+```sql
+with orders as  (
+   select id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+   from raw.jaffle_shop.orders
+),
+
+final as (
+
+   select
+       orders.*
+   from orders
+)
+
+
+select * from final
+```
+
+7. Enter `dbt run` in the command prompt at the bottom of the screen. You should get a successful run and see the four models.
 
 Later, you can connect your business intelligence (BI) tools to these views and tables so they only read cleaned up data rather than raw data in your BI tool.
 
@@ -340,9 +364,35 @@ Later, you can connect your business intelligence (BI) tools to these views and 
 
     </File>
 
+4. Edit the SQL in your `models/orders.sql` file as follows:
+
+    <File name='models/customers.sql'>
+
+    ```sql
+    with orders as (
+
+        select * from {{ ref('stg_orders') }}
+
+    ),
+
+
+   final as (
+   
+      select
+          orders.*
+      from orders
+   )
+
+
+   select * from final
+    
+    ```
+
+    </File>
+
 4. Execute `dbt run`.
 
-    This time, when you performed a `dbt run`, separate views/tables were created for `stg_customers`, `stg_orders` and `customers`. dbt inferred the order to run these models. Because `customers` depends on `stg_customers` and `stg_orders`, dbt builds `customers` last. You do not need to explicitly define these dependencies.
+    This time, when you performed a `dbt run`, separate views/tables were created for `stg_customers`, `stg_orders`, `customers`, and `orders`. dbt inferred the order to run these models. Because `customers` depends on `stg_customers` and `stg_orders`, dbt builds `customers` last. You do not need to explicitly define these dependencies.
 
 #### FAQs {#faq-2}
 
