@@ -14,18 +14,13 @@ if (process?.env?.VERCEL_ENV === "preview" && process?.env?.VERCEL_BRANCH_URL) {
   SITE_URL = `http://localhost:3000`;
 }
 
-var GIT_BRANCH;
-if (!process.env.CONTEXT || process.env.CONTEXT == "production") {
-  GIT_BRANCH = "current";
-} else {
-  GIT_BRANCH = process.env.HEAD;
-}
+const GIT_BRANCH = process?.env?.VERCEL_GIT_COMMIT_REF;
 
 let { ALGOLIA_APP_ID, ALGOLIA_API_KEY, ALGOLIA_INDEX_NAME } = process.env;
 
 let metatags = [];
-// If Not Current Branch, do not index site
-if (GIT_BRANCH !== "current") {
+// If not `current` and not `main` branch, do not index site
+if (GIT_BRANCH && (GIT_BRANCH !== "current" && GIT_BRANCH !== "main")) {
   metatags.push({
     tagName: "meta",
     attributes: {
@@ -35,6 +30,8 @@ if (GIT_BRANCH !== "current") {
   });
 }
 
+console.log("DEBUG: VERCEL_GIT_COMMIT_REF =", process.env.VERCEL_GIT_COMMIT_REF);
+console.log("DEBUG: GIT_BRANCH =", GIT_BRANCH);
 console.log("DEBUG: CONTEXT =", process.env.CONTEXT);
 console.log("DEBUG: DEPLOY_URL =", process.env.DEPLOY_URL);
 console.log("DEBUG: VERCEL_ENV =", process.env.VERCEL_ENV);
@@ -74,7 +71,8 @@ var siteSettings = {
     },
     announcementBar: {
       id: "virtual-event",
-      content: "Join our live event: Modernize self-service analytics with dbt — cut costs, reduce bottlenecks, and keep the tools analysts love. Register now.",
+      content:
+        "Join our live event: Modernize self-service analytics with dbt — cut costs, reduce bottlenecks, and keep the tools analysts love. Register now.",
       isCloseable: true,
     },
     announcementBarActive: true,
@@ -106,8 +104,8 @@ var siteSettings = {
     navbar: {
       hideOnScroll: true,
       logo: {
-        src: "/img/dbt-logo.svg",
-        srcDark: "img/dbt-logo-light.svg",
+        src: "/img/dbt-logo.svg?v=2",
+        srcDark: "img/dbt-logo-light.svg?v=2",
         alt: "dbt Logo",
       },
       items: [
@@ -220,7 +218,7 @@ var siteSettings = {
 
           <div class="footer-logo">
             <a href="/">
-              <img src="/img/dbt-logo-light.svg" alt="dbt Labs" />
+              <img src="/img/dbt-logo-light.svg?v=2" alt="dbt Labs" />
             </a>
           </div>
 
@@ -243,7 +241,7 @@ var siteSettings = {
               <h5 class="heading-5">Support</h5>
               <a href='/docs/dbt-support'>Contact Support</a>
               <a href="https://www.getdbt.com/services" target="_blank">Professional Services</a>
-              <a href="https://partners.getdbt.com/english/directory/" target="_blank">Find a Partner</a>
+              <a href="https://www.getdbt.com/partner-directory" target="_blank">Find a Partner</a>
               <a href="https://status.getdbt.com/" target="_blank">System Status</a>
             </div>
             <div class="footer-grid-item">
@@ -310,6 +308,9 @@ var siteSettings = {
           blogSidebarCount: 5,
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          // Un-truncated blog posts will throw an error
+          // https://docusaurus.io/blog/releases/3.5#onuntruncatedblogposts
+          onUntruncatedBlogPosts: "throw",
         },
       },
     ],
@@ -325,10 +326,10 @@ var siteSettings = {
     path.resolve("plugins/buildQuickstartIndexPage"),
     path.resolve("plugins/buildRSSFeeds"),
     [
-      'vercel-analytics',
+      "vercel-analytics",
       {
         debug: false,
-        mode: 'auto',
+        mode: "auto",
       },
     ],
   ],

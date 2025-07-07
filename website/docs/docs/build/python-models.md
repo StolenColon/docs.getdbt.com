@@ -145,8 +145,6 @@ with upstream_python_model as (
 Referencing [ephemeral](/docs/build/materializations#ephemeral) models is currently not supported (see [feature request](https://github.com/dbt-labs/dbt-core/issues/7288)) 
 :::
 
-<VersionBlock firstVersion="1.8">
-
 From dbt version 1.8, Python models also support dynamic configurations within Python f-strings. This allows for more nuanced and dynamic model configurations directly within your Python code. For example:
 
 <File name='models/my_python_model.py'>
@@ -163,7 +161,6 @@ print(f"{dbt.config.get('my_var')}")  # Output after change: 5
 This also means you can use `dbt.config.get()` within Python models to ensure that configuration values are effectively retrievable and usable within Python f-strings.
 
 </File>
-</VersionBlock>
 
 ## Configuring Python models
 
@@ -196,7 +193,7 @@ Out of the box, the `dbt` class supports:
 - Accessing the database location of the current model: `dbt.this()` (also: `dbt.this.database`, `.schema`, `.identifier`)
 - Determining if the current model's run is incremental: `dbt.is_incremental`
 
-It is possible to extend this context by "getting" them with `dbt.config.get()` after they are configured in the [model's config](/reference/model-configs). Starting from dbt v1.8, the `dbt.config.get()` method supports dynamic access to configurations within Python models, enhancing flexibility in model logic. This includes inputs such as `var`, `env_var`, and `target`. If you want to use those values for the conditional logic in your model, we require setting them through a dedicated YAML file config:
+It is possible to extend this context by "getting" them with `dbt.config.get()` after they are configured in the [model's config](/reference/model-configs). The `dbt.config.get()` method supports dynamic access to configurations within Python models, enhancing flexibility in model logic. This includes inputs such as `var`, `env_var`, and `target`. If you want to use those values for the conditional logic in your model, we require setting them through a dedicated YAML file config:
 
 <File name='models/config.yml'>
 
@@ -233,8 +230,6 @@ def model(dbt, session):
 
 </File>
 
-<VersionBlock firstVersion="1.8">
-
 #### Dynamic configurations
 
 In addition to the existing methods of configuring Python models, you also have dynamic access to configuration values set with `dbt.config()` within Python models using f-strings. This increases the possibilities for custom logic and configuration management.
@@ -252,7 +247,6 @@ def model(dbt, session):
 ```
 
 </File>
-</VersionBlock>
 
 ### Materializations
 
@@ -528,7 +522,7 @@ models:
 
 You can use the `@udf` decorator or `udf` function to define an "anonymous" function and call it within your `model` function's DataFrame transformation. This is a typical pattern for applying more complex functions as DataFrame operations, especially if those functions require inputs from third-party packages.
 - [Snowpark Python: Creating UDFs](https://docs.snowflake.com/en/developer-guide/snowpark/python/creating-udfs.html)
-- [BigQuery DataFrames UDFs](https://cloud.google.com/bigquery/docs/user-defined-functions)
+- [BigQuery DataFrames UDFs](https://cloud.google.com/bigquery/docs/use-bigquery-dataframes#custom-python-functions)
 - [PySpark functions: udf](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.udf.html)
 
 <Tabs>
@@ -583,7 +577,7 @@ def model(dbt, session):
 def model(dbt, session):
     dbt.config(submission_method="bigframes")
 
-    # Use @bpd.udf after remote_function is deprecated.
+    # You can use @bpd.udf (currently a preview feature)
     @bpd.remote_function(dataset='jialuo_test_us')
     def my_func(x: int) -> int:
         return x * 1100

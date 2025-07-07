@@ -150,6 +150,14 @@ To complete setup, follow the steps below in the <Constant name="cloud" /> appli
 
 <Snippet path="login_url_note" />
 
+### Additional configuration options
+
+The **Single sign-on** section also contains additional configuration options which are located after the credentials fields.
+
+- **Include all groups:** Retrieve all groups to which a user belongs from your identity provider. If a user is a member of nested groups, it will also include the parent groups. When this option is disabled, only groups where the user has direct membership will be supplied.  This option is enabled by default.
+
+- **Maximum number of groups to retrieve:** Provides a configurable limit to the number of groups to retrieve for users.  By default, this is set to 250 groups, but this number can be increased if users' group memberships exceed that amount.
+
 ## Setting up RBAC
 Now you have completed setting up SSO with Entra ID, the next steps will be to set up
 [RBAC groups](/docs/cloud/manage-access/enterprise-permissions) to complete your access control configuration.
@@ -159,3 +167,7 @@ Now you have completed setting up SSO with Entra ID, the next steps will be to s
 Ensure that the domain name under which user accounts exist in Azure matches the domain you supplied in [Supplying credentials](#supplying-credentials) when you configured SSO.
 
 <Lightbox src="/img/docs/dbt-cloud/dbt-cloud-enterprise/azure/azure-get-domain.png" title="Obtaining the user domain from Azure" />
+
+## Learn more
+
+<WistiaVideo id="e395rnl0cy" paddingTweak="62.25%" />
