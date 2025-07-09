@@ -8,7 +8,7 @@ displayed_sidebar: "docs"
 ## Resources
 
 - [Changelog](https://github.com/dbt-labs/dbt-core/blob/1.7.latest/CHANGELOG.md)
-- [dbt Core CLI Installation guide](/docs/core/installation-overview)
+- [<Constant name="core" /> CLI Installation guide](/docs/core/installation-overview)
 - [Cloud upgrade guide](/docs/dbt-versions/upgrade-dbt-version-in-cloud)
 - [Release schedule](https://github.com/dbt-labs/dbt-core/issues/8260)
 
@@ -36,8 +36,8 @@ To retain the behavior prior to v1.7, there are two main options:
 
 ## New and changed features and functionality
 
-- [`dbt docs generate`](/reference/commands/cmd-docs) now supports `--select` to generate [catalog metadata](/reference/artifacts/catalog-json) for a subset of your project. Currently available for Snowflake and Postgres only, but other adapters are coming soon. 
-- [Source freshness](/docs/deploy/source-freshness) can now be generated from warehouse metadata tables, currently Snowflake only, but other adapters that have metadata tables are coming soon. 
+- [`dbt docs generate`](/reference/commands/cmd-docs) now supports `--select` to generate [catalog metadata](/reference/artifacts/catalog-json) for a subset of your project. 
+- [Source freshness](/docs/deploy/source-freshness) can now be generated from warehouse metadata tables. 
 
 ### MetricFlow enhancements
 
@@ -57,7 +57,7 @@ To retain the behavior prior to v1.7, there are two main options:
 
 ### Model governance
 
-dbt Core v1.5 introduced model governance which we're continuing to refine.  v1.7 includes these additional features and functionality:
+<Constant name="core" /> v1.5 introduced model governance which we're continuing to refine.  v1.7 includes these additional features and functionality:
 
 - **[Breaking change detection](/reference/resource-properties/versions#detecting-breaking-changes) for models with contracts enforced:** When dbt detects a breaking change to a model with an enforced contract during state comparison, it will now raise an error for versioned models and a warning for models that are not versioned.
 - **[Set `access` as a config](/reference/resource-configs/access):** You can now set a model's `access` within config blocks in the model's file or in the `dbt_project.yml` for an entire subfolder at once.
@@ -66,7 +66,7 @@ dbt Core v1.5 introduced model governance which we're continuing to refine.  v1.
 
 ### dbt clean
 
-Starting in v1.7, [dbt clean](/reference/commands/clean) will only clean paths within the current working directory. The `--no-clean-project-files-only` flag will delete all paths specified in the `clean-targets` section of `dbt_project.yml`, even if they're outside the dbt project.
+[dbt clean](/reference/commands/clean) only cleans paths within the current working directory. The `--no-clean-project-files-only` flag will delete all paths specified in the `clean-targets` section of `dbt_project.yml`, even if they're outside the dbt project.
 
 Supported flags:
 -  `--clean-project-files-only` (default) 

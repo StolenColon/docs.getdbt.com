@@ -187,24 +187,6 @@ dbt snapshots allow a record to be made of changes to a mutable model over time.
 queries on models, where analysts can “look back in time” at the previous state of a model. This functionality is
 supported by the ClickHouse connector and is configured using the following syntax:
 
-<VersionBlock lastVersion="1.8">
-
-<File name='snapshots/<model_name>.sql'>
-
-```jinja
-{{
-   config(
-     target_schema = "<schema_name>",
-     unique_key = "<column-name>",
-     strategy = "<strategy>",
-     updated_at = "<unpdated_at_column-name>",
-   )
-}}
-```
-
-</File>
-
-</VersionBlock>
 
 <VersionBlock firstVersion="1.9">
 
@@ -250,7 +232,7 @@ issue [here](https://github.com/ClickHouse/dbt-clickhouse/issues).
 
 ## Cross database macro support
 
-dbt-clickhouse supports most of the cross database macros now included in dbt-core, with the following exceptions:
+dbt-clickhouse supports most of the cross database macros now included in <Constant name="core" />, with the following exceptions:
 
 * The `split_part` SQL function is implemented in ClickHouse using the splitByChar function. This function requires
   using a constant string for the "split" delimiter, so the `delimeter` parameter used for this macro will be
@@ -260,11 +242,11 @@ dbt-clickhouse supports most of the cross database macros now included in dbt-co
 
 ## Setting `quote_columns`
 
-To prevent a warning, make sure to explicitly set a value for `quote_columns` in your `dbt_project.yml`. See the [doc on quote_columns](https://docs.getdbt.com/reference/resource-configs/quote_columns) for more information.
+To prevent a warning, make sure to explicitly set a value for `quote_columns` in your `dbt_project.yml`. See the [doc on quote_columns](/reference/resource-configs/quote_columns) for more information.
 
 ```yaml
 seeds:
-  +quote_columns: false  #or `true` if you have csv column headers with spaces
+  +quote_columns: false  #or `true` if you have CSV column headers with spaces
 ```
 
  

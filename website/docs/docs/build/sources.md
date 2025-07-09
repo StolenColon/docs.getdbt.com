@@ -9,7 +9,7 @@ search_weight: "heavy"
 ## Related reference docs
 * [Source properties](/reference/source-properties)
 * [Source configurations](/reference/source-configs)
-* [`{{ source() }}` jinja function](/reference/dbt-jinja-functions/source)
+* [`{{ source() }}` Jinja function](/reference/dbt-jinja-functions/source)
 * [`source freshness` command](/reference/commands/source)
 
 ## Using sources
@@ -103,6 +103,7 @@ sources:
     description: This is a replica of the Postgres database used by our app
     tables:
       - name: orders
+        database: raw
         description: >
           One record per order. Includes cancelled and deleted orders.
         columns:
@@ -144,29 +145,33 @@ version: 2
 sources:
   - name: jaffle_shop
     database: raw
-    freshness: # default freshness
-      warn_after: {count: 12, period: hour}
-      error_after: {count: 24, period: hour}
-    loaded_at_field: _etl_loaded_at
+    config: 
+      freshness: # default freshness
+        # changed to config in v1.9
+        warn_after: {count: 12, period: hour}
+        error_after: {count: 24, period: hour}
+      loaded_at_field: _etl_loaded_at # changed to config in v1.10
 
     tables:
       - name: orders
-        freshness: # make this a little more strict
-          warn_after: {count: 6, period: hour}
-          error_after: {count: 12, period: hour}
+        config:
+          freshness: # make this a little more strict
+            warn_after: {count: 6, period: hour}
+            error_after: {count: 12, period: hour}
 
       - name: customers # this inherits the default freshness defined in the jaffle_shop source block at the beginning
 
 
       - name: product_skus
-        freshness: null # do not check freshness for this table
+        config:
+          freshness: null # do not check freshness for this table
 ```
 
 </File>
 
 In the `freshness` block, one or both of `warn_after` and `error_after` can be provided. If neither is provided, then dbt will not calculate freshness for the tables in this source.
 
-Additionally, the `loaded_at_field` is required to calculate freshness for a table. If a `loaded_at_field` is not provided, then dbt will not calculate freshness for the table.
+Additionally, the `loaded_at_field` is required to calculate freshness for a table (except for cases where dbt can leverage warehouse metadata to calculate freshness). If a `loaded_at_field`, or viable alternative, is not provided, then dbt will not calculate freshness for the table.
 
 These configs are applied hierarchically, so `freshness` and `loaded_at_field` values specified for a `source` will flow through to all of the `tables` defined in that source. This is useful when all of the tables in a source have the same `loaded_at_field`, as the config can just be specified once in the top-level source definition.
 
