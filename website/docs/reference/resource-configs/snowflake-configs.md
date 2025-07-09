@@ -4,6 +4,68 @@ id: "snowflake-configs"
 description: "Snowflake Configurations - Read this in-depth guide to learn about configurations in dbt."
 ---
 
+## Snowflake configurations breakdown
+
+<Expandable alt_header="Snowflake configurations">
+
+- [Iceberg table format](/docs/mesh/iceberg/snowflake-iceberg-support)
+
+dbt supports two methods for materializing a table in the Iceberg format. 
+
+One uses the legacy model configuration field `table_format = 'iceberg'`, and the other integrates an Iceberg catalog through the model, resource, or `dbt_project.yml` configuration. 
+
+- [Dynamic tables](/reference/resource-configs/snowflake-configs#dynamic-tables)
+
+Dynamic tables are a materialization specific to Snowflake. As a result, model configurations that typically come from <Constant name="core" /> such as those applied to `views` may not be available for dynamic tables. Although dynamic tables are unique to Snowflake, they closely follow the behavior of materialized views and support the `on_configuration_change` setting.
+
+- [Temporary tables](/reference/resource-configs/snowflake-configs#temporary-tables)
+
+The `tmp_relation_type` configuration lets you opt in to using temporary tables for incremental builds, and you define it within the model configuration.
+
+- [Transient tables](/reference/resource-configs/snowflake-configs#transient-tables)
+
+By default, dbt creates all Snowflake tables as `transient`, which means they support time travel for up to one day and don't include a fail-safe period.
+
+- [Query tags](/reference/resource-configs/snowflake-configs#query-tags)
+
+dbt allows you to set a default `query tag` for the duration of its Snowflake connections through your profile. You can override this default for specific models by using the query_tag model configuration or by customizing the `set_query_tag` macro.
+
+- [Merge behavior (incremental models)](/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models)
+
+The `incremental_strategy` configuration determines how dbt builds incremental models in Snowflake. By default, dbt uses the `merge` strategy to update incremental tables. Snowflake also supports other strategies, including `append`, `delete+insert`, `insert_overwrite`, and `microbatch`.
+
+- [Configuring table clustering](/reference/resource-configs/snowflake-configs#configuring-table-clustering)
+
+dbt supports table clustering in Snowflake through the `cluster_by` configuration. When this configuration is applied to a table or incremental model, dbt implicitly orders the table results by the specified `cluster_by` fields and adds those fields as clustering keys on the target table.
+
+- [Python model configuration](/reference/resource-configs/snowflake-configs#python-model-configuration)
+
+The Snowflake adapter supports Python models by leveraging Snowflake’s Snowpark framework, which shares many similarities with PySpark.
+
+- [Configuring virtual warehouses](/reference/resource-configs/snowflake-configs#configuring-virtual-warehouses)
+
+You can configure the default warehouse that dbt uses for Snowflake connections in your profile. To override the warehouse for specific models or groups of models, use the `snowflake_warehouse` model configuration. This allows you to assign a larger warehouse to certain models, helping manage Snowflake costs and optimize build times
+
+- [Copy grants](/reference/resource-configs/snowflake-configs#copying-grants)
+
+Default = `false`
+
+If copy_grants is set to `true`, dbt copies grants when rebuilding tables and views.
+
+- [Secure views](/reference/resource-configs/snowflake-configs#secure-views)
+
+The `secure` configuration creates a Snowflake secure view which can be used to limit access to sensitive data.
+
+- [Source freshness known limitation](/reference/resource-configs/snowflake-configs#source-freshness-known-limitation)
+
+Snowflake determines source freshness based on the `LAST_ALTERED` column, which updates whenever any change is made to an object and not just when the data itself changes.
+
+- [Pagination for object results](/reference/resource-configs/snowflake-configs#pagination-for-object-results)
+
+By default, when dbt queries a schema containing up to 100,000 objects, it paginates the results from `show objects` into pages of 10,000 items each, up to 10 pages. For schemas with more than 100,000 objects, you can customize the number of results per page and the page limit by setting specific flags in your `dbt_project.yml` file.
+
+</Expandable>
+
 ## Iceberg table format
 
 Our Snowflake Iceberg table content has moved to a [new page](/docs/mesh/iceberg/snowflake-iceberg-support)!
