@@ -33,17 +33,17 @@ The dbt Fusion engine can also render Jinja, but then it completes a second phas
 
 <Lightbox src="/img/fusion/annotated_steps.png" title="Each dot represents a step in that model's execution (render, analyze, run). The numbers reflect step order across the DAG. JIT steps are green; AOT steps are purple." alignment="left" width="600px"/>
 
-<Constant name="core" /> will _always_ use **Just In Time (JIT) rendering**. It renders a model, runs it in the warehouse, then moves on to the next model.
-
 <Expandable alt_header="JIT rendering and execution (dbt Core)" is_open="true">
   <video src="/img/fusion/CoreJitRun.mp4" autoPlay loop muted style={{ width: "100%", maxWidth: 950 }} />
 </Expandable>
 
-The <Constant name="fusion_engine" /> will _default to_ **Ahead of Time (AOT) rendering and analysis**. It renders all models in the project, then produces and statically analyzes every model's logical plan, and only then will it start running models in the warehouse.
+<Constant name="core" /> will _always_ use **Just In Time (JIT) rendering**. It renders a model, runs it in the warehouse, then moves on to the next model.
 
 <Expandable alt_header="AOT rendering, analysis and execution (dbt Fusion engine)" is_open="true">
   <video src="/img/fusion/FusionAotRun.mp4" autoPlay loop muted style={{ width: "100%", maxWidth: 950 }} />
 </Expandable>
+
+The <Constant name="fusion_engine" /> will _default to_ **Ahead of Time (AOT) rendering and analysis**. It renders all models in the project, then produces and statically analyzes every model's logical plan, and only then will it start running models in the warehouse.
 
 By rendering and analyzing all models ahead of time, and only beginning execution once everything is proven to be valid, the <Constant name="fusion_engine" /> avoids consuming any warehouse resources unnecessarily. By contrast, SQL errors in models run by <Constant name="core" />'s engine will only be flagged by the database itself during execution.
 
@@ -74,7 +74,7 @@ During a `dbt run`, JIT rendering ensures the downstream model's code will be up
 
 <Expandable alt_header="Rendering and analyzing without execution" is_open="true">
   <video src="/img/fusion/FusionJitCompileUnsafe.mp4" autoPlay loop muted style={{ width: "100%", maxWidth: 950 }} />
-  _Note that `model_d` is still rendered AOT, since it doesn't use introspection, but it still has to wait for `introspective_model_c` to be analyzed._
+  Note that `model_d` is rendered AOT, since it doesn't use introspection, but it still has to wait for `introspective_model_c` to be analyzed.
 </Expandable>
 
 You will still derive significant benefits from "unsafe" static analysis compared to no static analysis, and we recommend leaving it on unless you notice it causing you problems. Better still, you should consider whether your introspective code could be rewritten in a way that is eligible for AOT rendering and static analysis.
@@ -153,32 +153,32 @@ Static analysis may incorrectly fail on valid queries if they contain:
 
 ### No introspective models
 
-- Fusion renders each model in order.
-- Then it statically analyzes each model's logical plan in order.
-- Finally, it runs each model's rendered SQL. Nothing is persisted to the database until Fusion has validated the entire project.
-
 <Expandable alt_header="AOT rendering, analysis and execution" is_open="true">
   <video src="/img/fusion/FusionAotRun.mp4" autoPlay loop muted style={{ width: "100%", maxWidth: 950 }} />
 </Expandable>
 
+- Fusion renders each model in order.
+- Then it statically analyzes each model's logical plan in order.
+- Finally, it runs each model's rendered SQL. Nothing is persisted to the database until Fusion has validated the entire project.
+
 ### Introspective model with `unsafe` static analysis
 
 Imagine we update `model_c` to contain an introspective query (such as `dbt_utils.get_column_values`). We'll say it's querying `model_b`, but the <Constant name="fusion_engine" />'s response is the same regardless of what the introspection does.
+
+<Expandable alt_header="Unsafe static analysis of introspective models" is_open="true">
+  <video src="/img/fusion/FusionJitRunUnsafe.mp4" autoPlay loop muted style={{ width: "100%", maxWidth: 950 }} />
+</Expandable>
 
 - During parsing, Fusion discovers `model_c`'s introspective query. It switches `model_c` to JIT rendering and opts `model_c+` in to JIT static analysis.
 - `model_a` and `model_b` are still eligible for AOT compilation, so Fusion handles them the same as in the introspection-free example above. `model_d` is still eligible for AOT rendering (but not analysis).
 - Once `model_b` is run, Fusion renders `model_c`'s SQL (using the just-refreshed data), analyzes it, and runs it. All three steps happen back-to-back.
 - `model_d`'s AOT-rendered SQL is analyzed and run.
 
-<Expandable alt_header="Unsafe static analysis of introspective models" is_open="true">
-  <video src="/img/fusion/FusionJitRunUnsafe.mp4" autoPlay loop muted style={{ width: "100%", maxWidth: 950 }} />
-</Expandable>
-
-As you'd expect, a branching DAG will AOT compile as much as possible before moving on to the JIT components, and will work with multiple `--threads` if they're available. Here, `model_c` can start rendering as soon as `model_b` has finished running, while the AOT-compiled `model_x` and `model_y` run separately:
-
 <Expandable alt_header="Complex DAG with an introspective branch" is_open="true">
   <video src="/img/fusion/FusionJitRunUnsafeComplexDag.mp4" autoPlay loop muted style={{ width: "100%", maxWidth: 950 }} />
 </Expandable>
+
+As you'd expect, a branching DAG will AOT compile as much as possible before moving on to the JIT components, and will work with multiple `--threads` if they're available. Here, `model_c` can start rendering as soon as `model_b` has finished running, while the AOT-compiled `model_x` and `model_y` run separately:
 
 import AboutFusion from '/snippets/_about-fusion.md';
 
